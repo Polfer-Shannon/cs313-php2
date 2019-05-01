@@ -5,31 +5,33 @@
         <title>Week 2 Team Assignment</title>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
         <link rel="stylesheet" type="text/css" href="wk2style.css">
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
         <script type="text/javascript" src="wk2java.js"></script>
     </head>
     <body>
-        <div id="div1" class="first_div">This is div One</div>
-        <div id="div2" class="second_div">This is div Two</div>
-        <div id="div3" class="third_div">This is div Three</div>
+        <div class="container"> 
+            <div class="row">
+                <div id="div1" class="col-sm first_div">Box One</div>
+                <div id="div2" class="col-sm second_div">Box Two</div>
+                <div id="div3" class="col-sm third_div">Box Three</div>
+            </div>
 
-        <button type="button" onclick="clicked()">Click Me</button><br />
+            <div class="row">
+                <label for="txtColor" class="col-md lead text-center">Box 1 New Color:</label><input type="text" id="txtColor" class="col-md form-control" placeholder="#cccccc" required >
+                <button class="col-md btn-success" type="button" onclick="changeColor()">Click for JS</button>
 
+                <label for="txtColorJQ" class="col-md lead text-center">Box 2 New Color:</label><input type="text" id="txtColorJQ" class="col-md form-control" placeholder="#dddddd">
+                <button class="col-md btn-success" id="btn2">Click for JQ</button>
+            </div>
+                <div class="row">
+                    <button class="col-lg btn-warning" type="button" onclick="clicked()">Click for Alert</button>
+                    <button class="col-lg btn-info" id="btn3">Fade In and Out</button>
+                </div>
+            </div>
 
-        <label for="txtColor">Color:</label><input type="text" id="txtColor" placeholder="#cccccc" required >
-
-        <button type="button" onclick="changeColor()">Change color</button>
-
-        <label for="txtColorJQ">JQ Color:</label><input type="text" id="txtColorJQ" placeholder="#dddddd">
-
-        <button id="btn2">JQ</button>
-        
-        <button id="btn3">Fade In and Out</button>
-
-        <script>
-
-        </script>        
+             
 
 
 

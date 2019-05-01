@@ -5,17 +5,23 @@ div{
 
 .first_div{
     font-size: 3rem;
-    background-color: purple;
+    background-color: greenyellow;
+}
+.first_div:hover{
+    font-weight: bold;
 }
 .second_div{
     font-size: 3rem;
     background-color: blue;
 }
+.second_div:hover{
+    font-weight: bold;
+}
 .third_div{
     font-size: 3rem;
     background-color: red;
 }
-div:hover{
+.third_div:hover{
     font-weight: bold;
 }
 label{
@@ -24,4 +30,8 @@ label{
 button{
     margin: 1rem;
 }
+input{
+    margin-top: 2.5em;
+}
+
 
