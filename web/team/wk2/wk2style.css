@@ -1,0 +1,27 @@
+div{
+    padding: 3rem;
+    margin: 1rem;
+}
+
+.first_div{
+    font-size: 3rem;
+    background-color: purple;
+}
+.second_div{
+    font-size: 3rem;
+    background-color: blue;
+}
+.third_div{
+    font-size: 3rem;
+    background-color: red;
+}
+div:hover{
+    font-weight: bold;
+}
+label{
+    margin: 1rem;
+}
+button{
+    margin: 1rem;
+}
+
