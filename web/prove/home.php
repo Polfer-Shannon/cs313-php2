@@ -10,7 +10,7 @@ Personal Home Page
         <title>SP Home</title>
         <link href="css/home_style.css" rel="stylesheet" type="text/css" 
               media="screen">
-        <script src="homejs.js"></script>
+        <script src="js/homejs.js"></script>
     </head>
     <body>
         <header>
@@ -26,7 +26,7 @@ Personal Home Page
             <div class="home__btn--message-box">
                 <p id="home__btn--answer"></p>
             </div>
-        </header> 
+        </header>  
         <footer>
                 <?php include ('common/footer.php'); ?>
             </footer>
