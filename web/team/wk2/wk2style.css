@@ -5,7 +5,7 @@ div{
 
 .first_div{
     font-size: 3rem;
-    background-color: greenyellow;
+    background-color: purple;
 }
 .first_div:hover{
     font-weight: bold;
