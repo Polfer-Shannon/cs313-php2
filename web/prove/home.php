@@ -27,6 +27,7 @@ Personal Home Page
                 <p id="home__btn--answer"></p>
             </div>
         </header>  
+        
         <footer>
                 <?php include ('common/footer.php'); ?>
             </footer>

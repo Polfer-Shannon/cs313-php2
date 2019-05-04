@@ -1,0 +1,131 @@
+* {
+    margin: 0;
+    padding: 0; }
+
+*, *:before, *:after {
+    box-sizing: inherit; }
+
+
+body {   
+    font-family: "Georgia", serif;
+    line-height: 1.7;
+    box-sizing: border-box;
+    background-color: #faebd7; 
+    padding: 6px; }
+
+header {
+    height: 15vh;
+    background-color: #b3e6b3;
+    position: relative;
+    text-align: center;
+    border-radius: 20px;
+    box-shadow: 7px 1rem 1rem 0px rgba(0, 0, 0, 0.25);
+    margin-bottom: 2rem;
+}
+header h1{
+    padding: 1.4rem;;
+
+}
+.row{
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    height: 175px;
+
+}
+
+.col-1-of-4 input{
+    width: 3rem;
+    font-family: "Comic Sans MS";
+}
+
+.col-1-of-4 {
+    height: 1rem;
+    margin: auto;
+    margin-left: 9rem;
+    font-family: "Comic Sans MS";
+}
+
+p.viewImage{
+    margin: 2rem;
+    padding-left: 18rem;
+    font-weight: bold;
+}
+p.viewImage-month{
+    margin: 2rem;
+    padding-left: 10rem;
+    font-weight: bold;
+    font-size: 4rem;
+    float: left;
+    position: relative;
+    left: -10%;
+}
+.viewImage-submit{
+    margin-left: 35rem;
+    background-color: #000; 
+    border: none;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+}
+.calPic-div{
+    border: 3px solid #4CAF50;
+}
+.calPic-div::after{
+    content: "";
+    clear: both;
+    display: table;
+}
+.calPic{
+    position: relative;
+    left: -2%;
+
+}
+.btn-add-to-cart{
+    float: right;
+    position: relative;
+    right: 20%;
+    bottom: 200px;
+    background-color: #000; 
+    border: none;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    font-size: 16px;
+}
+.btn-return{
+/*    float: right;
+    position: relative;
+    right: 20%;
+    bottom: 200px;*/
+    background-color: #000; 
+    border: none;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    font-size: 16px;
+}
+
+/*.row {
+  max-width: 114rem;
+  background-color: red;
+  margin: 0 auto; }
+  .row:not(:last-child) {
+    margin-bottom: 8rem; }
+  .row::after {
+     }
+  .row [class^="col-"] {
+    float: left; }
+    .row [class^="col-"]:not(:last-child) {
+      margin-right: 6rem; }
+  .row .col-1-of-4 { 
+
+    width: calc((100% - 3 * 6rem) / 4);
+    background-color: blueviolet;}*/
+
