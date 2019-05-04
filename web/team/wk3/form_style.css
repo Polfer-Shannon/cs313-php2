@@ -1,0 +1,13 @@
+label, input{
+    margin: .5rem;
+    font-size: 1.2rem;
+}
+
+input[type="radio"]{
+    margin-left: 6rem;
+}
+
+input[type="checkbox"]{
+    margin-left: 6rem;
+}
+
