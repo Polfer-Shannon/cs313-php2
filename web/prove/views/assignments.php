@@ -16,7 +16,7 @@ Personal Home Page
             <?php include ('../common/header.php'); ?> 
         </header> 
         
-        <a href="browse.php" class="btn btn--white btn--animated btn__pages">&nbsp;&nbsp;&nbsp;&nbsp;CART&nbsp;&nbsp;&nbsp;&nbsp;</a>
+        <a href="scart/browse.php" class="btn btn--white btn--animated btn__pages">&nbsp;&nbsp;&nbsp;&nbsp;CART&nbsp;&nbsp;&nbsp;&nbsp;</a>
         
         <footer>
             <?php include ('../common/footer.php'); ?> 
