@@ -27,13 +27,13 @@ Browse Page
             
             <form method="post" action="cart.php" >
 
-                <input type="checkbox" name="plates[]" value="January">January <br>
+                <input type="checkbox" name="plates[]" value="Jan">January <br>
                 <img src="../../img/cart/jan.jpg" alt="January Plate" style="width: 100px;height: 100px;"><br>
-                <input type="checkbox" name="plates[]" value="February">February<br>
+                <input type="checkbox" name="plates[]" value="Feb">February<br>
                 <img src="../../img/cart/feb.jpg" alt="February Plate" style="width: 100px;height: 100px;"><br>
-                <input type="checkbox" name="plates[]" value="March">March<br>
+                <input type="checkbox" name="plates[]" value="Mar">March<br>
                 <img src="../../img/cart/mar.jpg" alt="March Plate" style="width: 100px;height: 100px;"><br>
-                <input type="checkbox" name="plates[]" value="April">April<br>
+                <input type="checkbox" name="plates[]" value="Apr">April<br>
                 <img src="../../img/cart/apr.jpg" alt="April Plate" style="width: 100px;height: 100px;"><br>
 
                 <input class="btn" type="submit" value="Add to Cart" name="submit">
