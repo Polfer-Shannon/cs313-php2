@@ -1,23 +1,10 @@
 <?php
 session_start();
-if (isset($_POST["submit"])) {
-    $_SESSION['purchase'][] = $_POST['plates'];
-    header('LOCATION: browse.php');
-}
-$plate = array(
-            "Jan" => "January",
-            "Feb" => "February",
-            "Mar" => "March",
-            "Apr" => "April",
-            "May" => "May",
-            "Jun" => "June",
-            "Jul" => "July",
-            "Aug" => "August",
-            "Sep" => "September",
-            "Oct" => "October",
-            "Nov" => "November",
-            "Dec" => "December",
-        );
+//if (isset($_POST["submit"])) {
+//    $_SESSION['purchase'][] = $_POST['plates'];
+//    header('LOCATION: browse.php');
+//}
+
 ?>
 <!DOCTYPE html>
 <!--
@@ -38,39 +25,31 @@ Browse Page
         <header>
             <h1>My Cart</h1>
         </header>
-        <?php
-        
-//        ?>
+        <?php //        ?>
         <main>
 
-            <p>See contents of your Cart</p>
-            <form method="post" action="" >
-                <input class="btn" type="submit" value="See Items in Cart" name="added">
-            </form>
+            <p class="paragraph">The contents of your shopping cart are:</p>
+            
+            
             <?php
-//                  
-                if (isset($_POST['added'])) {
-                foreach ($_SESSION['purchase'] as $key => $value) {
-                    if (isset($value[0])){
-                    echo $value[0];
-                    echo "" . ", ";
-                }
-                }
-                }
-                
-            
-            
-//            if (isset($_POST['added'])) {
-//            foreach ($_SESSION['purchase'] as $key1 => $value) {
-//                foreach ($plate as $x => $x_value)
-//                    if ($value === $x)
-//                        echo $x_value;
-//                echo "" . ", ";
-//            }
-//                print_r($_SESSION['purchase']);
-//            }
+            //save array items to session variable
+            foreach ($_POST['plates'] as $value) {
+                $_SESSION['plates'][$value] = $value;
+            }
+//            if (isset($_POST['delete']))
             
             ?>
+            <form action=cart.php method=post>
+            <?php
+//            display array items
+            foreach ($_SESSION['plates'] as $value) {
+                echo $value . " ";
+                echo '<button type="submit" name="delete" value=" ' . $value . '">Delete</button>';
+                echo "   ";
+            }
+            ?>
+            </form>
+
             <br>
             <a href="browse.php" class="btn">Return to Browse</a>
             <br>
@@ -79,13 +58,3 @@ Browse Page
 
     </body>
 </html>
-
-
-<!--if (isset($_POST["submit"])) {
-            foreach ($_POST["continent"] as $selected) {
-                foreach ($map as $x => $x_value)
-                    if ($selected === $x)
-                        echo $x_value;
-                echo "" . ", ";
-            }
-        }-->
