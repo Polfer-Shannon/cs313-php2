@@ -20,6 +20,7 @@ Personal Home Page
                     <span class="heading-primary--sub">CSS313 Web Engineering II Web Site </span>
                 </h1>
 
+                
                 <a href="#" onclick="myFunction()" class="btn btn--white btn--animated">&nbsp;&nbsp;&nbsp;&nbsp;Hi There&nbsp;&nbsp;&nbsp;&nbsp;</a>
                  <a href="views/assignments.php" class="btn btn--white btn--animated">Assignments</a>
             </div>

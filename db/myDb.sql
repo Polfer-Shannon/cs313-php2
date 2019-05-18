@@ -15,10 +15,12 @@ user_id INT NOT NULL REFERENCES users(id),
 directions TEXT NOT NULL
 );
 
+CREATE TYPE f_cat AS ENUM ('canned', 'dairy', 'dry', 'meat', 'produce', 'spices');
+
 CREATE TABLE ingredients (
 id SERIAL PRIMARY KEY,
 food VARCHAR(50) NOT NULL,
-category VARCHAR(7) NOT NULL,
+category f_cat NOT NULL,
 on_hand BOOLEAN NOT NULL,
 recipe_id INT NOT NULL REFERENCES recipes(id)
 );
@@ -30,8 +32,8 @@ INSERT INTO recipes (name, rank, date, user_id, directions)
 VALUES ('White Bean Chili', 2, '2019-04-28', 1, 'Cook the chicken...');
 
 INSERT INTO ingredients (food, category, on_hand, recipe_id)
-VALUES ('Chicken', 'Meat', TRUE, 1),
-('White Beans', 'Canned', FALSE, 1);
+VALUES ('Chicken', 'meat', TRUE, 1),
+('White Beans', 'canned', FALSE, 1);
 
 SELECT ingredients.food, recipes.name, users.first_name, users.last_name, recipes.rank 
 FROM ingredients
@@ -43,3 +45,10 @@ SELECT ingredients.food, ingredients.on_hand, recipes.name, users.first_name, us
 FROM ingredients
 LEFT JOIN recipes ON ingredients.recipe_id = recipes.id
 LEFT JOIN users ON recipes.user_id = users.id;
+
+SELECT recipes.directions FROM recipes
+LEFT JOIN ingredients ON ingredients.on_hand = TRUE;
+
+UPDATE recipes
+SET directions = 'Saute onions and garlic in olive oil. Place all ingredients in pot.'
+Where recipes.name = 'White Bean Chili';
