@@ -9,7 +9,7 @@ password VARCHAR(15) NOT NULL
 CREATE TABLE recipes (
 id SERIAL PRIMARY KEY,
 name VARCHAR(20) NOT NULL,
-rank SMALLINT NOT NULL,
+rank SMALLINT CHECK (rank > 0 AND rank < 6) NOT NULL,
 date DATE NOT NULL,
 user_id INT NOT NULL REFERENCES users(id),
 directions TEXT NOT NULL
@@ -54,14 +54,7 @@ UPDATE recipes
 SET directions = 'Saute onions and garlic in olive oil. Place all ingredients in pot.'
 Where recipes.name = 'White Bean Chili';
 
-CREATE TABLE recipes (
-id SERIAL PRIMARY KEY,
-name VARCHAR(20) NOT NULL,
-rank SMALLINT CHECK (rank > 0 AND rank < 6) NOT NULL,
-date DATE NOT NULL,
-user_id INT NOT NULL REFERENCES users(id),
-directions TEXT NOT NULL
-);
+
 
 DELETE FROM ingredients
 WHERE id = 1;
