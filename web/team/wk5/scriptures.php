@@ -38,12 +38,14 @@
             echo $row['book'] . $row['chapter'] . ':' . $row['verse'] . '-' . '"' . $row['content'] . '"';
             echo '<br>';
         }
+        echo '<br>';
         ?>
 
         <?php
         $statement = $db->query('SELECT book, chapter, verse, content FROM scriptures');
         while ($row = $statement->fetch(PDO::FETCH_ASSOC)) {
-            echo 'Scripture: ' . $row['book'] . $row['chapter'] . $row['verse'] . $row['content'] . '<br\>';
+            echo 'Scripture: ' . $row['book'] . $row['chapter'] . $row['verse'] . $row['content'];
+            echo '<br>';
         }
         ?>
     </body>
