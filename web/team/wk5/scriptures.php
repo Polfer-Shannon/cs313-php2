@@ -6,48 +6,43 @@
         <link rel="stylesheet" type="text/css" href="form_style.css"> 
     </head>
     <body>
-    <header>
-        <h1>Scripture Resources</h1>
-        
-    </header>
-    
+        <header>
+            <h1>Scripture Resources</h1>
 
-<?php
-try
-{
-  $dbUrl = getenv('DATABASE_URL');
+        </header>
 
-  $dbOpts = parse_url($dbUrl);
 
-  $dbHost = $dbOpts["host"];
-  $dbPort = $dbOpts["port"];
-  $dbUser = $dbOpts["user"];
-  $dbPassword = $dbOpts["pass"];
-  $dbName = ltrim($dbOpts["path"],'/');
+        <?php
+        try {
+            $dbUrl = getenv('DATABASE_URL');
 
-  $db = new PDO("pgsql:host=$dbHost;port=$dbPort;dbname=$dbName", $dbUser, $dbPassword);
+            $dbOpts = parse_url($dbUrl);
 
-  $db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-}
-catch (PDOException $ex)
-{
-  echo 'Error!: ' . $ex->getMessage();
-  die();
-}
-?>
-        
-        //<?php 
-//foreach ($db->query('SELECT * FROM scriptures') as $row)
-//{
-//    echo $row['book'] . $row['chapter'] .':' . $row['verse'] . '-' . '"' . $row['content'] . '"';
-//    echo '<br>';
-//}
-//        ?>
-        
+            $dbHost = $dbOpts["host"];
+            $dbPort = $dbOpts["port"];
+            $dbUser = $dbOpts["user"];
+            $dbPassword = $dbOpts["pass"];
+            $dbName = ltrim($dbOpts["path"], '/');
+
+            $db = new PDO("pgsql:host=$dbHost;port=$dbPort;dbname=$dbName", $dbUser, $dbPassword);
+
+            $db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+        } catch (PDOException $ex) {
+            echo 'Error!: ' . $ex->getMessage();
+            die();
+        }
+        ?>
+
+        <?php
+        foreach ($db->query('SELECT * FROM scriptures') as $row) {
+            echo $row['book'] . $row['chapter'] . ':' . $row['verse'] . '-' . '"' . $row['content'] . '"';
+            echo '<br>';
+        }
+        ?>
+
         <?php
         $statement = $db->query('SELECT book, chapter, verse, content FROM scriptures');
-        WHILE ($row = $statement->fetch(PDO_ASSOC))
-        {
+        while ($row = $statement->fetch(PDO::FETCH_ASSOC)) {
             echo 'Scripture: ' . $row['book'] . $row['chapter'] . $row['verse'] . $row['content'] . '<br\>';
         }
         ?>
