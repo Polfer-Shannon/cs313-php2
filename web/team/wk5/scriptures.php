@@ -43,5 +43,13 @@ foreach ($db->query('SELECT * FROM scriptures') as $row)
     echo '<br>';
 }
         ?>
+        
+        <?php
+        $statement = $db->query('SELECT book, chapter, verse, content FROM scriptures');
+        WHILE ($row = $statement->fetch(PDO_ASSOC))
+        {
+            echo 'Scripture: ' . $row['book'] . $row['chapter'] . $row['verse'] . $row['content'] . '<br\>';
+        }
+        ?>
     </body>
 </html>
