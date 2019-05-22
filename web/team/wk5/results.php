@@ -10,6 +10,15 @@
             <h1>Results Page</h1>
 
         </header>
+        <?php
+        $statement = $db->query('SELECT book, chapter, verse, content FROM scriptures');
+        $results = $statement->fetchAll(PDO::FETCH_ASSOC);
+        foreach ($results as $row) {
+            echo "<span>" . $row['book'] . ' ' . $row['chapter'] . ':' . $row['verse'] . ' - ' . "</span>" . '"' . $row['content'] . '"';
+            echo '<br>';
+        }
+        ?>
+        
         
         <div>
         You commented : <?php echo $_POST["book"]; ?><br>
