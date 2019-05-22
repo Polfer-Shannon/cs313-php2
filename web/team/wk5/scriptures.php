@@ -59,11 +59,12 @@
         }
         ?>
         
+        <div>
         <form method="post" action="results.php">
             <label for="book">Search for Book:</label>
             <input type="text" name="book">
             <input type="submit" name="submit">
         </form>
-         
+        </div>
     </body>
 </html>
