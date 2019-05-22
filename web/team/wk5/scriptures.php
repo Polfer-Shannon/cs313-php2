@@ -60,7 +60,7 @@
         ?>
         
         <div>
-            <form method="post" action="scriptures.php">
+            <form method="post" action="results.php">
             <label for="book">Search for Book:</label>
             <input type="text" name="book">
             <input type="submit" name="submit">
@@ -70,15 +70,15 @@
             <div>
                 
          <?php 
-         $book = $_POST["book"]; 
-         $statement = $db->query('SELECT book, chapter, verse, content FROM scriptures WHERE book = :book');
-         $statement->execute([$book]);
-         
-         $results = $statement->fetchAll(PDO::FETCH_ASSOC);
-         foreach ($results as $row) {
-            echo "<span>" . $row['book'] . ' ' . $row['chapter'] . ':' . $row['verse'] . ' - ' . "</span>" . '"' . $row['content'] . '"';
-            echo '<br>';
-        }
+//         $book = $_POST["book"]; 
+//         $statement = $db->query('SELECT book, chapter, verse, content FROM scriptures WHERE book = :book');
+//         $statement->execute([$book]);
+//         
+//         $results = $statement->fetchAll(PDO::FETCH_ASSOC);
+//         foreach ($results as $row) {
+//            echo "<span>" . $row['book'] . ' ' . $row['chapter'] . ':' . $row['verse'] . ' - ' . "</span>" . '"' . $row['content'] . '"';
+//            echo '<br>';
+//        }
         
         ?>
         </div>
