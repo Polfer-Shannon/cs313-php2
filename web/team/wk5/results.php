@@ -12,7 +12,7 @@
         </header>
         
         <div>
-        You commented : <?php echo $_POST["comment"]; ?><br>
+        You commented : <?php echo $_POST["book"]; ?><br>
         </div>
     </body>
 </html>
