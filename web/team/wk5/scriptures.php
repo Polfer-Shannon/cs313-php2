@@ -52,6 +52,8 @@
         <?php 
         $statement = $db->query('SELECT book, chapter, verse, content FROM scriptures');
         $results = $statement->fetchAll(PDO::FETCH_ASSOC);
+        echo $results;
+          
         ?>
     </body>
 </html>
