@@ -71,7 +71,7 @@
                 
          <?php 
          $book = $_POST["book"]; 
-         $statement = $pdo->prepare('SELECT book, chapter, verse, content FROM scriptures WHERE book = :book');
+         $statement = $db->query('SELECT book, chapter, verse, content FROM scriptures WHERE book = :book');
          $statement->execute([$book]);
          
          $results = $statement->fetchAll(PDO::FETCH_ASSOC);
