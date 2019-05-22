@@ -1,3 +1,8 @@
+<?php
+require "scriptures.php";
+$db = get_db();
+?>
+
 <html>
     <head>
         <title>Week 5 Team Assignment</title>  
@@ -10,23 +15,26 @@
             <h1>Results Page</h1>
 
         </header>
-        
+
+
+
         <div>
-        You commented : <?php echo $_POST["book"]; ?><br>
-        
-        <?php 
-         $book = $_POST["book"]; 
-         $statement = $db->query('SELECT book, chapter, verse, content FROM scriptures WHERE book = :book');
-         $statement->execute([$book]);
-         
-         $results = $statement->fetchAll(PDO::FETCH_ASSOC);
-         foreach ($results as $row) {
-            echo "<span>" . $row['book'] . ' ' . $row['chapter'] . ':' . $row['verse'] . ' - ' . "</span>" . '"' . $row['content'] . '"';
-            echo '<br>';
-        }
-        
-        ?>
-        
+            You commented : <?php echo $_POST["book"]; ?><br>
+
+            <?php
+            $book = $_POST["book"];
+            $stmt = $db->prepare('SELECT * FROM scriptures WHERE book=:book');
+            $stmt->bindValue(':book', $book, PDO::PARAM_STR);
+            $statement->execute();
+            $rows = $stmt->fetchAll(PDO::FETCH_ASSOC);
+            foreach ($rows as $r) {
+                echo '<p><a href="display.php?scripture=' . $r['id'] . '">';
+                echo $r['chapter'];
+                echo ':' . $r['verse'];
+                echo '</a></p>';
+            }
+            ?>
+
         </div>
     </body>
 </html>
