@@ -71,7 +71,9 @@
                 
          <?php 
          $book = $_POST["book"]; 
-         $statement = $db->query('SELECT book, chapter, verse, content FROM scriptures WHERE book = $book');
+         $statement = $pdo->prepare('SELECT book, chapter, verse, content FROM scriptures WHERE book = :book');
+         $statement->execute([$book]);
+         
          $results = $statement->fetchAll(PDO::FETCH_ASSOC);
          foreach ($results as $row) {
             echo "<span>" . $row['book'] . ' ' . $row['chapter'] . ':' . $row['verse'] . ' - ' . "</span>" . '"' . $row['content'] . '"';
