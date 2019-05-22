@@ -6,6 +6,7 @@
     </head>
     <body>
     <h1>Scripture Resources</h1>
+    
     <?php
         try
             {
@@ -29,6 +30,8 @@
             die();
             }
     ?>
+    
+    
     <?php
     $book = $_POST['book'];
     $stmt = $db->prepare('SELECT * FROM scriptures WHERE book=:book');
