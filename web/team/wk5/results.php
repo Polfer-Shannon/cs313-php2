@@ -22,10 +22,10 @@ $db = get_db();
           
 
             <?php
-            $book = $_POST["book"];
+            $book = $_POST['book'];
             $stmt = $db->prepare('SELECT * FROM scriptures WHERE book=:book');
             $stmt->bindValue(':book', $book, PDO::PARAM_STR);
-            $statement->execute();
+            $stmt->execute();
             $rows = $stmt->fetchAll(PDO::FETCH_ASSOC);
             foreach ($rows as $r) {
                 echo '<p><a href="display.php?scripture=' . $r['id'] . '">';
