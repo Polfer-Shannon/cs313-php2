@@ -35,7 +35,7 @@
 
         <?php
         foreach ($db->query('SELECT * FROM scriptures') as $row) {
-            echo "<span>" . $row['book'] . "</span>" . $row['chapter'] . ':' . $row['verse'] . '-' . '"' . $row['content'] . '"';
+            echo "<span>" . $row['book'] . "</span>" . ' ' . $row['chapter'] . ':' . $row['verse'] . '-' . '"' . $row['content'] . '"';
             echo '<br>';
         }
         echo '<br>';
@@ -44,7 +44,7 @@
         <?php
         $statement = $db->query('SELECT book, chapter, verse, content FROM scriptures');
         while ($row = $statement->fetch(PDO::FETCH_ASSOC)) {
-            echo 'Scripture: ' . $row['book'] . ' ' . $row['chapter'] . ':' . $row['verse'] . ' ' . '"' . $row['content'] . '"';
+            echo "<span>" . $row['book'] . "</span>" . ' ' . $row['chapter'] . ':' . $row['verse'] . ' ' . '"' . $row['content'] . '"';
             echo '<br>';
         }
         echo '<br>';
@@ -54,7 +54,7 @@
         $statement = $db->query('SELECT book, chapter, verse, content FROM scriptures');
         $results = $statement->fetchAll(PDO::FETCH_ASSOC);
         foreach ($results as $row) {
-            echo $row['book'] . ' ' . $row['chapter'] . ':' . $row['verse'] . ' ' . '"' . $row['content'] . '"';
+            echo "<span>" . $row['book'] . "</span>" . ' ' . $row['chapter'] . ':' . $row['verse'] . ' ' . '"' . $row['content'] . '"';
             echo '<br>';
         }
         ?>
