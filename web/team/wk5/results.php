@@ -19,7 +19,7 @@ $db = get_db();
 
 
         <div>
-            You commented : <?php echo $_POST["book"]; ?><br>
+          
 
             <?php
             $book = $_POST["book"];
