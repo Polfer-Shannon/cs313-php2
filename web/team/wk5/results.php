@@ -10,12 +10,9 @@
             <h1>Results Page</h1>
 
         </header>
-
-
-    
         
         <div>
-        
+        You commented : <?php echo $_POST["book"]; ?><br>
         </div>
     </body>
 </html>
