@@ -34,20 +34,20 @@
         ?>
 
         <?php
-        foreach ($db->query('SELECT * FROM scriptures') as $row) {
-            echo "<span>" . $row['book'] .  ' ' . $row['chapter'] . ':' . $row['verse'] . ' - ' . "</span>" . '"' . $row['content'] . '"';
-            echo '<br>';
-        }
-        echo '<br>';
+//        foreach ($db->query('SELECT * FROM scriptures') as $row) {
+//            echo "<span>" . $row['book'] .  ' ' . $row['chapter'] . ':' . $row['verse'] . ' - ' . "</span>" . '"' . $row['content'] . '"';
+//            echo '<br>';
+//        }
+//        echo '<br>';
         ?>
 
         <?php
-        $statement = $db->query('SELECT book, chapter, verse, content FROM scriptures');
-        while ($row = $statement->fetch(PDO::FETCH_ASSOC)) {
-            echo "<span>" . $row['book'] . ' ' . $row['chapter'] . ':' . $row['verse'] . ' - ' . "</span>" . '"' . $row['content'] . '"';
-            echo '<br>';
-        }
-        echo '<br>';
+//        $statement = $db->query('SELECT book, chapter, verse, content FROM scriptures');
+//        while ($row = $statement->fetch(PDO::FETCH_ASSOC)) {
+//            echo "<span>" . $row['book'] . ' ' . $row['chapter'] . ':' . $row['verse'] . ' - ' . "</span>" . '"' . $row['content'] . '"';
+//            echo '<br>';
+//        }
+//        echo '<br>';
         ?>
 
         <?php
