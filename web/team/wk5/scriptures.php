@@ -47,18 +47,16 @@
             echo 'Scripture: ' . $row['book'] . ' ' . $row['chapter'] . ':' . $row['verse'] . ' ' . $row['content'];
             echo '<br>';
         }
+        echo '<br>';
         ?>
-        
-        <?php 
+
+        <?php
         $statement = $db->query('SELECT book, chapter, verse, content FROM scriptures');
         $results = $statement->fetchAll(PDO::FETCH_ASSOC);
         foreach ($results as $row) {
-        echo $row['book'] . ' ' . $row['chapter'] . ':' . $row['verse'] . ' ' . $row['content'];
-        echo '<br>';
-            
+            echo $row['book'] . ' ' . $row['chapter'] . ':' . $row['verse'] . ' ' . $row['content'];
+            echo '<br>';
         }
-            
-          
         ?>
     </body>
 </html>
