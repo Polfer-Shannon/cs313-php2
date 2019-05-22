@@ -1,9 +1,9 @@
 <html>
     <head>
-        <title>Week 3 Team Assignment</title>  
+        <title>Week 5 Team Assignment</title>  
         <meta charset="UTF-8">
         <meta name="viewport" >
-        <link rel="stylesheet" type="text/css" href="form_style.css"> 
+        <link rel="stylesheet" type="text/css" href="scriptures.css"> 
     </head>
     <body>
         <header>
@@ -35,7 +35,7 @@
 
         <?php
         foreach ($db->query('SELECT * FROM scriptures') as $row) {
-            echo $row['book'] . $row['chapter'] . ':' . $row['verse'] . '-' . '"' . $row['content'] . '"';
+            echo "<p>" . $row['book'] . "<\p>" . $row['chapter'] . ':' . $row['verse'] . '-' . '"' . $row['content'] . '"';
             echo '<br>';
         }
         echo '<br>';
