@@ -60,11 +60,16 @@
         ?>
         
         <div>
-        <form method="post" action="results.php">
+            <form method="post" action="scriptures.php">
             <label for="book">Search for Book:</label>
             <input type="text" name="book">
             <input type="submit" name="submit">
+           
         </form>
+            
+            <div>
+        You commented : <?php echo $_POST["book"]; ?><br>
+        </div>
         </div>
     </body>
 </html>
