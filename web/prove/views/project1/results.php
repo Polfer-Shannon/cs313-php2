@@ -21,7 +21,7 @@ Personal Home Page
     <body>
         <?php
             $recipe = $_POST['recipe'];
-            $stmt = $db->prepare('SELECT * FROM recipes WHERE recipe=:recipe');
+            $stmt = $db->prepare('SELECT * FROM recipes WHERE name=:name');
 //            $stmt->bindValue(':recipe', $recipe, PDO::PARAM_STR);
             $stmt->execute(['name' => $recipe]);
             $rows = $stmt->fetchAll(PDO::FETCH_ASSOC);
