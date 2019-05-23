@@ -19,7 +19,7 @@ Personal Home Page
         <script src="../../js/homejs.js"></script>
     </head>
     <body>
-        <header class="header__pages">
+        <header>
             <div class="header__text-box header__text-box--pages">
                 <h1 class="heading-primary pages">
                     <span class="heading-primary--main pages">Organize</span>
@@ -39,7 +39,7 @@ Personal Home Page
             $statement = $db->query('SELECT  id, name FROM recipes ORDER BY name');
             $results = $statement->fetchAll(PDO::FETCH_ASSOC);
             foreach ($results as $row) {
-                echo "<span class='r_list'>" . 'id# ' . ' ' . $row['id'] . ' ' . $row['name'] . $row['date'] . $row['directions'] . "</span>";
+                echo "<span class='r_list'>" . 'id# ' . $row['id'] . ' ' . $row['name'] . $row['date'] . $row['directions'] . "</span>";
                 echo '<br>';
             }
             ?> 
