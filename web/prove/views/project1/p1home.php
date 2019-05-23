@@ -29,7 +29,7 @@ Personal Home Page
         </header>  
         <form method="post" action="results.php">
 
-            <input type="text" name="book" placeholder="Enter id#">
+            <input type="text" name="recipe" placeholder="Enter id#">
             <input class="btn btn--white btn--animated" type="submit" value="View a Recipe">
 
         </form>
