@@ -14,7 +14,7 @@ btn {
 }
 .home__btn--message-box {
     position: absolute;
-    top: 60%
+    top: 50%
     left: 47%;
     transform: translate(-60%, -80%);
     text-align: left;
@@ -23,6 +23,6 @@ btn {
 
 .foot {
     position: relative;
-    top: 15em;
+    top: 20em;
     
 }
