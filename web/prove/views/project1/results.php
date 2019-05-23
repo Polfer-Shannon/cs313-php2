@@ -26,7 +26,7 @@ Personal Home Page
             $stmt->execute(['id' => $recipe]);
             $rows = $stmt->fetchAll(PDO::FETCH_ASSOC);
             foreach ($rows as $r) {
-                echo '<p><a href="details.php?recipeLinks=' . $r['id'] . '">';
+                echo '<p class="recipe_name"><a href="details.php?recipeLinks=' . $r['id'] . '">';
                 echo $r['name'] . ' ';
                 echo '<br>';
                 echo '</a>;</p>';

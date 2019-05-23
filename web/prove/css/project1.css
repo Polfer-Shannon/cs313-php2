@@ -29,6 +29,11 @@ a {
     text-decoration: none;
 }
 
-body {
-    
+recipe_name {
+    color: white;
+    font-size: 3em;
+}
+recipe_details {
+    color: white;
+    font-size: 3em;
 }
