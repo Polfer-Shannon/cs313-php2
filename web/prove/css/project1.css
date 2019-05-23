@@ -14,10 +14,13 @@ btn {
 }
 .home__btn--message-box {
     position: absolute;
-    top: 70%;
+    top: 75%;
     left: 47%;
     transform: translate(-60%, -80%);
     text-align: left;
-    margin-bottom: 5em;
 
+}
+
+.foot {
+    margin-top: 5em;
 }
