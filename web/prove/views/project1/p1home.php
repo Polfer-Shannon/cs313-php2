@@ -40,7 +40,7 @@ Personal Home Page
             $statement = $db->query('SELECT * FROM recipes');
             $results = $statement->fetchAll(PDO::FETCH_ASSOC);
             foreach ($results as $row) {
-                echo "<span>" . $row['name'] . ' ' . $row['rank'] . $row['date'] . $row['directions'] . "</span>";
+                echo "<span class='r_list'>" . $row['name'] . ' ' . $row['rank'] . $row['date'] . $row['directions'] . "</span>";
                 echo '<br>';
             }
             ?>

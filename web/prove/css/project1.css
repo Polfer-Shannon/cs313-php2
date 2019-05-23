@@ -5,3 +5,10 @@ span {
 btn {
     -webkit-appearance: none;
 }
+.r_list{
+    color: #fff;
+    font-size: 2.5rem;
+    line-height: 2.75rem;
+    font-weight: 600;
+    font-family: "Garamond", serif;
+}
