@@ -19,9 +19,9 @@ Personal Home Page
         <script src="../../js/homejs.js"></script>
     </head>
     <body>
-        <header>
+<!--        <header>
             
-        </header>
+        </header>-->
         <?php
         $recipe_id = $_GET['recipeLinks'];
         $stmt = $db->prepare('SELECT * FROM scriptures WHERE id=:id');
