@@ -23,6 +23,9 @@ btn {
 
 .foot {
     position: relative;
-    top: 20em;
-    
+    top: 20em;  
+}
+a {
+    text-decoration: none;
+    color: white;
 }
