@@ -27,24 +27,32 @@ Personal Home Page
                 </h1>
 
                 <a href="#" onclick="recipeList()" class="btn btn--white btn--animated">Choose a Recipe</a>
-<!--                 <a href="prove/views/assignments.php" class="btn btn--white btn--animated">Assignments</a>-->
+
+                <form method="post" action="results.php">
+                    <label for="book">Search for Book:</label>
+                    <input type="text" name="book">
+                    <input type="submit" value="search">
+
+                </form>
+
+
             </div>
             <div class="home__btn--message-box">
                 <p id="recipe_list"></p>
             </div>
             <?php
-        //Example 3 get and print data from database
-        $statement = $db->query('SELECT * FROM recipes');
-        $results = $statement->fetchAll(PDO::FETCH_ASSOC);
-        foreach ($results as $row) {
-            echo "<span>" . $row['name'] . ' ' . $row['rank'] . $row['date'] . $row['directions'] .  "</span>";
-            echo '<br>';
-        }
-        ?>
+            //Example 3 get and print data from database
+            $statement = $db->query('SELECT * FROM recipes');
+            $results = $statement->fetchAll(PDO::FETCH_ASSOC);
+            foreach ($results as $row) {
+                echo "<span>" . $row['name'] . ' ' . $row['rank'] . $row['date'] . $row['directions'] . "</span>";
+                echo '<br>';
+            }
+            ?>
         </header>  
-        
+
         <footer>
-                <?php include ('../../common/footer.php'); ?>
-            </footer>
+            <?php include ('../../common/footer.php'); ?>
+        </footer>
     </body>
 </html>
