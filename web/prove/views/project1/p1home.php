@@ -35,15 +35,6 @@ Personal Home Page
                     <input class="btn btn--white btn--animated" type="submit" value="View a Recipe">
 
                 </form>
-                <?php
-                //get and print data from database
-                $statement = $db->query('SELECT  id, name FROM recipes');
-                $results = $statement->fetchAll(PDO::FETCH_ASSOC);
-                foreach ($results as $row) {
-                    echo "<span class='r_list'>" . $row['id'] . ' ' . $row['name'] . $row['date'] . $row['directions'] . "</span>";
-                    echo '<br>';
-                }
-                ?>
 
             </div>
             <div class="home__btn--message-box">
