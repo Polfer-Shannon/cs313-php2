@@ -19,7 +19,7 @@ Personal Home Page
         <script src="../../js/homejs.js"></script>
     </head>
     <body>
-        <header>
+        <header class="header__pages">
             <div class="header__text-box header__text-box--pages">
                 <h1 class="heading-primary pages">
                     <span class="heading-primary--main pages">Organize</span>
