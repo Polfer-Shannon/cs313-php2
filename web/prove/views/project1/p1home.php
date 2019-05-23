@@ -31,7 +31,7 @@ Personal Home Page
                 <form method="post" action="results.php">
                     
                     <input type="text" name="book">
-                    <input type="submit" value="View a Recipe">
+                    <input class="btn btn--white btn--animated" type="submit" value="View a Recipe">
 
                 </form>
 
