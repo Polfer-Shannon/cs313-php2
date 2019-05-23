@@ -125,7 +125,7 @@ header{
     font-weight: 600;
     font-family: "Garamond", serif;
 }
-.home__btn--message-box{
+.home__btn--message-box {
     position: absolute;
     top: 80%;
     left: 47%;
@@ -133,7 +133,13 @@ header{
     text-align: center;
 
 }
-
+#recipe_list {
+    color: #fff;
+    font-size: 2.5rem;
+    line-height: 2.75rem;
+    font-weight: 600;
+    font-family: "Garamond", serif;
+}
 /*Footer*/
 .foot {
     border-top: 1rem solid #fff;

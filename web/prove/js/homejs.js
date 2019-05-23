@@ -33,3 +33,7 @@ function myFunction() {
 }
 
 
+function recipeList(){
+    var rlist = "White Bean Chili";
+    document.getElementById("recipe_list").innerHTML = rlist;
+}
