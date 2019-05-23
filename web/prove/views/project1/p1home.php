@@ -21,36 +21,29 @@ Personal Home Page
     <body>
         <header>
             <div class="header__text-box header__text-box--pages">
-    <h1 class="heading-primary pages">
-        <span class="heading-primary--main pages">Organize</span>
-        <span class="heading-primary--sub pages">Favorite Family Recipes</span>
-    </h1>
-
-                <!--                <a href="#" onclick="recipeList()" class="btn btn--white btn--animated">Choose a Recipe</a>-->
-
-
-                <form method="post" action="results.php">
-
-                    <input type="text" name="book">
-                    <input class="btn btn--white btn--animated" type="submit" value="View a Recipe">
-
-                </form>
-
+                <h1 class="heading-primary pages">
+                    <span class="heading-primary--main pages">Organize</span>
+                    <span class="heading-primary--sub pages">Favorite Family Recipes</span>
+                </h1>
             </div>
-            <div class="home__btn--message-box">
-                <?php
-                //get and print data from database
-                $statement = $db->query('SELECT  id, name FROM recipes');
-                $results = $statement->fetchAll(PDO::FETCH_ASSOC);
-                foreach ($results as $row) {
-                    echo "<span class='r_list'>" . $row['id'] . ' ' . $row['name'] . $row['date'] . $row['directions'] . "</span>";
-                    echo '<br>';
-                }
-                ?> 
-            </div>
-
         </header>  
+        <form method="post" action="results.php">
 
+            <input type="text" name="book">
+            <input class="btn btn--white btn--animated" type="submit" value="View a Recipe">
+
+        </form>
+        <div class="home__btn--message-box">
+            <?php
+            //get and print data from database
+            $statement = $db->query('SELECT  id, name FROM recipes');
+            $results = $statement->fetchAll(PDO::FETCH_ASSOC);
+            foreach ($results as $row) {
+                echo "<span class='r_list'>" . $row['id'] . ' ' . $row['name'] . $row['date'] . $row['directions'] . "</span>";
+                echo '<br>';
+            }
+            ?> 
+        </div>
         <footer>
             <?php include ('../../common/footer.php'); ?>
         </footer>
