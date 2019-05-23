@@ -22,15 +22,14 @@ Personal Home Page
         <?php
             $recipe = $_POST['recipe'];
             $stmt = $db->prepare('SELECT * FROM recipes WHERE recipe=:recipe');
-            $stmt->bindValue(':book', $book, PDO::PARAM_STR);
+            $stmt->bindValue(':recipe', $recipe, PDO::PARAM_STR);
             $stmt->execute();
             $rows = $stmt->fetchAll(PDO::FETCH_ASSOC);
             foreach ($rows as $r) {
-                echo '<p><a href="details.php?scripture=' . $r['id'] . '">';
-                echo $r['book'] . ' ';
-                echo $r['chapter'];
-                echo ':' . $r['verse'];
-                echo '</a></p>';
+                echo '<p><a href="details.php?recipeLinks=' . $r['id'] . '">';
+                echo $r['name'] . ' ';
+                echo '<br>';
+                echo '</a>;</p>';
             }
             ?>
     </body>
