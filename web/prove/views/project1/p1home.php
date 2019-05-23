@@ -29,9 +29,9 @@ Personal Home Page
                 <a href="#" onclick="recipeList()" class="btn btn--white btn--animated">Choose a Recipe</a>
 
                 <form method="post" action="results.php">
-                    <label for="book">Search for Book:</label>
+                    
                     <input type="text" name="book">
-                    <input type="submit" value="search">
+                    <input class="btn btn--white btn--animated" type="submit" value="search">
 
                 </form>
 
