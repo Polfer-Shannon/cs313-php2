@@ -13,8 +13,8 @@ btn {
     font-family: "Garamond", serif;
 }
 .home__btn--message-box {
-    position: relative;
-    top: 15em;
+    position: absolute;
+    top: 60%
     left: 47%;
     transform: translate(-60%, -80%);
     text-align: left;
