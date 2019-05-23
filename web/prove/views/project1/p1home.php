@@ -30,7 +30,7 @@ Personal Home Page
         <form method="post" action="results.php">
 
             <input type="text" name="book">
-            <input class="btn btn--white btn--animated" type="submit" value="View a Recipe">
+            <input class="btn btn--white btn--animated" type="submit" value="View a Recipe" placeholder="Enter ID#">
 
         </form>
         <div class="home__btn--message-box">
@@ -39,7 +39,7 @@ Personal Home Page
             $statement = $db->query('SELECT  id, name FROM recipes');
             $results = $statement->fetchAll(PDO::FETCH_ASSOC);
             foreach ($results as $row) {
-                echo "<span class='r_list'>" . $row['id'] . ' ' . $row['name'] . $row['date'] . $row['directions'] . "</span>";
+                echo "<span class='r_list'>" . 'ID# ' . $row['id'] . ' ' . $row['name'] . $row['date'] . $row['directions'] . "</span>";
                 echo '<br>';
             }
             ?> 
