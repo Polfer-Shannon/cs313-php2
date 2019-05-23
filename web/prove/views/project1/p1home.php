@@ -37,10 +37,10 @@ Personal Home Page
                 </form>
 <?php
             //get and print data from database
-            $statement = $db->query('SELECT name FROM recipes');
+            $statement = $db->query('SELECT  id name FROM recipes');
             $results = $statement->fetchAll(PDO::FETCH_ASSOC);
             foreach ($results as $row) {
-                echo "<span class='r_list'>" . $row['name'] . ' ' . $row['rank'] . $row['date'] . $row['directions'] . "</span>";
+                echo "<span class='r_list'>" . $row['id'] . ' ' . $row['name'] . $row['date'] . $row['directions'] . "</span>";
                 echo '<br>';
             }
             ?>

@@ -69,3 +69,10 @@ SELECT * FROM myview;
 SELECT food AS Grocery_list
 FROM ingredients
 WHERE on_hand = FALSE;
+
+
+INSERT INTO recipes (name, rank, date, user_id, directions)
+VALUES ('Dijon Salmon', 1, '2019-03-27', 1, 'Defrost salmon filets...'),
+('Chicken Enchiladas', 5, '2019-02-07', 1, 'Boil chicken in boulion...'),
+('Steak Diane', 2, '2019-05-15', 1, 'Cook onions in butter...'),
+('Chicken Salad', 4, '2019-05-20', 1, 'Dice cooked chicken...');
