@@ -26,7 +26,8 @@ Personal Home Page
                     <span class="heading-primary--sub">Favorite Family Recipes</span>
                 </h1>
 
-                <a href="#" onclick="recipeList()" class="btn btn--white btn--animated">Choose a Recipe</a>
+<!--                <a href="#" onclick="recipeList()" class="btn btn--white btn--animated">Choose a Recipe</a>-->
+
 
                 <form method="post" action="results.php">
                     
@@ -34,14 +35,8 @@ Personal Home Page
                     <input class="btn btn--white btn--animated" type="submit" value="View a Recipe">
 
                 </form>
-
-
-            </div>
-            <div class="home__btn--message-box">
-                <p id="recipe_list"></p>
-            </div>
-            <?php
-            //Example 3 get and print data from database
+<?php
+            //get and print data from database
             $statement = $db->query('SELECT * FROM recipes');
             $results = $statement->fetchAll(PDO::FETCH_ASSOC);
             foreach ($results as $row) {
@@ -49,6 +44,12 @@ Personal Home Page
                 echo '<br>';
             }
             ?>
+
+            </div>
+            <div class="home__btn--message-box">
+                <p id="recipe_list"></p>
+            </div>
+            
         </header>  
 
         <footer>
