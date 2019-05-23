@@ -24,12 +24,12 @@ Personal Home Page
         </header>-->
         <?php
         $recipe_id = $_GET['recipeLinks'];
-        $stmt = $db->prepare('SELECT * FROM scriptures WHERE id=:id');
+        $stmt = $db->prepare('SELECT * FROM recipes WHERE id=:id');
         $stmt->bindValue(':id', $recipe_id, PDO::PARAM_STR);
         $stmt->execute();
         $row = $stmt->fetch(PDO::FETCH_ASSOC);
         echo "<p><span>" . $row['name'] . ' '  . "</span>";
-        echo $row['directions'];
+        echo $row['directions'] . '"' . "</p>";
         echo '<br/>';
         ?>
     </body>
