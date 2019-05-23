@@ -23,6 +23,6 @@ btn {
 
 .foot {
     position: absolute;
-    top: 100%;
-    left: 47%;
+    top: 100%; 
+    border-width: 100%;
 }
