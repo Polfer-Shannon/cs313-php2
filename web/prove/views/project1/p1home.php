@@ -39,7 +39,7 @@ Personal Home Page
             $statement = $db->query('SELECT  id, name FROM recipes ORDER BY name');
             $results = $statement->fetchAll(PDO::FETCH_ASSOC);
             foreach ($results as $row) {
-                echo "<span class='r_list'>" . 'id#  ' . $row['id'] . ' ' . $row['name'] . $row['date'] . $row['directions'] . "</span>";
+                echo "<span class='r_list'>" . 'id# ' . ' ' . $row['id'] . ' ' . $row['name'] . $row['date'] . $row['directions'] . "</span>";
                 echo '<br>';
             }
             ?> 
