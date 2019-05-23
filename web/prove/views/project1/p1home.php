@@ -29,8 +29,8 @@ Personal Home Page
         </header>  
         <form method="post" action="results.php">
 
-            <input type="text" name="book">
-            <input class="btn btn--white btn--animated" type="submit" value="View a Recipe" placeholder="Enter ID#">
+            <input type="text" name="book" placeholder="Enter id#">
+            <input class="btn btn--white btn--animated" type="submit" value="View a Recipe">
 
         </form>
         <div class="home__btn--message-box">
