@@ -22,5 +22,6 @@ btn {
 }
 
 .foot {
-    margin-top: 5em;
+    position: absolute;
+    top: 100%;
 }
