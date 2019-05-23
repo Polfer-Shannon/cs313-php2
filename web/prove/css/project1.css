@@ -2,3 +2,6 @@ span {
     color: white;
 }
 
+btn {
+    -webkit-appearance: none;
+}
