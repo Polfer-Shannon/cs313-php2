@@ -20,11 +20,11 @@ Personal Home Page
     </head>
     <body>
         <header>
-            <div class="header__text-box">
-                <h1 class="heading-primary">
-                    <span class="heading-primary--main">Organize</span>
-                    <span class="heading-primary--sub">Favorite Family Recipes</span>
-                </h1>
+            <div class="header__text-box header__text-box--pages">
+    <h1 class="heading-primary pages">
+        <span class="heading-primary--main pages">Organize</span>
+        <span class="heading-primary--sub pages">Favorite Family Recipes</span>
+    </h1>
 
                 <!--                <a href="#" onclick="recipeList()" class="btn btn--white btn--animated">Choose a Recipe</a>-->
 
