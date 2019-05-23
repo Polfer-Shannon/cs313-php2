@@ -36,7 +36,7 @@ Personal Home Page
         <div class="home__btn--message-box">
             <?php
             //get and print data from database
-            $statement = $db->query('SELECT  id, name FROM recipes');
+            $statement = $db->query('SELECT  id, name FROM recipes ORDER BY name');
             $results = $statement->fetchAll(PDO::FETCH_ASSOC);
             foreach ($results as $row) {
                 echo "<span class='r_list'>" . 'id# ' . $row['id'] . ' ' . $row['name'] . $row['date'] . $row['directions'] . "</span>";
