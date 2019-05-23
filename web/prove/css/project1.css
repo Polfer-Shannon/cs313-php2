@@ -29,11 +29,11 @@ a {
     text-decoration: none;
 }
 
-recipe_name {
+.recipe_name {
     color: white;
     font-size: 3em;
 }
-recipe_details {
+.recipe_details {
     color: white;
     font-size: 3em;
 }
