@@ -82,3 +82,14 @@ VALUES ('Speghetti', 3, '2018-03-27', 1, 'Brown the hamburger meat...'),
 ('Chicken Pot Pie', 1, '2018-06-07', 1, 'Boil chicken in boulion...'),
 ('Biscuits and Gravy', 2, '2019-04-20', 1, 'Brown the ground sausage...'),
 ('ACA Salad', 4, '2018-12-20', 1, 'Dice cooked chicken...');
+
+INSERT INTO ingredients (food, category, on_hand, recipe_id)
+VALUES ('Ground Beef', 'meat', FALSE, 7),
+('Chilis', 'canned', TRUE, 2),
+('White Onion', 'produce', FALSE, 2)
+('Cream Cheese', 'dairy', TRUE, 2),
+('Chili Powder', 'spices', TRUE, 2);
+
+INSERT INTO ingredients (food, category, on_hand, recipe_id)
+VALUES ('Cream Cheese', 'dairy', TRUE, 2),
+('Chili Powder', 'spices', TRUE, 2);
