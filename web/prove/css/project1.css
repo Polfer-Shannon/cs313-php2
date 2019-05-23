@@ -29,7 +29,7 @@ a {
     text-decoration: none;
 }
 
-.recipe_name {
+.recipe_name a {
     color: white;
     font-size: 3em;
 }

@@ -28,7 +28,7 @@ Personal Home Page
         $stmt->bindValue(':id', $recipe_id, PDO::PARAM_STR);
         $stmt->execute();
         $row = $stmt->fetch(PDO::FETCH_ASSOC);
-        echo "<p class='recipe_details'><span>" . $row['name'] . ' '  . "</span>";
+        echo "<p class='recipe_details'><span>" . $row['name'] . ': '  . "</span>";
         echo $row['directions'] . '"' . "</p>";
         echo '<br/>';
         ?>
