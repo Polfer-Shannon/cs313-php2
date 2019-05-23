@@ -76,3 +76,9 @@ VALUES ('Dijon Salmon', 1, '2019-03-27', 1, 'Defrost salmon filets...'),
 ('Chicken Enchiladas', 5, '2019-02-07', 1, 'Boil chicken in boulion...'),
 ('Steak Diane', 2, '2019-05-15', 1, 'Cook onions in butter...'),
 ('Chicken Salad', 4, '2019-05-20', 1, 'Dice cooked chicken...');
+
+INSERT INTO recipes (name, rank, date, user_id, directions)
+VALUES ('Speghetti', 3, '2018-03-27', 1, 'Brown the hamburger meat...'),
+('Chicken Pot Pie', 1, '2018-06-07', 1, 'Boil chicken in boulion...'),
+('Biscuits and Gravy', 2, '2019-04-20', 1, 'Brown the ground sausage...'),
+('ACA Salad', 4, '2018-12-20', 1, 'Dice cooked chicken...');
