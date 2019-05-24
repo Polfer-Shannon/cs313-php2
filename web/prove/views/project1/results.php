@@ -22,8 +22,8 @@ Personal Home Page
         <?php
             $recipe = $_POST['recipe'];
             $stmt = $db->prepare('SELECT * FROM recipes WHERE id=:id');
-//            $stmt->bindValue(':id', $recipe, PDO::PARAM_STR);
-            $stmt->execute(['id' => $recipe]);
+            $stmt->bindValue(':id', $recipe, PDO::PARAM_STR);
+            $stmt->execute();
             $rows = $stmt->fetchAll(PDO::FETCH_ASSOC);
             foreach ($rows as $r) {
                 echo '<p class="recipe_name"><a href="details.php?recipeLinks=' . $r['id'] . '">';

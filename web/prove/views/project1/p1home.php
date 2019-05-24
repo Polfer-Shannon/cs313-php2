@@ -29,6 +29,9 @@ Personal Home Page
         </header>  
         <form method="post" action="results.php">
 
+            <input type="text" name="user" placeholder="Enter username">
+            <input class="btn btn--white btn--animated" type="submit" value="View Your Recipes">
+            
             <input type="text" name="recipe" placeholder="Enter id#">
             <input class="btn btn--white btn--animated" type="submit" value="View a Recipe">
 
