@@ -135,3 +135,9 @@ FROM ingredients
 INNER JOIN (recipes INNER JOIN menu ON recipes.id = menu.recipes_id)
 ON ingredients.id = menu.ingredients_id
 WHERE recipes.id = 1;
+
+
+SELECT recipes.id, recipes.name 
+FROM recipes, users
+WHERE recipes.user_id = users.id
+AND users.id = 1;

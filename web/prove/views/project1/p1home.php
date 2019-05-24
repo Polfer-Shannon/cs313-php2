@@ -27,11 +27,16 @@ Personal Home Page
                 </h1>
             </div>
         </header>  
+        <form method="post" action="p1home.php">
+
+            <input type="text" name="user" placeholder="Enter Username">
+            <input class="btn btn--white btn--animated" type="submit" value="List Your Recipe">
+
+        </form>
+        
+        
         <form method="post" action="results.php">
 
-            <input type="text" name="user" placeholder="Enter username">
-            <input class="btn btn--white btn--animated" type="submit" value="View Your Recipes">
-            
             <input type="text" name="recipe" placeholder="Enter id#">
             <input class="btn btn--white btn--animated" type="submit" value="View a Recipe">
 
@@ -39,9 +44,12 @@ Personal Home Page
         <div class="home__btn--message-box">
             <?php
             //get and print data from database
-            $statement = $db->query('SELECT  id, name FROM recipes ORDER BY name');
-            $results = $statement->fetchAll(PDO::FETCH_ASSOC);
-            foreach ($results as $row) {
+            $user = $_POST['user'];
+            $stmt = $db->prepare('SELECT recipes.id, recipes.name FROM recipes, users WHERE recipes.user_id = users.id AND users.id = 1 AND users.id=:user');
+            $stmt->bindValue('user', $user, PDO::PARAM_STR);
+            $stmt->execute();
+            $rows = $stmt->fetchAll(PDO::FETCH_ASSOC);
+            foreach ($rows as $r) {
                 echo "<span class='r_list'>" . 'id# ' . $row['id'] . ' ' . $row['name'] . $row['date'] . $row['directions'] . "</span>";
                 echo '<br>';
             }
