@@ -30,7 +30,7 @@ btn {
 }
 a {
     text-decoration: none;
-    color: white;
+    
 }
 
 .recipe_name a {
@@ -40,4 +40,8 @@ a {
 .recipe_details {
     color: white;
     font-size: 3em;
+}
+
+body {
+    background-color: pink;
 }
