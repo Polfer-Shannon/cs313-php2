@@ -41,7 +41,7 @@ Personal Home Page
             <input class="btn btn--white btn--animated" type="submit" value="View a Recipe">
 
         </form>
-        <div class="home__btn--message-box">
+        <div class="home__btn--message-box recipe_list">
             <?php
             //get and print data from database
             $user = $_POST['username'];
@@ -50,7 +50,7 @@ Personal Home Page
             $stmt->execute();
             $rows = $stmt->fetchAll(PDO::FETCH_ASSOC);
             foreach ($rows as $r) {
-                echo "<span class='r_list'>" . 'id# ' . $r['id'] . ' ' . $r['name'] . $r['date'] . $r['directions'] . "</span>";
+                echo "<span class='r_list'>" . 'id# ' . $r['id'] . ' ' . $r['name'] . "</span>";
                 echo '<br>';
             }
             ?> 

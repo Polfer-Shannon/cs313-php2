@@ -5,6 +5,9 @@ span {
 btn {
     -webkit-appearance: none;
 }
+.recipe_list {
+    margin-left: 5em;
+}
 .r_list{
     color: #fff;
     font-size: 2.5rem;
