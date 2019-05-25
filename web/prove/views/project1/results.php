@@ -22,15 +22,17 @@ Personal Home Page
         <?php
             //get and print data from database
             $user = $_POST['username'];
-            $user2 = $_POST['username'];
             $stmt = $db->prepare('SELECT * FROM recipes WHERE user_id=:user');
-            $stmt2 = $db->prepare('SELECT * FROM users WHERE id=:id');
             $stmt->bindValue('user', $user, PDO::PARAM_STR);
-            $stmt2->bindValue('id', $user2, PDO::PARAM_STR);
             $stmt->execute();
-            $stmt2->execute();
             $rows = $stmt->fetchAll(PDO::FETCH_ASSOC);
+            
+            $user2 = $_POST['username'];
+            $stmt2 = $db->prepare('SELECT * FROM users WHERE id=:id');
+            $stmt2->bindValue('id', $user2, PDO::PARAM_STR);
+            $stmt2->execute();
             $rows2 = $stmt2->fetchAll(PDO::FETCH_ASSOC);
+            
             foreach ($rows2 as $r2) {
                 echo '<h1 class="recipe_list__title">' . 'Recipes for ' . $r2['first_name'] . '</h1>';
             }
@@ -39,6 +41,9 @@ Personal Home Page
                 echo '<br>';
             }
             ?> 
+        
+        
+        
         <?php
             $recipe = $_POST['recipe'];
             $stmt = $db->prepare('SELECT * FROM recipes WHERE id=:id');
