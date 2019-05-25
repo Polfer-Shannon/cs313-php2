@@ -28,6 +28,9 @@ btn {
     text-align: left;
 
 }
+.p1_message_box {
+    margin-bottom: 2em;
+}
 
 .foot {
     position: relative;

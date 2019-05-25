@@ -30,7 +30,7 @@ Personal Home Page
         </header>  
         
        
-        <div class="home__btn--message-box">
+        <div class="home__btn--message-box p1_message_box">
             <form method="post" action="results.php">
 
             <input class="input_box" type="text" name="username" placeholder="Enter UserID 1, 2 or 3">

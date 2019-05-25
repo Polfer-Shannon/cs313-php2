@@ -146,3 +146,15 @@ SELECT recipes.id, recipes.name
 FROM recipes, users 
 WHERE recipes.user_id = users.id 
 AND users.username=:user
+
+SELECT ingredients.food
+FROM ingredients
+JOIN (recipes JOIN menu ON recipes.id = menu.recipes_id)
+ON ingredients.id = menu.ingredients_id
+WHERE recipes.id = 1;
+
+SELECT ingredients.food
+FROM ingredients
+JOIN (recipes JOIN menu ON recipes.id = menu.recipes_id)
+ON ingredients.id = menu.ingredients_id
+WHERE ingredients.food =:id;
