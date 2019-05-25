@@ -59,9 +59,10 @@ Personal Home Page
         ?>
         <form method="post" action="results.php">
             <label for="rank">Enter 1 to Order by Rank :</label>
+            <br>
             <label for="rank">Enter 2 to Order by Date :</label>
             <input type="text" name="rank" placeholder="Enter Username">
-            <input class="btn btn--white btn--animated" type="submit" value="Order By Rank">
+            <input class="btn btn--white btn--animated" type="submit" value="Change Order">
         </form>    
 
             <?php

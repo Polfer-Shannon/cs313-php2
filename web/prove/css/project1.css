@@ -31,7 +31,7 @@ btn {
 a {
     text-decoration: none;
     color: #fff;
-    
+
 }
 
 .recipe_name a {
@@ -48,6 +48,8 @@ a {
     margin-bottom: 2em;
     text-decoration: underline;
 }
-body {
-    
+label {
+    font-size: 4em;
+    color: #fff;
+    margin-bottom: 2em;   
 }
