@@ -73,7 +73,7 @@ Personal Home Page
             $stmt->execute();
             $rows = $stmt->fetchAll(PDO::FETCH_ASSOC);
 
-            $user2 = $_POST['username'];
+            $user2 = $_POST[''];
             $stmt2 = $db->prepare('SELECT * FROM users WHERE id=:id');
             $stmt2->bindValue('id', $user2, PDO::PARAM_STR);
             $stmt2->execute();
