@@ -24,15 +24,14 @@ Personal Home Page
         </header>-->
         <?php
         $recipe_id = $_GET['recipeLinks'];
-        $stmt = $db->prepare('SELECT ingredients.food, recipes.name FROM ingredients, recipes, menu WHERE recipes.id=:id AND ingredients.id = menu.ingredients_id And recipes.id = menu.recipes_id');
+        $stmt = $db->prepare('SELECT * FROM recipes WHERE id=:id');
         $stmt->bindValue(':id', $recipe_id, PDO::PARAM_STR);
         $stmt->execute();
         $row = $stmt->fetch(PDO::FETCH_ASSOC);
         echo "<p class='recipe_details'><span>" . $row['name'] . ': '  . 'Ingredient List' . "</span>";
         echo '<br>';
-        echo $row['food'] . '"' . "</p>";
+        echo $row['directions'] . '"' . "</p>";
         echo '<br/>';
-        var_dump($recipe_id);
         ?>
     </body>
 </html>
