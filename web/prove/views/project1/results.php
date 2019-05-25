@@ -24,9 +24,9 @@ Personal Home Page
             $user = $_POST['username'];
             $user2 = $_POST['username'];
             $stmt = $db->prepare('SELECT * FROM recipes WHERE user_id=:user');
-            $stmt2 = $db->prepare('SELECT * FROM users WHERE first_name=:fname');
+            $stmt2 = $db->prepare('SELECT * FROM users WHERE id=:id');
             $stmt->bindValue('user', $user, PDO::PARAM_STR);
-            $stmt2->bindValue('fname', $user2, PDO::PARAM_STR);
+            $stmt2->bindValue('id', $user2, PDO::PARAM_STR);
             $stmt->execute();
             $stmt2->execute();
             $rows = $stmt->fetchAll(PDO::FETCH_ASSOC);
