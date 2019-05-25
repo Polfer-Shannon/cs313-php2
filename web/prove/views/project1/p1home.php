@@ -30,10 +30,10 @@ Personal Home Page
         </header>  
         
        
-        <div class="home__btn--message-box recipe_list">
+        <div class="home__btn--message-box">
             <form method="post" action="results.php">
 
-            <input type="text" name="username" placeholder="Enter Username">
+            <input class="input_box" type="text" name="username" placeholder="Enter Username">
             <input class="btn btn--white btn--animated" type="submit" value="List Your Recipes">
 
         </form>
