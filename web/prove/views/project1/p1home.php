@@ -28,7 +28,7 @@ Personal Home Page
                 <a href="../../../index.php" class="btn btn--white btn--animated btn__pages">&nbsp;&nbsp;&nbsp;&nbsp;Home&nbsp;&nbsp;&nbsp;&nbsp;</a>
             </div>
         </header>  
-        <form method="post" action="p1home.php">
+        <form method="post" action="results.php">
 
             <input type="text" name="username" placeholder="Enter Username">
             <input class="btn btn--white btn--animated" type="submit" value="List Your Recipes">
@@ -43,18 +43,7 @@ Personal Home Page
 
         </form>
         <div class="home__btn--message-box recipe_list">
-            <?php
-            //get and print data from database
-            $user = $_POST['username'];
-            $stmt = $db->prepare('SELECT * FROM recipes WHERE user_id=:user');
-            $stmt->bindValue('user', $user, PDO::PARAM_STR);
-            $stmt->execute();
-            $rows = $stmt->fetchAll(PDO::FETCH_ASSOC);
-            foreach ($rows as $r) {
-                echo "<span class='r_list'>" . 'id# ' . ' ' . $r['id'] . ' ' . $r['name'] . "</span>";
-                echo '<br>';
-            }
-            ?> 
+            
         </div>
         <footer>
             <?php include ('../../common/footer.php'); ?>
