@@ -63,3 +63,7 @@ label {
 .input_box {
     height: 3.7em;
 }
+
+.ib_big {
+    width: 20em;
+}
