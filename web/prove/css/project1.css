@@ -50,11 +50,10 @@ a {
 .recipe_list__title {
     font-size: 4em;
     color: #fff;
-    margin-bottom: 1em;
     text-decoration: underline;
 }
 .recipe_list_title--directions{
-    font-size: 2em;
+    font-size: 3em;
     color: #fff;
     margin-bottom: 1em;
 }
