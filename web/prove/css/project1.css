@@ -5,6 +5,11 @@ span {
 btn {
     -webkit-appearance: none;
 }
+
+.btn_color{
+    color: #995c00;
+    background-color: #777;
+}
 .recipe_list {
     margin-left: 5em;
 }
