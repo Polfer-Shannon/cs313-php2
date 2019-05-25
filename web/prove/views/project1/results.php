@@ -47,8 +47,8 @@ Personal Home Page
             <label for="rank">Enter 1 to Order by Rank :</label>
             <br>
             <label for="rank">Enter 2 to Order by Date :</label>
-            <input type="text" name="rank" placeholder="Enter Username">
-            <input class="btn btn--white btn--animated" type="submit" value="Change Order">
+            <input class="input_box" type="text" name="rank" placeholder="Enter Username">
+            <input class="btn btn--white btn--animated btn_color" type="submit" value="Change Order">
         </form>    
 
         <?php
