@@ -32,7 +32,7 @@ Personal Home Page
             $rows = $stmt->fetchAll(PDO::FETCH_ASSOC);
             $rows2 = $stmt2->fetchAll(PDO::FETCH_ASSOC);
             foreach ($rows2 as $r2) {
-                echo '<h1 class"recipe_list__title">' . 'Recipes for ' . $r2['first_name'] . '</h1>';
+                echo '<h1 class="recipe_list__title">' . 'Recipes for ' . $r2['first_name'] . '</h1>';
             }
             foreach ($rows as $r) {
                 echo '<span class="r_list"><a href="details.php?recipeLinks=' . $r['id'] . '">' . $r['name'] .  '</a></span>';
