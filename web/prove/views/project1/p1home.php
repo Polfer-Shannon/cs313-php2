@@ -45,7 +45,7 @@ Personal Home Page
             <?php
             //get and print data from database
             $user = $_POST['user'];
-            $stmt = $db->prepare('SELECT recipes.id, recipes.name FROM recipes, users WHERE recipes.user_id = users.id AND users.username=:user');
+            $stmt = $db->prepare('SELECT recipes.name FROM recipes WHERE recipe.id=:user');
             $stmt->bindValue('user', $user, PDO::PARAM_STR);
             $stmt->execute();
             $rows = $stmt->fetchAll(PDO::FETCH_ASSOC);

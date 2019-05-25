@@ -141,3 +141,8 @@ SELECT recipes.id, recipes.name
 FROM recipes, users
 WHERE recipes.user_id = users.id
 AND users.username = 'morgock';
+
+SELECT recipes.id, recipes.name 
+FROM recipes, users 
+WHERE recipes.user_id = users.id 
+AND users.username=:user
