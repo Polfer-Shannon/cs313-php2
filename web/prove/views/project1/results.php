@@ -41,7 +41,7 @@ Personal Home Page
             echo '<br>';
         }
         ?> 
-
+        <br>
 
 
         <?php
@@ -65,30 +65,30 @@ Personal Home Page
             <input class="btn btn--white btn--animated" type="submit" value="Change Order">
         </form>    
 
-            <?php
-            //get and print data from database
-            $user = $_POST['l_rank'];
-            $stmt = $db->prepare('SELECT * FROM recipes WHERE user_id=:user ORDER BY name');
-            $stmt->bindValue('user', $user, PDO::PARAM_STR);
-            $stmt->execute();
-            $rows = $stmt->fetchAll(PDO::FETCH_ASSOC);
+        <?php
+        //get and print data from database
+        $user = $_POST['l_rank'];
+        $stmt = $db->prepare('SELECT * FROM recipes WHERE user_id=:user ORDER BY name');
+        $stmt->bindValue('user', $user, PDO::PARAM_STR);
+        $stmt->execute();
+        $rows = $stmt->fetchAll(PDO::FETCH_ASSOC);
 
-            $user2 = $_POST[''];
-            $stmt2 = $db->prepare('SELECT * FROM users WHERE id=:id');
-            $stmt2->bindValue('id', $user2, PDO::PARAM_STR);
-            $stmt2->execute();
-            $rows2 = $stmt2->fetchAll(PDO::FETCH_ASSOC);
+        $user2 = $_POST[''];
+        $stmt2 = $db->prepare('SELECT * FROM users WHERE id=:id');
+        $stmt2->bindValue('id', $user2, PDO::PARAM_STR);
+        $stmt2->execute();
+        $rows2 = $stmt2->fetchAll(PDO::FETCH_ASSOC);
 
-            foreach ($rows2 as $r2) {
-                echo '<h1 class="recipe_list__title">' . 'Recipes for ' . $r2['first_name'] . '</h1>';
-            }
-            foreach ($rows as $r) {
-                echo '<span class="r_list"><a href="details.php?recipeLinks=' . $r['id'] . '">' . $r['name'] . '</a></span>';
-                echo '<br>';
-            }
-            ?> 
+        foreach ($rows2 as $r2) {
+            echo '<h1 class="recipe_list__title">' . 'Recipes for ' . $r2['first_name'] . '</h1>';
+        }
+        foreach ($rows as $r) {
+            echo '<span class="r_list"><a href="details.php?recipeLinks=' . $r['id'] . '">' . $r['name'] . '</a></span>';
+            echo '<br>';
+        }
+        ?> 
 
-        
+
     </body>
 </html>
 
