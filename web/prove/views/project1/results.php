@@ -44,10 +44,10 @@ Personal Home Page
         <br>
 
         <form method="post" action="results.php">
-            <label for="rank">Enter 1 to Order by Rank :</label>
+<!--            <label for="rank">Enter 1 to Order by Rank :</label>-->
             <br>
-            <label for="rank">Enter 2 to Order by Date :</label>
-            <input class="input_box" type="text" name="rank" placeholder="enter 1 for rank or 2 for date">
+<!--            <label for="rank">Enter 2 to Order by Date :</label>-->
+            <input class="input_box" type="text" name="rank" placeholder="enter '1' for rank or '2' for date">
             <input class="btn btn--white btn--animated btn_color" type="submit" value="Change Order">
         </form>    
 
