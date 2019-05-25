@@ -43,20 +43,6 @@ Personal Home Page
         ?> 
         <br>
 
-
-        <?php
-        $recipe = $_POST['recipe'];
-        $stmt = $db->prepare('SELECT * FROM recipes WHERE id=:id');
-        $stmt->bindValue(':id', $recipe, PDO::PARAM_STR);
-        $stmt->execute();
-        $rows = $stmt->fetchAll(PDO::FETCH_ASSOC);
-        foreach ($rows as $r) {
-            echo '<p class="recipe_name"><a href="details.php?recipeLinks=' . $r['id'] . '">';
-            echo $r['name'] . ' ';
-            echo '<br>';
-            echo '</a>;</p>';
-        }
-        ?>
         <form method="post" action="results.php">
             <label for="rank">Enter 1 to Order by Rank :</label>
             <br>

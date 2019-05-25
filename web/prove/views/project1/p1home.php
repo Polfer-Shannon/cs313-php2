@@ -28,22 +28,15 @@ Personal Home Page
                 <a href="../../../index.php" class="btn btn--white btn--animated btn__pages">&nbsp;&nbsp;&nbsp;&nbsp;Home&nbsp;&nbsp;&nbsp;&nbsp;</a>
             </div>
         </header>  
-        <form method="post" action="results.php">
+        
+       
+        <div class="home__btn--message-box recipe_list">
+            <form method="post" action="results.php">
 
             <input type="text" name="username" placeholder="Enter Username">
             <input class="btn btn--white btn--animated" type="submit" value="List Your Recipes">
 
         </form>
-        
-        
-        <form method="post" action="results.php">
-
-            <input type="text" name="recipe" placeholder="Enter id#">
-            <input class="btn btn--white btn--animated" type="submit" value="View a Recipe">
-
-        </form>
-        <div class="home__btn--message-box recipe_list">
-            
         </div>
         <footer>
             <?php include ('../../common/footer.php'); ?>
