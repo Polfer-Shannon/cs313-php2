@@ -57,6 +57,11 @@ Personal Home Page
                 echo '</a>;</p>';
             }
             ?>
+        <form method="post" action="results.php">
+            
+            <input class="btn btn--white btn--animated" name="l_rank" type="submit" value="Order By Rank">
+
+        </form>
     </body>
 </html>
 
