@@ -30,6 +30,7 @@ btn {
 }
 a {
     text-decoration: none;
+    color: #fff;
     
 }
 
@@ -41,7 +42,12 @@ a {
     color: white;
     font-size: 3em;
 }
-
+.recipe_list__title {
+    font-size: 4em;
+    color: #fff;
+    margin-bottom: 2em;
+    text-decoration: underline;
+}
 body {
     
 }
