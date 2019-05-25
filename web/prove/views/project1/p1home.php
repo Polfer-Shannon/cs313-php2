@@ -28,7 +28,7 @@ Personal Home Page
                 <a href="../../../index.php" class="btn btn--white btn--animated btn__pages">&nbsp;&nbsp;&nbsp;&nbsp;Home&nbsp;&nbsp;&nbsp;&nbsp;</a>
             </div>
         </header>  
-        <form method="post" action="p1home.php">
+        <form method="post" action="results.php">
 
             <input type="text" name="username" placeholder="Enter Username">
             <input class="btn btn--white btn--animated" type="submit" value="List Your Recipes">
