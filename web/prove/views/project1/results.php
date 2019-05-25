@@ -22,7 +22,7 @@ Personal Home Page
         <?php
             //get and print data from database
             $user = $_POST['username'];
-            $stmt = $db->prepare('SELECT * FROM recipes WHERE user_id=:user');
+            $stmt = $db->prepare('SELECT * FROM recipes WHERE user_id=:user ORDER BY name');
             $stmt->bindValue('user', $user, PDO::PARAM_STR);
             $stmt->execute();
             $rows = $stmt->fetchAll(PDO::FETCH_ASSOC);
