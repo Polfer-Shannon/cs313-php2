@@ -1,4 +1,4 @@
-<?php 
+<?php
 require 'dbConnect.php';
 $db = get_db();
 ?>
@@ -20,47 +20,47 @@ Personal Home Page
     </head>
     <body>
         <?php
-            //get and print data from database
-            $user = $_POST['username'];
-            $stmt = $db->prepare('SELECT * FROM recipes WHERE user_id=:user ORDER BY name');
-            $stmt->bindValue('user', $user, PDO::PARAM_STR);
-            $stmt->execute();
-            $rows = $stmt->fetchAll(PDO::FETCH_ASSOC);
-            
-            $user2 = $_POST['username'];
-            $stmt2 = $db->prepare('SELECT * FROM users WHERE id=:id');
-            $stmt2->bindValue('id', $user2, PDO::PARAM_STR);
-            $stmt2->execute();
-            $rows2 = $stmt2->fetchAll(PDO::FETCH_ASSOC);
-            
-            foreach ($rows2 as $r2) {
-                echo '<h1 class="recipe_list__title">' . 'Recipes for ' . $r2['first_name'] . '</h1>';
-            }
-            foreach ($rows as $r) {
-                echo '<span class="r_list"><a href="details.php?recipeLinks=' . $r['id'] . '">' . $r['name'] .  '</a></span>';
-                echo '<br>';
-            }
-            ?> 
-        
-        
-        
-        <?php
-            $recipe = $_POST['recipe'];
-            $stmt = $db->prepare('SELECT * FROM recipes WHERE id=:id');
-            $stmt->bindValue(':id', $recipe, PDO::PARAM_STR);
-            $stmt->execute();
-            $rows = $stmt->fetchAll(PDO::FETCH_ASSOC);
-            foreach ($rows as $r) {
-                echo '<p class="recipe_name"><a href="details.php?recipeLinks=' . $r['id'] . '">';
-                echo $r['name'] . ' ';
-                echo '<br>';
-                echo '</a>;</p>';
-            }
-            ?>
-        <form method="post" action="results.php">
-            
-            <input class="btn btn--white btn--animated" name="l_rank" type="submit" value="Order By Rank">
+        //get and print data from database
+        $user = $_POST['username'];
+        $stmt = $db->prepare('SELECT * FROM recipes WHERE user_id=:user ORDER BY name');
+        $stmt->bindValue('user', $user, PDO::PARAM_STR);
+        $stmt->execute();
+        $rows = $stmt->fetchAll(PDO::FETCH_ASSOC);
 
+        $user2 = $_POST['username'];
+        $stmt2 = $db->prepare('SELECT * FROM users WHERE id=:id');
+        $stmt2->bindValue('id', $user2, PDO::PARAM_STR);
+        $stmt2->execute();
+        $rows2 = $stmt2->fetchAll(PDO::FETCH_ASSOC);
+
+        foreach ($rows2 as $r2) {
+            echo '<h1 class="recipe_list__title">' . 'Recipes for ' . $r2['first_name'] . '</h1>';
+        }
+        foreach ($rows as $r) {
+            echo '<span class="r_list"><a href="details.php?recipeLinks=' . $r['id'] . '">' . $r['name'] . '</a></span>';
+            echo '<br>';
+        }
+        ?> 
+
+
+
+        <?php
+        $recipe = $_POST['recipe'];
+        $stmt = $db->prepare('SELECT * FROM recipes WHERE id=:id');
+        $stmt->bindValue(':id', $recipe, PDO::PARAM_STR);
+        $stmt->execute();
+        $rows = $stmt->fetchAll(PDO::FETCH_ASSOC);
+        foreach ($rows as $r) {
+            echo '<p class="recipe_name"><a href="details.php?recipeLinks=' . $r['id'] . '">';
+            echo $r['name'] . ' ';
+            echo '<br>';
+            echo '</a>;</p>';
+        }
+        ?>
+        <form method="post" action="results.php">
+
+            <input class="btn btn--white btn--animated" name="l_rank" type="submit" value="Order By Rank">
+            <input class="btn btn--white btn--animated" name="l_date" type="submit" value="Order By Rank">
         </form>
     </body>
 </html>
