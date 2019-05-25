@@ -24,7 +24,7 @@ Personal Home Page
                 <h1 class="heading-primary pages">
                     <span class="heading-primary--sub pages">Favorite Family Recipes</span>
                 </h1>
-                <a href="../../../index.php" class="btn btn--white btn--animated btn__pages">&nbsp;&nbsp;&nbsp;&nbsp;Recipe Home&nbsp;&nbsp;&nbsp;&nbsp;</a>
+                <a href="p1home.php" class="btn btn--white btn--animated btn__pages">&nbsp;&nbsp;&nbsp;&nbsp;Recipe Home&nbsp;&nbsp;&nbsp;&nbsp;</a>
             </div>
         </header>
         <?php
