@@ -52,30 +52,30 @@ Personal Home Page
         </form>    
 
         <?php
-        //get and print data from database
-        $order = $_POST['order'];
-        $stmt = $db->query('SELECT * FROM recipes ORDER BY rank');
-        $stmt->execute();
-        $rows = $stmt->fetchAll(PDO::FETCH_ASSOC);
-
-        $order2 = $_POST['order'];
-        $stmt2 = $db->query('SELECT * FROM recipes ORDER BY date');
-        $stmt2->execute();
-        $rows2 = $stmt2->fetchAll(PDO::FETCH_ASSOC);
-
-        foreach ($rows as $r) {
-            if ($order = 1) {
-                echo '<span class="r_list"><a href="details.php?recipeLinks=' . $r['id'] . '">' . $r['rank'] . $r['name'] . '</a></span>';
-                echo '<br>';
-            }
-        }
-        
-        foreach ($rows2 as $r2) {
-            if ($order2 = 2){
-            echo '<span class="r_list"><a href="details.php?recipeLinks=' . $r['id'] . '">' . $r['date'] . $r['name'] . '</a></span>';
-            echo '<br>';
-        }
-        }
+//        //get and print data from database
+//        $order = $_POST['order'];
+//        $stmt = $db->query('SELECT * FROM recipes ORDER BY rank');
+//        $stmt->execute();
+//        $rows = $stmt->fetchAll(PDO::FETCH_ASSOC);
+//
+//        $order2 = $_POST['order'];
+//        $stmt2 = $db->query('SELECT * FROM recipes ORDER BY date');
+//        $stmt2->execute();
+//        $rows2 = $stmt2->fetchAll(PDO::FETCH_ASSOC);
+//
+//        foreach ($rows as $r) {
+//            if ($order = 1) {
+//                echo '<span class="r_list"><a href="details.php?recipeLinks=' . $r['id'] . '">' . $r['rank'] . $r['name'] . '</a></span>';
+//                echo '<br>';
+//            }
+//        }
+//        
+//        foreach ($rows2 as $r2) {
+//            if ($order2 = 2){
+//            echo '<span class="r_list"><a href="details.php?recipeLinks=' . $r['id'] . '">' . $r['date'] . $r['name'] . '</a></span>';
+//            echo '<br>';
+//        }
+//        }
         ?> 
 
 
