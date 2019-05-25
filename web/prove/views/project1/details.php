@@ -32,6 +32,7 @@ Personal Home Page
         echo '<br>';
         echo $row['directions'] . '"' . "</p>";
         echo '<br/>';
+        var_dump($recipe_id);
         ?>
     </body>
 </html>
