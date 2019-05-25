@@ -29,8 +29,8 @@ Personal Home Page
         </header>  
         <form method="post" action="p1home.php">
 
-            <input type="text" name="user" placeholder="Enter Username">
-            <input class="btn btn--white btn--animated" type="submit" value="List Your Recipe">
+            <input type="text" name="username" placeholder="Enter Username">
+            <input class="btn btn--white btn--animated" type="submit" value="List Your Recipes">
 
         </form>
         
@@ -44,8 +44,8 @@ Personal Home Page
         <div class="home__btn--message-box">
             <?php
             //get and print data from database
-            $user = $_POST['user'];
-            $stmt = $db->prepare('SELECT recipes.name FROM recipes WHERE recipe.id=:user');
+            $user = $_POST['username'];
+            $stmt = $db->prepare('SELECT id FROM recipes WHERE recipe.user_id=:user');
             $stmt->bindValue('user', $user, PDO::PARAM_STR);
             $stmt->execute();
             $rows = $stmt->fetchAll(PDO::FETCH_ASSOC);
