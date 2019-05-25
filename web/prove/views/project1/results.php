@@ -43,6 +43,8 @@ Personal Home Page
 
         foreach ($rows2 as $r2) {
             echo '<h1 class="recipe_list__title">' . 'Recipes for ' . $r2['first_name'] . '</h1>';
+            echo '<br>';
+            echo '<p>' . 'Click on a recipe to view directions' . '</p>';
         }
         foreach ($rows as $r) {
             echo '<span class="r_list"><a href="details.php?recipeLinks=' . $r['id'] . '">' . $r['name'] . '</a></span>';
