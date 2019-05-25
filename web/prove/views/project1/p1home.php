@@ -36,7 +36,7 @@ Personal Home Page
         </form>
         
         
-        <form method="post" action="results.php">
+        <form method="post" action="p1home.php">
 
             <input type="text" name="recipe" placeholder="Enter id#">
             <input class="btn btn--white btn--animated" type="submit" value="View a Recipe">
