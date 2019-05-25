@@ -22,15 +22,13 @@ btn {
 }
 .home__btn--message-box {
     position: absolute;
-    top: 80%;
+    top: 70%;
     left: 47%;
     transform: translate(-60%, -80%);
     text-align: left;
 
 }
-.p1_message_box {
-    margin-bottom: 2em;
-}
+
 
 .foot {
     position: relative;
