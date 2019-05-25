@@ -26,6 +26,7 @@ Personal Home Page
                 </h1>
                 <a href="../../../index.php" class="btn btn--white btn--animated btn__pages">&nbsp;&nbsp;&nbsp;&nbsp;Recipe Home&nbsp;&nbsp;&nbsp;&nbsp;</a>
             </div>
+        </header>
         <?php
         //get and print data from database
         $user = $_POST['username'];
