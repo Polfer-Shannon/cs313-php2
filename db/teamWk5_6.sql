@@ -38,3 +38,9 @@ VALUES ('Faith'),
 ALTER TABLE topic
 ADD PRIMARY KEY (id);
 
+INSERT INTO scriptures (book, chapter, verse, content)
+VALUES ('2 Nephi'),
+(10),
+(4),
+('For should the mighty amiracles be wrought among other nations they would repent, and know that he be their God.'),
+WHERE

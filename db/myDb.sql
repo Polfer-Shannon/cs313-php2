@@ -137,6 +137,8 @@ ON ingredients.id = menu.ingredients_id
 WHERE recipes.id = 1;
 
 
+
+
 SELECT recipes.id, recipes.name 
 FROM recipes, users
 WHERE recipes.user_id = users.id
