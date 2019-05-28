@@ -4,7 +4,7 @@ $db = get_db();
 ?>
 <?php
             $add_script = htmlspecialchars($_POST['addScripture']);
-            $stmt = $db->prepare('SELECT * FROM scriptures WHERE book=:book');
+//            $stmt = $db->prepare('SELECT * FROM scriptures WHERE book=:book');
 //            $stmt->bindValue(':book', $book, PDO::PARAM_STR);
 //            $stmt->execute();
 //            $rows = $stmt->fetchAll(PDO::FETCH_ASSOC);
