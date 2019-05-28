@@ -27,18 +27,36 @@ $db = get_db();
                 <label for="add_chapter">Add a chapter</label>
                 <input type="text" name="add_chapter">
                 
-                <label for="add_verse">Add a book</label>
+                <label for="add_verse">Add a verse</label>
                 <input type="text" name="add_verse">
                 
-                <label for="add_content">Add a book</label>
+                <label for="add_content">Add content</label>
                 <textarea rows="6" cols="50" name="add_content"></textarea>
                 
                 
-                <input type="submit" value="search">
+                <input type="submit" value="addScripture">
 
             </form>
 
 
+            <?php
+            $add_script = $_POST['addScripture'];
+            $stmt = $db->prepare('SELECT * FROM scriptures WHERE book=:book');
+            $stmt->bindValue(':book', $book, PDO::PARAM_STR);
+            $stmt->execute();
+            $rows = $stmt->fetchAll(PDO::FETCH_ASSOC);
+            foreach ($rows as $r) {
+                echo '<p><a href="details.php?scripture=' . $r['id'] . '">';
+                echo $r['book'] . ' ';
+                echo $r['chapter'];
+                echo ':' . $r['verse'];
+                echo '</a></p>';
+            }
+            
+            
+            ?>
+            
+            
         </div>
     </body>
 </html>
