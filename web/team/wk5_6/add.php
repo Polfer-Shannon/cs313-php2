@@ -19,7 +19,7 @@
 
 
         <div>
-            <form method="post" action="list_all.php">
+            <form method="post" action="llist_all.php">
 
 <!--                <label for="add_book">Add a book</label>
                 <input type="text" name="add_book">
