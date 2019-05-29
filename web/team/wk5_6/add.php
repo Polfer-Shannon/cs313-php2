@@ -34,7 +34,9 @@ $db = get_db();
                 <textarea rows="6" cols="50" name="add_content"></textarea>
 
                 
-                <input type="submit" value="<?php
+                
+                
+                <input type="checkbox" value="<?php
                 $stmt = $db->query('SELECT * FROM topic');
                 $results = $stmt->fetchAll(PDO::FETCH_ASSOC);
                 foreach ($results as $row['name']) {
