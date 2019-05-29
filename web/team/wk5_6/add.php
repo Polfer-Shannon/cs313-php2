@@ -33,13 +33,15 @@ $db = get_db();
                 <label for="add_content">Add content</label>
                 <textarea rows="6" cols="50" name="add_content"></textarea>
 
-                <?php
+                
+                <input type="submit" value="<?php
                 $stmt = $db->query('SELECT * FROM topic');
                 $results = $stmt->fetchAll(PDO::FETCH_ASSOC);
                 foreach ($results as $row['name']) {
-                   echo '<input type = "checkbox" value = "$row">';
+                   echo '<input type = "checkbox" value = . $row>';
                    echo '<br>';
-                    ?>
+                    ?>">
+                
                    
                 <input type="submit" value="Add Scripture">
                 </form>
