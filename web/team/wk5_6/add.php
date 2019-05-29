@@ -41,6 +41,7 @@ $db = get_db();
                    echo '<br>';
                     ?>
                    
+                <input type="submit" value="Add Scripture">
                 </form>
 
             </div>
