@@ -64,12 +64,12 @@ $db = get_db();
             echo '<br/>';
 
             $scriptureid = $row['id'];
-            $stmt = $db->prepare('SELECT topic.name FROM topic
+            $stmt2 = $db->prepare('SELECT topic.name FROM topic
         LEFT JOIN scrip_top
         ON scrip_top.topic_id = topic.id
         WHERE scrip_top.scriptures_id = $scriptureid');
-            $stmt->execute();
-            $topics = $stmt->fetchAll(PDO::FETCH_ASSOC);
+            $stmt2->execute();
+            $topics = $stmt2->fetchAll(PDO::FETCH_ASSOC);
             foreach ($topics as $t) {
                 echo $t['name'];
                 echo '<br>';
