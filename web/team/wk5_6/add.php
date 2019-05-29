@@ -32,15 +32,15 @@ $db = get_db();
 
                 <label for="add_content">Add content</label>
                 <textarea rows="6" cols="50" name="add_content"></textarea>
-
+                <br>
 
                 <?php
-                $stmt = $db->query('SELECT name FROM topic');
+                $stmt = $db->query('SELECT all FROM topic');
                 $results = $stmt->fetchAll(PDO::FETCH_ASSOC);
 
 
                 foreach ($results as $row) {
-                    echo "<input type ='checkbox' value = '$row'>" . $row . ', ' . '<br>';
+                    echo "<input type ='checkbox' value = '$row'>" . $row['name'] . ', ' . '<br>';
                 }
                     ?>
 
