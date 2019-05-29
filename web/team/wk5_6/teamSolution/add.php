@@ -64,7 +64,7 @@ $db = get_db();
             echo '<br/>';
 
             $scriptureid = $row['id'];
-            echo $scriptureid;
+          
             $stmt2 = $db->prepare('SELECT topic.name FROM topic
         LEFT JOIN scrip_top
         ON scrip_top.topic_id = topic.id
