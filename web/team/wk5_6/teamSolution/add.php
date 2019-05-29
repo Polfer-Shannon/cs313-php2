@@ -65,10 +65,10 @@ $db = get_db();
 
             $scriptureid = $row['id'];
             echo $scriptureid;
-//            $stmt2 = $db->prepare('SELECT topic.name FROM topic
-//        LEFT JOIN scrip_top
-//        ON scrip_top.topic_id = topic.id
-//        WHERE scrip_top.scriptures_id = $scriptureid');
+            $stmt2 = $db->prepare('SELECT topic.name FROM topic
+        LEFT JOIN scrip_top
+        ON scrip_top.topic_id = topic.id
+        WHERE scrip_top.scriptures_id = $scriptureid');
 //            $stmt2->execute();
 //            $topics = $stmt2->fetchAll(PDO::FETCH_ASSOC);
 //            foreach ($topics as $t) {
