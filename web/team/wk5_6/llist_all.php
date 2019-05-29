@@ -1,5 +1,6 @@
         <?php
 $add_script = htmlspecialchars($_POST['addScripture']);
+$content = htmlspecialchars($_POST['add_content']);
 //            $stmt = $db->prepare('SELECT * FROM scriptures WHERE book=:book');
 //            $stmt->bindValue(':book', $book, PDO::PARAM_STR);
 //            $stmt->execute();
