@@ -52,7 +52,22 @@ $db = get_db();
             </form>
 
         </div>
+        <?php
+        $stmt = $db->prepare('SELECT * FROM scriptures');
+        $stmt->execute();
+        $rows = $stmt->fetchAll(PDO::FETCH_ASSOC);
+        foreach ($rows as $row) {
+            echo "<p><span>" . $row['book'] . ' ';
+            echo $row['chapter'];
+            echo ':' . $row['verse'] . ' - ' . "</span>";
+            echo '"' . $row['content'] . '"' . "</p>";
+            echo '<br/>';
+        }
+        ?>
+        <div>
 
+
+        </div>
 
 
     </body>

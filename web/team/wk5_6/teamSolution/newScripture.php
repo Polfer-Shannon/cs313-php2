@@ -20,11 +20,13 @@ $stmt->bindValue(':add_content', $add_content, PDO::PARAM_STR);
 $stmt->execute();
 $scripture_id = $db->lastInsertId();
 foreach ($topics as $t) {
-    echo "<p>$t</p>";
+
     $stmt = $db->prepare('INSERT INTO scrip_top(scriptures_id, topic_id) VALUES(:scriptures_id, :topic_id);');
     $stmt->bindValue(':scriptures_id', $scripture_id, PDO::PARAM_INT);
     $stmt->bindValue(':topic_id', $t, PDO::PARAM_INT);
     $stmt->execute();
 }
+header("Location: add.php");
 ?>
-<pre><?php echo print_r($topics);?></pre>
+
+
