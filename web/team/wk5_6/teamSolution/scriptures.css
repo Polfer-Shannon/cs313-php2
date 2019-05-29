@@ -1,0 +1,18 @@
+* {
+    margin: 1em;
+}
+
+header{
+    text-align: center;
+    margin-bottom: 2em;
+}
+
+span {
+    font-weight: bold;
+    font-size: 1.25em;
+}
+ 
+div {
+    margin-top: 3em;
+    background-color: #ffc6c0;
+}

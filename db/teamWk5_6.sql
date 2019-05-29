@@ -7,9 +7,16 @@ content TEXT NOT NULL
 );
 
 CREATE TABLE topic (
-id SERIAL,
+id SERIAL PRIMARY KEY,
 name VARCHAR(20)
 );
+
+CREATE TABLE scrip_top (
+id SERIAL PRIMARY KEY,
+scriptures_id INT NOT NULL REFERENCES scriptures(id),
+topic_id INT NOT NULL REFERENCES topic(id)
+);
+
 
 INSERT INTO scriptures (book, chapter, verse, content)
 VALUES ('John', 1, 5, 'And the light shineth in darkness; and the darkness comprehended it not.'),
@@ -24,23 +31,12 @@ VALUES ('John', 5, 8, 'Jesus saith unto him, aRise, take up thy bed, and walk.')
 ('Mosiah', 14, 1, 'Yea, even doth not Isaiah say: Who hath abelieved our report, and to whom is the arm of the Lord revealed?'),
 ('Mark', 13, 5, 'And Jesus answering them began to say, Take heed lest any man deceive you:');
 
-CREATE TABLE scrip_top (
-id SERIAL PRIMARY KEY,
-scriptures_id INT NOT NULL REFERENCES scriptures(id),
-topic_id INT NOT NULL REFERENCES topic(id)
-);
 
 INSERT INTO topic (name)
 VALUES ('Faith'),
-('Scrifice'),
+('Sacrifice'),
 ('Charity');
 
 ALTER TABLE topic
 ADD PRIMARY KEY (id);
 
-INSERT INTO scriptures (book, chapter, verse, content)
-VALUES ('2 Nephi'),
-(10),
-(4),
-('For should the mighty amiracles be wrought among other nations they would repent, and know that he be their God.'),
-WHERE
