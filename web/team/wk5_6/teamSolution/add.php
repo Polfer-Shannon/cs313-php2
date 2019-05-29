@@ -71,11 +71,11 @@ $db = get_db();
         WHERE scrip_top.scriptures_id = :scriptureid');
             $stmt2->bindValue(':scriptureid', $scriptureid, PDO::PARAM_INT);
             $stmt2->execute();
-//            $topics = $stmt2->fetchAll(PDO::FETCH_ASSOC);
-//            foreach ($topics as $t) {
-//                echo $t['name'];
-//                echo '<br>';
-//            }
+            $topics = $stmt2->fetchAll(PDO::FETCH_ASSOC);
+            foreach ($topics as $t) {
+                echo $t['name'];
+                echo '<br>';
+            }
         }
         ?>
         <div>
