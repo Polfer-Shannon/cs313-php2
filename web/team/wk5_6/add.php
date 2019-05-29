@@ -34,15 +34,16 @@ $db = get_db();
                 <textarea rows="6" cols="50" name="add_content"></textarea>
 
                 
-                
-                
-                <input type="checkbox" value="<?php
-                $stmt = $db->query('SELECT * FROM topic');
+                <?php
+                $stmt = $db->query('SELECT name FROM topic');
                 $results = $stmt->fetchAll(PDO::FETCH_ASSOC);
-                foreach ($results as $row['name']) {
-                   echo '<input type = "checkbox" value = . $row>';
-                   echo '<br>';
-                    ?>">
+                
+                
+                foreach ($results as $row) {
+                   echo "<input type ='checkbox' value = '$row'>" . $row . ', ' . '<br>';
+                       
+                   
+                    ?>'>
                 
                    
                 <input type="submit" value="Add Scripture">
