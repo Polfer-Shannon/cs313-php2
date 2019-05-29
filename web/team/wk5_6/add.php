@@ -35,7 +35,7 @@ $db = get_db();
                 <br>
 
                 <?php
-                $stmt = $db->query('SELECT all FROM topic');
+                $stmt = $db->query('SELECT * FROM topic');
                 $results = $stmt->fetchAll(PDO::FETCH_ASSOC);
                 $stmt->execute();
 
