@@ -19,7 +19,7 @@ $db = get_db();
 
 
         <div>
-            <form method="post" action="add.php">
+            <form method="post" action="newScripture.php">
 
                 <label for="add_book">Add a book</label>
                 <input type="text" name="add_book">
@@ -40,7 +40,10 @@ $db = get_db();
                 $stmt->execute();
 
                 foreach ($results as $row) {
-                    echo "<input type ='radio' value = '$row'>" . $row['name'] . '<br>';
+                    ?>
+
+                    <input type="checkbox" name="topics[]" value="<?= $row['id']; ?>"> <?= $row['name']; ?>
+                    <?php
                 }
                 ?>
 
@@ -50,19 +53,7 @@ $db = get_db();
 
         </div>
 
-        <?php
-        $add_book = htmlspecialchars($_POST['add_book']);
-        $add_chapter = htmlspecialchars($_POST['add_chapter']);
-        $add_verse = htmlspecialchars($_POST['add_verse']);
-        $add_content = htmlspecialchars($_POST['add_content']);
 
-        $stmt = $db->prepare('INSERT INTO scriptures(book, chapter, verse, content) VALUES(:add_book, :add_chapter, :add_verse, :add_content);');
-        $stmt->bindValue(':add_book', $add_book, PDO::PARAM_STR);
-        $stmt->bindValue(':add_chapter', $add_chapter, PDO::PARAM_INT);
-        $stmt->bindValue(':add_verse', $add_verse, PDO::PARAM_INT);
-        $stmt->bindValue(':add_content', $add_content, PDO::PARAM_STR);
-        $stmt->execute();
-        ?>
 
     </body>
 </html>
