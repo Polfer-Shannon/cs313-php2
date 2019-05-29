@@ -1,5 +1,5 @@
         <?php
-$add_script = htmlspecialchars($_POST['addScripture']);
+
 $content = htmlspecialchars($_POST['add_content']);
 //            $stmt = $db->prepare('SELECT * FROM scriptures WHERE book=:book');
 //            $stmt->bindValue(':book', $book, PDO::PARAM_STR);
@@ -13,7 +13,7 @@ $content = htmlspecialchars($_POST['add_content']);
 //                echo '</a></p>';
 //            }
 
-echo $add_script;
+echo $content;
 ?>
 <html>
     <head>
