@@ -1,20 +1,9 @@
-        <?php
-
-$content = htmlspecialchars($_POST['add_content']);
-//            $stmt = $db->prepare('SELECT * FROM scriptures WHERE book=:book');
-//            $stmt->bindValue(':book', $book, PDO::PARAM_STR);
-//            $stmt->execute();
-//            $rows = $stmt->fetchAll(PDO::FETCH_ASSOC);
-//            foreach ($rows as $r) {
-//                echo '<p><a href="details.php?scripture=' . $r['id'] . '">';
-//                echo $r['book'] . ' ';
-//                echo $r['chapter'];
-//                echo ':' . $r['verse'];
-//                echo '</a></p>';
-//            }
-
-echo $content;
+<?php
+require 'dbConnect.php';
+$db = get_db();
 ?>
+
+
 <html>
     <head>
         <title>Week 6 Team Assignment</title>  
@@ -24,25 +13,31 @@ echo $content;
     </head>
     <body>
         <header>
-            <h1>Add Scripture and Topic</h1>
+            <h1>All Scriptures in Database</h1>
 
         </header>
-                <?php
-$add_script = htmlspecialchars($_POST['addScripture']);
-$content = htmlspecialchars($_POST['add_content']);
-//            $stmt = $db->prepare('SELECT * FROM scriptures WHERE book=:book');
-//            $stmt->bindValue(':book', $book, PDO::PARAM_STR);
-//            $stmt->execute();
-//            $rows = $stmt->fetchAll(PDO::FETCH_ASSOC);
-//            foreach ($rows as $r) {
-//                echo '<p><a href="details.php?scripture=' . $r['id'] . '">';
-//                echo $r['book'] . ' ';
-//                echo $r['chapter'];
-//                echo ':' . $r['verse'];
-//                echo '</a></p>';
-//            }
+        <?php
+        $add_book = htmlspecialchars($_POST['add_book']);
+        $add_chapter = htmlspecialchars($_POST['add_chapter']);
+        $add_verse = htmlspecialchars($_POST['add_verse']);
+        $add_content = htmlspecialchars($_POST['add_content']);
+        
+            $stmt = $db->prepare('INSERT INTO scriptures(book, chapter, verse, content) VALUES(:add_book, :add_chapter, :add_verse, :add_content);');
+            $stmt->bindValue(':add_book', $add_book, PDO::PARAM_STR);
+            $stmt->bindValue(':add_chapter', $add_chapter, PDO::PARAM_INT);
+            $stmt->bindValue(':add_verse', $add_verse, PDO::PARAM_INT);
+            $stmt->bindValue(':add_content', $add_content, PDO::PARAM_STR);
+            $stmt->execute();
+            $rows = $stmt->fetchAll(PDO::FETCH_ASSOC);
+            foreach ($rows as $r) {
+                echo '<p><a href="details.php?scripture=' . $r['id'] . '">';
+                echo $r['book'] . ' ';
+                echo $r['chapter'];
+                echo ':' . $r['verse'];
+                echo '</a></p>';
+            }
 
-echo $add_script;
-?>
+        echo $add_script;
+        ?>
     </body>
 </html>
