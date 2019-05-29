@@ -46,7 +46,8 @@ $db = get_db();
                     <?php
                 }
                 ?>
-
+                    <input type="checkbox" name="newTopic" value="true">
+                     <input type="text" name="newTopic_text">
 
                 <input type="submit" value="Add Scripture">
             </form>
