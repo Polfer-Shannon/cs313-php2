@@ -34,11 +34,11 @@ $db = get_db();
                 <textarea rows="6" cols="50" name="add_content"></textarea>
 
                 <?php
-//                $stmt = $db->query('SELECT * FROM topic');
-//                $results = $stmt->fetchAll(PDO::FETCH_ASSOC);
-//                foreach ($results as $row) {
-//                   echo '<input type = "checkbox" value = "$row">';
-//                   echo '<br>';
+                $stmt = $db->query('SELECT * FROM topic');
+                $results = $stmt->fetchAll(PDO::FETCH_ASSOC);
+                foreach ($results as $row['name']) {
+                   echo '<input type = "checkbox" value = "$row">';
+                   echo '<br>';
                     ?>
                    
                 </form>
