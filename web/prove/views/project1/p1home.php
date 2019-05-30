@@ -28,7 +28,9 @@ Personal Home Page
                 <a href="../../../index.php" class="btn btn--white btn--animated btn__pages">&nbsp;&nbsp;&nbsp;&nbsp;Home&nbsp;&nbsp;&nbsp;&nbsp;</a>
             </div>
         </header>  
-        
+        <?php 
+        echo '<a href="login.php?action=login" title="Go to login" >Login</a>';
+        ?>
        
         <div class="home__btn--message-box p1_message_box">
             <form method="post" action="results.php">
