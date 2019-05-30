@@ -96,3 +96,7 @@ p, h2 {
     font-size: 4em;
     text-decoration: underline;
 }
+
+.login_span {
+    text-decoration: none;
+}
