@@ -1,4 +1,4 @@
-<?php 
+<?php
 require 'dbConnect.php';
 $db = get_db();
 ?>
@@ -27,19 +27,23 @@ Personal Home Page
                 </h1>
                 <a href="../../../index.php" class="btn btn--white btn--animated btn__pages">&nbsp;&nbsp;&nbsp;&nbsp;Home&nbsp;&nbsp;&nbsp;&nbsp;</a>
             </div>
-        </header>  
-        <?php 
-        echo '<a href="login.php?action=login" title="Go to login" >Login</a>';
-        ?>
-       
+        </header> 
+
+        <div class="home__btn--message-box p1_message_box">
+            <?php
+            echo '<a href="login.php?action=login" title="Go to login" class="login">Login</a>';
+            ?>
+        </div>
+
         <div class="home__btn--message-box p1_message_box">
             <form method="post" action="results.php">
 
-            <input class="input_box" type="text" name="username" placeholder="Enter UserID 1, 2 or 3">
-            <input class="btn btn--white btn--animated btn_color" type="submit" value="List Your Recipes">
+                <input class="input_box" type="text" name="username" placeholder="Enter UserID 1, 2 or 3">
+                <input class="btn btn--white btn--animated btn_color" type="submit" value="List Your Recipes">
 
-        </form>
+            </form>
         </div>
+        
         <footer>
             <?php include ('../../common/footer.php'); ?>
         </footer>
