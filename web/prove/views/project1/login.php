@@ -27,7 +27,7 @@ Personal Home Page
                 <a href="p1home.php" class="btn btn--white btn--animated btn__pages">&nbsp;&nbsp;&nbsp;&nbsp;Recipe Home&nbsp;&nbsp;&nbsp;&nbsp;</a>
             </div>
         </header>
-        <div>
+        <div class="login_box">
         <form method="post" action="p1home.php">
                     <!--<fieldset>-->
                         <h1 class="login_title">Login</h1>
