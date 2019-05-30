@@ -29,7 +29,7 @@ Personal Home Page
                 <a href="../../../index.php" class="btn btn--white btn--animated btn__pages">&nbsp;&nbsp;&nbsp;&nbsp;Home&nbsp;&nbsp;&nbsp;&nbsp;</a>
             </div>
         </header> 
-
+        <div class="container-fluid">
         <div class="login_box">
             <?php
             echo '<a href="login.php?action=login" title="Go to login" class="login">Login</a><br><span class="login_span">Or Enter Your Username</span>';
@@ -44,7 +44,7 @@ Personal Home Page
 
             </form>
         </div>
-        
+        </div>
         <footer>
             <?php include ('../../common/footer.php'); ?>
         </footer>
