@@ -42,11 +42,12 @@ Personal Home Page
                         of each of the following: number, capital letter, special character.</p>
 
 
-                    <input type="submit" name="submit" value="Login">
+                    <input class="btn btn--white btn--animated btn_color" type="submit" name="submit" value="Login">
                     <input type="hidden" name="action" value="Login">
 
                 </form>
         </div>
+        <br>
          <footer>
             <?php include ('../../common/footer.php'); ?>
         </footer>
