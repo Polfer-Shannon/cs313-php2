@@ -31,7 +31,7 @@ Personal Home Page
 
         <div class="login_box">
             <?php
-            echo '<a href="login.php?action=login" title="Go to login" class="login">Login<span class="login_span">Or Enter Your Username</span></a>';
+            echo '<a href="login.php?action=login" title="Go to login" class="login">Login</a><span class="login_span"> - Or Enter Your Username</span>';
             ?>
         </div>
 
