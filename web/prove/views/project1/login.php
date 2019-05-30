@@ -19,6 +19,14 @@ Personal Home Page
         <script src="../../js/homejs.js"></script>
     </head>
     <body>
+        <header class="header__pages project1">
+            <div class="header__text-box header__text-box--pages">
+                <h1 class="heading-primary pages">
+                    <span class="heading-primary--sub pages">Favorite Family Recipes</span>
+                </h1>
+                <a href="p1home.php" class="btn btn--white btn--animated btn__pages">&nbsp;&nbsp;&nbsp;&nbsp;Recipe Home&nbsp;&nbsp;&nbsp;&nbsp;</a>
+            </div>
+        </header>
         <div>
         <form method="post" action="p1home.php">
                     <!--<fieldset>-->
