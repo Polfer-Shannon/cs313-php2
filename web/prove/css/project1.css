@@ -84,7 +84,7 @@ p, h2 {
     font-size: 1em;
 }
 
-login_box {
+.login_box {
     position: absolute;
     top: 70%;
     left: 47%;
@@ -92,7 +92,7 @@ login_box {
     text-align: center;
 }
 
-login {
+.login {
     font-size: 2em;
     text-decoration: underline;
 }
