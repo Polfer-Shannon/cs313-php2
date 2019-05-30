@@ -27,7 +27,7 @@ Personal Home Page
                 <a href="p1home.php" class="btn btn--white btn--animated btn__pages">&nbsp;&nbsp;&nbsp;&nbsp;Recipe Home&nbsp;&nbsp;&nbsp;&nbsp;</a>
             </div>
         </header>
-        <div class="login_box">
+        <div class="login_box__page">
         <form method="post" action="p1home.php">
                     
                         <h2 class="rlForm"><label for="clientEmail">Email:</label></h2>
