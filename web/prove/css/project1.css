@@ -23,7 +23,7 @@ btn {
 .home__btn--message-box {
     position: absolute;
     top: 70%;
-    left: 47%;
+    left: 52%;
     transform: translate(-60%, -80%);
     text-align: left;
 
@@ -86,7 +86,7 @@ p, h2 {
 
 .login_box {
     position: absolute;
-    top: 63%;
+    top: 52%;
     left: 46%;
     transform: translate(-60%, -80%);
     text-align: center;
