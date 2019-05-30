@@ -29,7 +29,7 @@ Personal Home Page
             </div>
         </header> 
 
-        <div class="">
+        <div class="login_box">
             <?php
             echo '<a href="login.php?action=login" title="Go to login" class="login">Login</a>';
             ?>
