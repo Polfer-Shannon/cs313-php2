@@ -41,6 +41,7 @@ Personal Home Page
                 <div class="form-group">    
                     <label for="username">Or Enter Your Username:</label>
                     <input  class="form-control" type="text" name="username" placeholder="Username">
+                    <br>
                     <input  class="form-control btn-primary" type="submit" value="List Your Recipes">
                 </div>
             </form>
