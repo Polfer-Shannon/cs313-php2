@@ -29,7 +29,7 @@ Personal Home Page
             </div>
         </header> 
 
-        <div class="home__btn--message-box p1_message_box">
+        <div class="">
             <?php
             echo '<a href="login.php?action=login" title="Go to login" class="login">Login</a>';
             ?>
