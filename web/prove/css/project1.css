@@ -79,7 +79,7 @@ label {
     height: 40vh;
 }
 
-p, h2 {
+h2 {
     color: #fff;
     font-size: 1em;
 }
@@ -96,7 +96,15 @@ p, h2 {
     font-size: 4em;
     text-decoration: underline;
 }
+.login_title {
+    font-size: 4em;
+    color: #fff;
+}
 
+.login_paragraph{
+    font-size: 1em;
+    color: #fff;
+}
 .login_span {
     font-size: 2.5em;
 }
