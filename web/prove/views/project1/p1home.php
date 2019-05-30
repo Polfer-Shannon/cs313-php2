@@ -32,7 +32,7 @@ Personal Home Page
         <div class="container">
 
             <?php
-            echo '<h2><a href="login.php?action=login" title="Go to login">Login</a><h2><br><span class="login_span">Or Enter Your Username</span>';
+            echo '<h2><a href="login.php?action=login" title="Go to login">Login</a><h2><br>';
             ?>
 
 
@@ -41,7 +41,7 @@ Personal Home Page
                 <div class="form-group">    
                     <label for="username">Or Enter Your Username:</label>
                     <input  class="form-control" type="text" name="username" placeholder="Username">
-                    <button  class="btn btn-default" type="submit">List Your Recipes</button>
+                    <input  class="btn-primary" type="submit" value="List Your Recipes">
 
                     </form>
                 </div>
