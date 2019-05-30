@@ -29,15 +29,14 @@ Personal Home Page
         </header>
         <div class="login_box">
         <form method="post" action="p1home.php">
-                    <!--<fieldset>-->
-                        <h1 class="login_title">Login</h1>
+                    
                         <h2 class="rlForm"><label for="clientEmail">Email:</label></h2>
                         <input type="email" name="clientEmail" id="clientEmail" placeholder="Enter your email address" <?php if (isset($clientEmail)) {
                     echo "value='$clientEmail'";
                 } ?> required><br>
                         <h2 class="rlForm"><label for="clientPassword">Password:</label></h2>
                         <input type="password" name="clientPassword" id="clientPassword" placeholder="Enter your password" required pattern="(?=^.{8,}$)(?=.*\d)(?=.*\W+)(?![.\n])(?=.*[A-Z])(?=.*[a-z]).*$"><br>
-<!--                    </fieldset>-->
+
                     <p class="login_paragraph">Passwords must be at least 8 character's and contain at least 1<br>
                         of each of the following: number, capital letter, special character.</p>
 
