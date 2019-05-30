@@ -88,7 +88,14 @@ h2 {
     text-align: left;
     
 }
-
+.login_box__page {
+    position: absolute;
+    top: 69%;
+    left: 52%;
+    transform: translate(-60%, -80%);
+    text-align: left;
+    
+}
 .login {
     font-size: 4em;
     text-decoration: underline;
