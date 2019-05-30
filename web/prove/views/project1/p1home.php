@@ -7,16 +7,19 @@ $db = get_db();
 Personal Home Page
 -->
 <html lang="en-us">
-    <head>   
+    <head>  
+        <title>SP Home</title>
         <meta charset="UTF-8"/>
         <meta name="author" content="Shannon Polfer">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>SP Home</title>
-        <link href="../../css/home_style.css" rel="stylesheet" type="text/css" 
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+        
+        
+<!--        <link href="../../css/home_style.css" rel="stylesheet" type="text/css" 
               media="screen">
         <link href="../../css/project1.css" rel="stylesheet" type="text/css" 
               media="screen">
-        <script src="../../js/homejs.js"></script>
+        <script src="../../js/homejs.js"></script>-->
     </head>
     <body>
         <header class="header__pages">

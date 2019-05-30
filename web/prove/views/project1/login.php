@@ -27,6 +27,14 @@ Personal Home Page
                 <a href="p1home.php" class="btn btn--white btn--animated btn__pages">&nbsp;&nbsp;&nbsp;&nbsp;Recipe Home&nbsp;&nbsp;&nbsp;&nbsp;</a>
             </div>
         </header>
+         <?php
+                if (isset($message)){
+                    echo $message;
+                }
+                if (isset($_SESSION['message'])) {
+                    echo $_SESSION['message'];
+                }
+                ?>    
         <div class="login_box__page">
         <form method="post" action="p1home.php">
                     
