@@ -12,10 +12,10 @@ Personal Home Page
         <meta name="author" content="Shannon Polfer">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>SP Home</title>
-        <link href="../../css/home_style.css" rel="stylesheet" type="text/css" 
+<!--        <link href="../../css/home_style.css" rel="stylesheet" type="text/css" 
               media="screen">
         <link href="../../css/project1.css" rel="stylesheet" type="text/css" 
-              media="screen">
+              media="screen">-->
         <script src="../../js/homejs.js"></script>
     </head>
     <header class="header__pages project1">
