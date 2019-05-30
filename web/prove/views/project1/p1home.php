@@ -29,21 +29,22 @@ Personal Home Page
                 <a href="../../../index.php" class="btn btn--white btn--animated btn__pages">&nbsp;&nbsp;&nbsp;&nbsp;Home&nbsp;&nbsp;&nbsp;&nbsp;</a>
             </div>
         </header> 
-        <div class="container-fluid">
-        <div>
+        <div class="container">
+
             <?php
             echo '<a href="login.php?action=login" title="Go to login">Login</a><br><span class="login_span">Or Enter Your Username</span>';
             ?>
-        </div>
 
-        <div>
+
+
             <form method="post" action="results.php">
+                <div class="form-group">    
 
-                <input  type="text" name="username" placeholder="Username">
-                <input  type="submit" value="List Your Recipes">
+                    <input  class="form-control" type="text" name="username" placeholder="Username">
+                    <input  class="btn btn-default" type="submit" value="List Your Recipes">
 
-            </form>
-        </div>
+                    </form>
+                </div>
         </div>
         <footer>
             <?php include ('../../common/footer.php'); ?>
