@@ -78,3 +78,8 @@ label {
 .project1{
     height: 40vh;
 }
+
+p {
+    color: #fff;
+    font-size: 1em;
+}
