@@ -32,7 +32,7 @@ Personal Home Page
         <div class="container">
 
             <?php
-            echo '<a href="login.php?action=login" title="Go to login">Login</a><br><span class="login_span">Or Enter Your Username</span>';
+            echo '<h2><a href="login.php?action=login" title="Go to login">Login</a><h2><br><span class="login_span">Or Enter Your Username</span>';
             ?>
 
 
