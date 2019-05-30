@@ -86,13 +86,13 @@ p, h2 {
 
 .login_box {
     position: absolute;
-    top: 70%;
-    left: 47%;
+    top: 58%;
+    left: 41%;
     transform: translate(-60%, -80%);
     text-align: center;
 }
 
 .login {
-    font-size: 2em;
+    font-size: 4em;
     text-decoration: underline;
 }
