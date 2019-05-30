@@ -30,17 +30,17 @@ Personal Home Page
             </div>
         </header> 
         <div class="container-fluid">
-        <div class="login_box">
+        <div>
             <?php
-            echo '<a href="login.php?action=login" title="Go to login" class="login">Login</a><br><span class="login_span">Or Enter Your Username</span>';
+            echo '<a href="login.php?action=login" title="Go to login">Login</a><br><span class="login_span">Or Enter Your Username</span>';
             ?>
         </div>
 
-        <div class="home__btn--message-box p1_message_box">
+        <div>
             <form method="post" action="results.php">
 
-                <input class="input_box" type="text" name="username" placeholder="Username">
-                <input class="btn btn--white btn--animated btn_color" type="submit" value="List Your Recipes">
+                <input  type="text" name="username" placeholder="Username">
+                <input  type="submit" value="List Your Recipes">
 
             </form>
         </div>
