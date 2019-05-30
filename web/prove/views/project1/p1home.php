@@ -41,10 +41,9 @@ Personal Home Page
                 <div class="form-group">    
                     <label for="username">Or Enter Your Username:</label>
                     <input  class="form-control" type="text" name="username" placeholder="Username">
-                    <input  class="btn-primary" type="submit" value="List Your Recipes">
-
-                    </form>
+                    <input  class="form-control btn-primary" type="submit" value="List Your Recipes">
                 </div>
+            </form>
         </div>
         <footer>
             <?php include ('../../common/footer.php'); ?>
