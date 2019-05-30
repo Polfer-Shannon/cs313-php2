@@ -32,7 +32,7 @@ btn {
 
 .foot {
     position: relative;
-    top: 20em;  
+    top: 22em;  
 }
 a {
     text-decoration: none;
@@ -86,8 +86,8 @@ h2 {
 
 .login_box {
     position: absolute;
-    top: 63%;
-    left: 52%;
+    top: 66%;
+    left: 54%;
     transform: translate(-60%, -80%);
     text-align: left;
     
