@@ -87,7 +87,9 @@ Personal Home Page
 //        }
 //        }
         ?> 
-
+        <footer>
+            <?php include ('../../common/footer.php'); ?>
+        </footer>
 
     </body>
 </html>
