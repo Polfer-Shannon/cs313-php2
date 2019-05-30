@@ -90,6 +90,7 @@ h2 {
     left: 52%;
     transform: translate(-60%, -80%);
     text-align: left;
+    margin-bottom: 2em;
 }
 
 .login {
@@ -102,7 +103,7 @@ h2 {
 }
 
 .login_paragraph{
-    font-size: 1em;
+    font-size: 1.5em;
     color: #fff;
 }
 .login_span {
