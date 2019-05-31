@@ -4,7 +4,7 @@ $db = get_db();
 ?>
 <!DOCTYPE html>
 <!--
-Personal Results Page
+Personal Home Page
 -->
 <html lang="en-us">
     <head>   
@@ -27,26 +27,25 @@ Personal Results Page
                 <a href="p1home.php" class="btn btn--white btn--animated btn__pages">&nbsp;&nbsp;&nbsp;&nbsp;Recipe Home&nbsp;&nbsp;&nbsp;&nbsp;</a>
             </div>
         </header>
-        <div>
         <?php
         //get and print data from database
         $user = $_POST['username'];
-        $stmt = $db->prepare('SELECT recipes.name, users.id FROM recipes LEFT JOIN users WHERE recipes.user_id = users.id AND username=:user ORDER BY name');
-        $stmt->bindValue(':user', $user, PDO::PARAM_STR);
+        $stmt = $db->prepare('SELECT * FROM recipes WHERE user_id=:user ORDER BY name');
+        $stmt->bindValue('user', $user, PDO::PARAM_STR);
         $stmt->execute();
         $rows = $stmt->fetchAll(PDO::FETCH_ASSOC);
 
-//        $user2 = $_POST['username'];
-//        $stmt2 = $db->prepare('SELECT * FROM users WHERE id=:id');
-//        $stmt2->bindValue(':id', $user2, PDO::PARAM_STR);
-//        $stmt2->execute();
-//        $rows2 = $stmt2->fetchAll(PDO::FETCH_ASSOC);
+        $user2 = $_POST['username'];
+        $stmt2 = $db->prepare('SELECT * FROM users WHERE id=:id');
+        $stmt2->bindValue('id', $user2, PDO::PARAM_STR);
+        $stmt2->execute();
+        $rows2 = $stmt2->fetchAll(PDO::FETCH_ASSOC);
 
-//        foreach ($rows2 as $r2) {
-//            echo '<h1 class="recipe_list__title">' . 'Recipes for ' . $r2['first_name'] . '</h1>';
-//            echo '<br>';
-//            echo '<p class="recipe_list_title--directions">' . 'Click on a recipe to view directions:' . '</p>';
-//        }
+        foreach ($rows2 as $r2) {
+            echo '<h1 class="recipe_list__title">' . 'Recipes for ' . $r2['first_name'] . '</h1>';
+            echo '<br>';
+            echo '<p class="recipe_list_title--directions">' . 'Click on a recipe to view directions:' . '</p>';
+        }
         foreach ($rows as $r) {
             echo '<span class="r_list"><a href="details.php?recipeLinks=' . $r['id'] . '">' . $r['name'] . '</a></span>';
             echo '<br>';
@@ -88,7 +87,6 @@ Personal Results Page
 //        }
 //        }
         ?> 
-        </div>
         <footer>
             <?php include ('../../common/footer.php'); ?>
         </footer>
