@@ -32,14 +32,14 @@ Personal Home Page
         <div class="container">
 
             <?php
-            echo '<h2><a href="login.php?action=login" title="Go to login">Login</a><h2><br>';
+//            echo '<h2><a href="login.php?action=login" title="Go to login">Login</a><h2><br>';
             ?>
 
 
 
             <form method="post" action="results.php">
                 <div class="form-group">    
-                    <label for="username">Or Enter Your Username:</label>
+                    <label for="username">Please enter your username before choosing an action:</label>
                     <input  class="form-control" type="text" name="username" placeholder="Username">
                     <br>
                     <input  class="form-control btn-primary" type="submit" value="List Your Recipes">
