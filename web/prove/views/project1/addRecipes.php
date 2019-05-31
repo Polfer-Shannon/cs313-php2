@@ -51,12 +51,12 @@ Personal Home Page
                 <div class="form-group">    
                     <label for="addRecipeName">Recipe Name:</label>
                     <input  class="form-control" type="text" name="addRecipeName" placeholder="Recipe Name">
-                    <label for="addRecipeDirections">Directions:</label>
-                    <textarea  class="form-control" type="text" name="addRecipeDirections" placeholder="Directions"></textarea>
                     <label for="addRank">How much does your family like this recipe? (Rank 1 to 5):</label>
                     <input  class="form-control" type="text" name="addRank" placeholder="Family Rank">
                     <label for="addDateServed">When did you last serve this recipe to your family?:</label>
                     <input  class="form-control" type="date" name="addDateServed" placeholder="mm/dd/yyy">
+                    <label for="addRecipeDirections">Directions:</label>
+                    <textarea  class="form-control" type="text" name="addRecipeDirections" placeholder="Directions"></textarea>
                     <br>
                     <input  class="form-control btn-primary" name="newRecipe" type="submit" value="Add Recipe">
                 </div>
