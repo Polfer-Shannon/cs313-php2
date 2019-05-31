@@ -36,8 +36,8 @@ Personal Home Page
 //        $rows = $stmt->fetchAll(PDO::FETCH_ASSOC);
 
         $user2 = $_POST['username'];
-        $stmt2 = $db->prepare('SELECT * FROM users WHERE id=:id');
-        $stmt2->bindValue('id', $user2, PDO::PARAM_STR);
+        $stmt2 = $db->prepare('SELECT * FROM users LEFT JOIN recipes ON users.id = recipes.user_id WHERE username:username;');
+        $stmt2->bindValue('username', $user2, PDO::PARAM_STR);
         $stmt2->execute();
         $rows2 = $stmt2->fetchAll(PDO::FETCH_ASSOC);
 
