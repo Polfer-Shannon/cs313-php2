@@ -29,6 +29,33 @@ Personal Home Page
                 <a href="../../../index.php" class="btn btn--white btn--animated btn__pages">&nbsp;&nbsp;&nbsp;&nbsp;Home&nbsp;&nbsp;&nbsp;&nbsp;</a>
             </div>
         </header> 
+        <div>
+            <?php
+        //get and print data from database
+        $user2 = htmlspecialchars($_POST['username']);
+        $stmt2 = $db->prepare('SELECT * FROM users WHERE username=:username');
+        $stmt2->bindValue(':username', $user2, PDO::PARAM_STR);
+        $stmt2->execute();
+        $rows2 = $stmt2->fetchAll(PDO::FETCH_ASSOC);
+        foreach ($rows2 as $row) {
+           
+                echo '<h1 class="recipe_list__title">' . 'Recipes for ' . $row['first_name'] . '</h1>';
+                echo '<br>';
+                echo '<p>' . 'Click on a recipe to view directions:' . '</p>';
+                
+                $user_id = $row['id'];
+                $stmt = $db->prepare('SELECT * FROM recipes WHERE user_id=:user ORDER BY name');
+                $stmt->bindValue(':user', $user_id, PDO::PARAM_INT);
+                $stmt->execute();
+                $rows = $stmt->fetchAll(PDO::FETCH_ASSOC);
+            
+            foreach ($rows as $r) {
+                echo '<span><a href="details.php?recipeLinks=' . $r['id'] . '">' . $r['name'] . '</a></span>';
+                echo '<br>';
+            }
+        }
+        ?> 
+        </div>
         <div class="container">
             <form>
                 <div class="form-group">    

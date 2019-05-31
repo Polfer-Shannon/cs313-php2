@@ -42,17 +42,11 @@ Personal Home Page
                     <br>
                     <input  class="form-control btn-primary" type="submit" value="List Your Recipes">
                     <br>
-                    
+                    <input  class="form-control btn-primary" name="username" formaction="addRecipes.php" type="submit" value="Add New Recipes">
                 </div>
             </form>
             
-            <form method="post" action="addRecipes.php">
-                <div class="form-group"> 
-                    <input  class="form-control btn-primary" type="submit" value="Add New Recipes">
-                    <br>
-                    
-                </div>
-            </form>
+            
             
         </div>
         <footer>
