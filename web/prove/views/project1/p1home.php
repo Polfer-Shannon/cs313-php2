@@ -44,7 +44,7 @@ Personal Home Page
                     <br>
                     <input  class="form-control btn-primary" type="submit" value="List Your Recipes">
                     <br>
-                    <button class="form-control btn-primary" type="button" onclick="window.location.href = 'addRecipes.php' >Add New Recipes</button>
+                    <button class="form-control btn-primary" type="button" onclick="window.location.href = 'addRecipes.php';" >Add New Recipes</button>
                 </div>
             </form>
             
