@@ -62,7 +62,7 @@ Personal Home Page
                     <label for="username">Recipe Name:</label>
                     <input  class="form-control" type="text" name="recipeName" placeholder="Recipe Name">
                     <label for="username">Directions:</label>
-                    <input  class="form-control" type="text" name="recipeName" placeholder="Recipe Name">
+                    <textarea  class="form-control" type="text" name="recipeName" placeholder="Recipe Name"></textarea>
                     <br>
                     <input  class="form-control btn-primary" type="submit" value="Add Recipe">
                     
