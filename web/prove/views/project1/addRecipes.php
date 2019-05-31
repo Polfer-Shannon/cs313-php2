@@ -68,7 +68,12 @@ Personal Home Page
                     
         </div>
 <?php
-
+echo $add_recipe;
+echo $add_rank;
+echo $add_date;
+echo $user_id;
+echo $add_directions;
+echo $recipe_id;
 ?>
       
         <footer>
