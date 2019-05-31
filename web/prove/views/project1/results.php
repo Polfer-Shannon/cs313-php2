@@ -42,7 +42,7 @@ Personal Home Page
                 
                 $user_id = $row['id'];
                 $_SESSION['users_id'] = $user_id;
-                echo $SESSION['users_id'];
+                echo $_SESSION['users_id'];
                 $stmt = $db->prepare('SELECT * FROM recipes WHERE user_id=:user ORDER BY name');
                 $stmt->bindValue(':user', $user_id, PDO::PARAM_INT);
                 $stmt->execute();
