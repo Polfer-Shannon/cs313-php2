@@ -12,10 +12,10 @@ Personal Home Page
         <meta name="author" content="Shannon Polfer">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>SP Home</title>
-<!--        <link href="../../css/home_style.css" rel="stylesheet" type="text/css" 
-              media="screen">
-        <link href="../../css/project1.css" rel="stylesheet" type="text/css" 
-              media="screen">-->
+        <!--        <link href="../../css/home_style.css" rel="stylesheet" type="text/css" 
+                      media="screen">
+                <link href="../../css/project1.css" rel="stylesheet" type="text/css" 
+                      media="screen">-->
         <script src="../../js/homejs.js"></script>
     </head>
     <body>
@@ -29,26 +29,28 @@ Personal Home Page
         </header>
         <?php
         //get and print data from database
-        $user = $_POST['username'];
-        $stmt = $db->prepare('SELECT * FROM recipes WHERE user_id=:user ORDER BY name');
-        $stmt->bindValue('user', $user, PDO::PARAM_STR);
-        $stmt->execute();
-        $rows = $stmt->fetchAll(PDO::FETCH_ASSOC);
-
         $user2 = $_POST['username'];
-        $stmt2 = $db->prepare('SELECT * FROM users WHERE id=:id');
-        $stmt2->bindValue('id', $user2, PDO::PARAM_STR);
+        $stmt2 = $db->prepare('SELECT * FROM users WHERE username=:username');
+        $stmt2->bindValue(':username', $user2, PDO::PARAM_STR);
         $stmt2->execute();
         $rows2 = $stmt2->fetchAll(PDO::FETCH_ASSOC);
+        foreach ($rows2 as $row) {
+           
+                echo '<h1 class="recipe_list__title">' . 'Recipes for ' . $row['first_name'] . '</h1>';
+                echo '<br>';
+                echo '<p>' . 'Click on a recipe to view directions:' . '</p>';
 
-        foreach ($rows2 as $r2) {
-            echo '<h1 class="recipe_list__title">' . 'Recipes for ' . $r2['first_name'] . '</h1>';
-            echo '<br>';
-            echo '<p class="recipe_list_title--directions">' . 'Click on a recipe to view directions:' . '</p>';
-        }
-        foreach ($rows as $r) {
-            echo '<span class="r_list"><a href="details.php?recipeLinks=' . $r['id'] . '">' . $r['name'] . '</a></span>';
-            echo '<br>';
+
+                $user_id = $row['id'];
+                $stmt = $db->prepare('SELECT * FROM recipes WHERE user_id=:user ORDER BY name');
+                $stmt->bindValue(':user', $user_id, PDO::PARAM_INT);
+                $stmt->execute();
+                $rows = $stmt->fetchAll(PDO::FETCH_ASSOC);
+            
+            foreach ($rows as $r) {
+                echo '<span><a href="details.php?recipeLinks=' . $r['id'] . '">' . $r['name'] . '</a></span>';
+                echo '<br>';
+            }
         }
         ?> 
         <br>
@@ -61,7 +63,7 @@ Personal Home Page
             <input class="btn btn--white btn--animated btn_color" type="submit" value="Change List Order">
         </form>    
 
-        <?php
+<?php
 //        //get and print data from database
 //        $order = $_POST['order'];
 //        $stmt = $db->query('SELECT * FROM recipes ORDER BY rank');
@@ -86,9 +88,9 @@ Personal Home Page
 //            echo '<br>';
 //        }
 //        }
-        ?> 
+?> 
         <footer>
-            <?php include ('../../common/footer.php'); ?>
+        <?php include ('../../common/footer.php'); ?>
         </footer>
 
     </body>
