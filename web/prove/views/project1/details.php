@@ -47,14 +47,14 @@ Personal Home Page
         LEFT JOIN menu
         ON menu.ingredients_id = ingredients.id
         WHERE menu.recipes_id=:recipe_id');
-            $stmt2->bindValue(':recipe_id', $recipe_id2, PDO::PARAM_STR);
+            $stmt2->bindValue(':recipe_id', $recipe_id2, PDO::PARAM_INT);
             $stmt2->execute();
-            $row2 = $stmt2->fetch(PDO::FETCH_ASSOC);
-            foreach ($row2 as $r2){
+            $row2 = $stmt2->fetchAll(PDO::FETCH_ASSOC);
             echo '<p>' . "Ingredient List" . '</p>';
             echo '<br>';
-            echo '<p>' . $row2['food'] . '</p>';
-            echo '<br/>';
+            foreach ($row2 as $r2) {
+                echo '<p>' . $row2['food'] . '</p>';
+                echo '<br/>';
             }
             ?>
         </div>
