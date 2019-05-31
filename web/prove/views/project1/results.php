@@ -30,7 +30,7 @@ Personal Results Page
         <?php
         //get and print data from database
         $user = $_POST['username'];
-        $stmt = $db->prepare('SELECT * FROM recipes WHERE username=:user ORDER BY name');
+        $stmt = $db->prepare('SELECT recipes.name, users.id FROM recipes LEFT JOIN users WHERE recipes.user_id = users.id AND username=:user ORDER BY name');
         $stmt->bindValue(':user', $user, PDO::PARAM_STR);
         $stmt->execute();
         $rows = $stmt->fetchAll(PDO::FETCH_ASSOC);
