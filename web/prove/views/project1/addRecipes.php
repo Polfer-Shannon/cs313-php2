@@ -39,22 +39,22 @@ Personal Home Page
         $rows2 = $stmt2->fetchAll(PDO::FETCH_ASSOC);
         foreach ($rows2 as $row) {
            
-                echo '<h1 class="recipe_list__title">' . 'New Recipes for ' . $row['first_name'] . '</h1>';
+                echo '<h1>' . 'New Recipes for ' . $row['first_name'] . '</h1>';
                 echo '<br>';
-                echo '<p>' . 'Please enter a new recipe name and the directions before adding ingredients:' . '</p>';
+                echo '<p>' . 'Please fill out the top form before adding ingredients:' . '</p>';
                 
-                $user_id = $row['id'];
-                $stmt = $db->prepare('SELECT * FROM recipes WHERE user_id=:user ORDER BY name');
-                $stmt->bindValue(':user', $user_id, PDO::PARAM_INT);
-                $stmt->execute();
-                $rows = $stmt->fetchAll(PDO::FETCH_ASSOC);
+//                $user_id = $row['id'];
+//                $stmt = $db->prepare('SELECT * FROM recipes WHERE user_id=:user ORDER BY name');
+//                $stmt->bindValue(':user', $user_id, PDO::PARAM_INT);
+//                $stmt->execute();
+//                $rows = $stmt->fetchAll(PDO::FETCH_ASSOC);
             
             
         }
         ?> 
         </div>
         <div class="container">
-            <form>
+            <form method="post" action="results.php">
                 <div class="form-group">    
                     <label for="username">Recipe Name:</label>
                     <input  class="form-control" type="text" name="recipeName" placeholder="Recipe Name">
@@ -63,9 +63,9 @@ Personal Home Page
                     <label for="username">How much does your family like this recipe? (Rank 1 to 5):</label>
                     <input  class="form-control" type="text" name="rank" placeholder="Family Rank">
                     <label for="username">When did you last serve this recipe to your family?:</label>
-                    <input  class="form-control" type="date" name="dateServed" placeholder="yyyy-mm-dd">
+                    <input  class="form-control" type="date" name="dateServed" placeholder="mm/dd/yyy">
                     <br>
-                    <input  class="form-control btn-primary" type="submit" value="Add Recipe">
+                    <input  class="form-control btn-primary" name="newRecipe" type="submit" value="Add Recipe">
                     
                 </div>
             </form>
