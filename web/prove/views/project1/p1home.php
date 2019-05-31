@@ -35,8 +35,6 @@ Personal Home Page
 //            echo '<h2><a href="login.php?action=login" title="Go to login">Login</a><h2><br>';
             ?>
 
-
-
             <form method="post" action="results.php">
                 <div class="form-group">    
                     <label for="username">Please enter your username before choosing an action:</label>
@@ -44,7 +42,15 @@ Personal Home Page
                     <br>
                     <input  class="form-control btn-primary" type="submit" value="List Your Recipes">
                     <br>
-                    <button class="form-control btn-primary" type="button" onclick="window.location.href = 'addRecipes.php';" >Add New Recipes</button>
+                    
+                </div>
+            </form>
+            
+            <form method="post" action="addRecipes.php">
+                <div class="form-group"> 
+                    <input  class="form-control btn-primary" type="submit" value="Add New Recipes">
+                    <br>
+                    
                 </div>
             </form>
             
