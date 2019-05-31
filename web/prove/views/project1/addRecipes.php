@@ -49,13 +49,13 @@ Personal Home Page
         <div class="container">
             <form method="post" action="addRecipes.php">
                 <div class="form-group">    
-                    <label for="username">Recipe Name:</label>
+                    <label for="addRecipeName">Recipe Name:</label>
                     <input  class="form-control" type="text" name="addRecipeName" placeholder="Recipe Name">
-                    <label for="username">Directions:</label>
+                    <label for="addRecipeDirections">Directions:</label>
                     <textarea  class="form-control" type="text" name="addRecipeDirections" placeholder="Directions"></textarea>
-                    <label for="username">How much does your family like this recipe? (Rank 1 to 5):</label>
+                    <label for="addRank">How much does your family like this recipe? (Rank 1 to 5):</label>
                     <input  class="form-control" type="text" name="addRank" placeholder="Family Rank">
-                    <label for="username">When did you last serve this recipe to your family?:</label>
+                    <label for="addDateServed">When did you last serve this recipe to your family?:</label>
                     <input  class="form-control" type="date" name="addDateServed" placeholder="mm/dd/yyy">
                     <br>
                     <input  class="form-control btn-primary" name="newRecipe" type="submit" value="Add Recipe">
@@ -67,16 +67,17 @@ Personal Home Page
         </div>
         <?php
         $add_recipe = htmlspecialchars($_POST['addRecipeName']);
-        $add_directions = htmlspecialchars($_POST['addRecipeDirections']);
         $add_rank = htmlspecialchars($_POST['addRank']);
         $add_date = htmlspecialchars($_POST['addDateServed']);
         $user_id = $row['id'];
+        $add_directions = htmlspecialchars($_POST['addRecipeDirections']);
         
-        $stmt = $db->prepare('INSERT INTO recipes(name, directions, rank, date) VALUES(:addRecipeName, :addRecipeDirections, :addRank, :addDateServed);');
+        $stmt = $db->prepare('INSERT INTO recipes(name, rank, date, user_id,  directions,) VALUES(:addRecipeName, :addRank, :addDateServed, :user_id, :addRecipeDirections,);');
         $stmt->bindValue(':addRecipeName', $add_recipe, PDO::PARAM_STR);
-        $stmt->bindValue(':addRecipeDirections', $add_directions, PDO::PARAM_STR);
         $stmt->bindValue(':addRank', $add_rank, PDO::PARAM_INT);
         $stmt->bindValue(':addDateServed', $add_date, PDO::PARAM_STR);
+        $stmt->bindValue(':user_id', $user_id, PDO::PARAM_STR);
+        $stmt->bindValue(':addRecipeDirections', $add_directions, PDO::PARAM_STR);
         $stmt->execute();
         $recipe_id = $db->lastInsertId();
         
