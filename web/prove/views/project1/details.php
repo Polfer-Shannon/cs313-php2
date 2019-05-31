@@ -36,12 +36,6 @@ Personal Home Page
             $stmt->execute();
             $row = $stmt->fetch(PDO::FETCH_ASSOC);
 
-            echo '<h2><span>' . $row['name'] . '</span></h2>';
-            echo '<p>' . "Directions" . '</p>';
-            echo '<br>';
-            echo '<p>' . $row['directions'] . "</p>";
-            echo '<br/>';
-
             $recipe_id2 = $row['id'];
             $stmt2 = $db->prepare('SELECT ingredients.food FROM ingredients
         LEFT JOIN menu
@@ -56,6 +50,11 @@ Personal Home Page
                 echo '<p>' . $r2['food'] . '</p>';
                 echo '<br/>';
             }
+            echo '<h2><span>' . $row['name'] . '</span></h2>';
+            echo '<p>' . "Directions" . '</p>';
+            echo '<br>';
+            echo '<p>' . $row['directions'] . "</p>";
+            echo '<br/>';
             ?>
         </div>
         <footer>
