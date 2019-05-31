@@ -67,7 +67,9 @@ Personal Home Page
             </form>
                     
         </div>
+<?php
 
+?>
       
         <footer>
             <?php include ('../../common/footer.php'); ?>

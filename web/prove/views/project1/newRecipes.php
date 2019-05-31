@@ -23,12 +23,19 @@ $stmt->bindValue(':addRecipeDirections', $add_directions, PDO::PARAM_STR);
 $stmt->execute();
 $recipe_id = $db->lastInsertId();
 
-foreach ($menu as $m) {
-    $stmt = $db->prepare('INSERT INTO menu(recipes_id, ingredients_id) VALUES(:recipies_id, :ingredients_id);');
-    $stmt->bindValue(':recipies_id', $recipe_id, PDO::PARAM_INT);
-    $stmt->bindValue(':ingredients_id', $m, PDO::PARAM_INT);
-    $stmt->execute();
-}
-        
-       
+echo $add_recipe;
+echo $add_rank;
+echo $add_date;
+echo $user_id;
+echo $add_directions;
+echo $recipe_id;
+
+//foreach ($menu as $m) {
+//    $stmt = $db->prepare('INSERT INTO menu(recipes_id, ingredients_id) VALUES(:recipies_id, :ingredients_id);');
+//    $stmt->bindValue(':recipies_id', $recipe_id, PDO::PARAM_INT);
+//    $stmt->bindValue(':ingredients_id', $m, PDO::PARAM_INT);
+//    $stmt->execute();
+//}
+//    header("Location: addRecipes.php");    
+  ?>     
 
