@@ -39,7 +39,7 @@ Personal Home Page
                 echo '<h1 class="recipe_list__title">' . 'Recipes for ' . $row['first_name'] . '</h1>';
                 echo '<br>';
                 echo '<p>' . 'Click on a recipe to view directions:' . '</p>';
-
+                var_dump($rows2);
 
                 $user_id = $row['id'];
                 $stmt = $db->prepare('SELECT * FROM recipes WHERE user_id=:user ORDER BY name');
