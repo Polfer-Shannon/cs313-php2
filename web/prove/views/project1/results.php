@@ -27,6 +27,7 @@ Personal Results Page
                 <a href="p1home.php" class="btn btn--white btn--animated btn__pages">&nbsp;&nbsp;&nbsp;&nbsp;Recipe Home&nbsp;&nbsp;&nbsp;&nbsp;</a>
             </div>
         </header>
+        <div>
         <?php
         //get and print data from database
         $user = $_POST['username'];
@@ -87,6 +88,7 @@ Personal Results Page
 //        }
 //        }
         ?> 
+        </div>
         <footer>
             <?php include ('../../common/footer.php'); ?>
         </footer>
