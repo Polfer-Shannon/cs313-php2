@@ -1,4 +1,9 @@
-        <?php
+   <?php
+require 'dbConnect.php';
+$db = get_db();
+?>   
+
+  <?php
         $add_recipe = htmlspecialchars($_POST['addRecipeName']);
         $add_rank = htmlspecialchars($_POST['addRank']);
         $add_date = htmlspecialchars($_POST['addDateServed']);
