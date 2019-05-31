@@ -46,7 +46,7 @@ Personal Home Page
             $stmt2->execute();
             $row2 = $stmt2->fetchAll(PDO::FETCH_ASSOC);
             echo '<p>' . "Ingredient List" . '</p>';
-            echo '<br>';
+//            echo '<br>';
             foreach ($row2 as $r2) {
                 echo '<p>' . $r2['food'] . '</p>';
                 echo '<br/>';
