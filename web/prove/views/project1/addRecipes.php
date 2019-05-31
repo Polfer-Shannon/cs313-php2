@@ -87,7 +87,7 @@ Personal Home Page
 //            $stmt->bindValue('ingredients_id', $m, PDO::PARAM_INT);
 //            $stmt->execute();
 //        }
-        
+        var_dump($user_id);
         ?>
         <footer>
             <?php include ('../../common/footer.php'); ?>
