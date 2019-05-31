@@ -11,7 +11,7 @@ session_start();
         $users_id = $_SESSION["users_id"];
         $add_directions = htmlspecialchars($_POST['addRecipeDirections']);
         
-        var_dump($users_id);
+        print_r($users_id);
         var_dump($add_recipe);
         var_dump($add_rank);
         var_dump($add_date);
