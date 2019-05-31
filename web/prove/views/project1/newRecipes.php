@@ -10,7 +10,7 @@ $db = get_db();
         $_SESSION['users_id'] = $row['id'];
         $add_directions = htmlspecialchars($_POST['addRecipeDirections']);
         
-        var_dump($user_id);
+        var_dump($_SESSION['users_id']);
         var_dump($add_recipe);
         var_dump($add_rank);
         var_dump($add_date);
