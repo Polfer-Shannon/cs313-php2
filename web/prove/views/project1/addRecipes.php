@@ -32,11 +32,11 @@ Personal Home Page
         <div class="container">
             <form>
                 <div class="form-group">    
-                    <label for="username">Recipe Name</label>
+                    <label for="username">Recipe Name:</label>
                     <input  class="form-control" type="text" name="recipeName" placeholder="Recipe Name">
-                    <label for="username">Recipe Name</label>
+                    <label for="username">Directions:</label>
                     <input  class="form-control" type="text" name="recipeName" placeholder="Recipe Name">
-                    
+                    <br>
                     <input  class="form-control btn-primary" type="submit" value="Add Recipe">
                     
                 </div>
