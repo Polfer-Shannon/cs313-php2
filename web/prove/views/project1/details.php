@@ -42,18 +42,20 @@ Personal Home Page
             echo '<p>' . $row['directions'] . "</p>";
             echo '<br/>';
 
-            
+            $recipe_id2 = $row['id'];
             $stmt2 = $db->prepare('SELECT ingredients.food FROM ingredients
         LEFT JOIN menu
         ON menu.ingredients_id = ingredients.id
         WHERE menu.recipes_id=:recipe_id');
-            $stmt2->bindValue(':id', $recipe_id, PDO::PARAM_STR);
+            $stmt2->bindValue(':recipe_id', $recipe_id2, PDO::PARAM_STR);
             $stmt2->execute();
             $row2 = $stmt2->fetch(PDO::FETCH_ASSOC);
-            echo "<p class='recipe_details'><span>" . $row['name'] . ': ' . 'Ingredient List' . "</span>";
+            foreach ($row2 as $r2){
+            echo '<p>' . "Ingredient List" . '</p>';
             echo '<br>';
-            echo $row2['food'] . '"' . "</p>";
+            echo '<p>' . $row2['food'] . '</p>';
             echo '<br/>';
+            }
             ?>
         </div>
         <footer>
