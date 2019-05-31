@@ -41,7 +41,7 @@ Personal Home Page
            
                 echo '<h1 class="recipe_list__title">' . 'Recipes for ' . $row['first_name'] . '</h1>';
                 echo '<br>';
-                echo '<p>' . 'Click on a recipe to view directions:' . '</p>';
+                echo '<p>' . 'Please enter a new recipe name and the directions before adding ingredients:' . '</p>';
                 
                 $user_id = $row['id'];
                 $stmt = $db->prepare('SELECT * FROM recipes WHERE user_id=:user ORDER BY name');
@@ -49,10 +49,7 @@ Personal Home Page
                 $stmt->execute();
                 $rows = $stmt->fetchAll(PDO::FETCH_ASSOC);
             
-            foreach ($rows as $r) {
-                echo '<span><a href="details.php?recipeLinks=' . $r['id'] . '">' . $r['name'] . '</a></span>';
-                echo '<br>';
-            }
+            
         }
         ?> 
         </div>
