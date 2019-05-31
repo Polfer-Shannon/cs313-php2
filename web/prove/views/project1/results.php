@@ -29,7 +29,7 @@ Personal Home Page
         </header>
         <?php
         //get and print data from database
-        $user2 = $_POST['username'];
+        $user2 = htmlspecialchars($_POST['username']);
         $stmt2 = $db->prepare('SELECT * FROM users WHERE username=:username');
         $stmt2->bindValue(':username', $user2, PDO::PARAM_STR);
         $stmt2->execute();
@@ -40,7 +40,6 @@ Personal Home Page
                 echo '<br>';
                 echo '<p>' . 'Click on a recipe to view directions:' . '</p>';
                 
-
                 $user_id = $row['id'];
                 $stmt = $db->prepare('SELECT * FROM recipes WHERE user_id=:user ORDER BY name');
                 $stmt->bindValue(':user', $user_id, PDO::PARAM_INT);
