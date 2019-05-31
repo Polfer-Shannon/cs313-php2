@@ -29,11 +29,11 @@ Personal Home Page
         </header>
         <?php
         //get and print data from database
-        $user = $_POST['username'];
-        $stmt = $db->prepare('SELECT * FROM recipes WHERE user_id=:user ORDER BY name');
-        $stmt->bindValue('user', $user, PDO::PARAM_STR);
-        $stmt->execute();
-        $rows = $stmt->fetchAll(PDO::FETCH_ASSOC);
+//        $user = $_POST['username'];
+//        $stmt = $db->prepare('SELECT * FROM recipes WHERE user_id=:user ORDER BY name');
+//        $stmt->bindValue('user', $user, PDO::PARAM_STR);
+//        $stmt->execute();
+//        $rows = $stmt->fetchAll(PDO::FETCH_ASSOC);
 
         $user2 = $_POST['username'];
         $stmt2 = $db->prepare('SELECT * FROM users WHERE id=:id');
@@ -46,10 +46,10 @@ Personal Home Page
             echo '<br>';
             echo '<p class="recipe_list_title--directions">' . 'Click on a recipe to view directions:' . '</p>';
         }
-        foreach ($rows as $r) {
-            echo '<span class="r_list"><a href="details.php?recipeLinks=' . $r['id'] . '">' . $r['name'] . '</a></span>';
-            echo '<br>';
-        }
+//        foreach ($rows as $r) {
+//            echo '<span class="r_list"><a href="details.php?recipeLinks=' . $r['id'] . '">' . $r['name'] . '</a></span>';
+//            echo '<br>';
+//        }
         ?> 
         <br>
 
