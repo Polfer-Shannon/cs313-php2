@@ -11,6 +11,10 @@ $db = get_db();
         $add_directions = htmlspecialchars($_POST['addRecipeDirections']);
         
         var_dump($user_id);
+        var_dump($add_recipe);
+        var_dump($add_rank);
+        var_dump($add_date);
+        var_dump($add_directions);
 //        $stmt = $db->prepare('INSERT INTO recipes(name, rank, date, user_id,  directions,) VALUES(:addRecipeName, :addRank, :addDateServed, :user_id, :addRecipeDirections,);');
 //        $stmt->bindValue(':addRecipeName', $add_recipe, PDO::PARAM_STR);
 //        $stmt->bindValue(':addRank', $add_rank, PDO::PARAM_INT);
