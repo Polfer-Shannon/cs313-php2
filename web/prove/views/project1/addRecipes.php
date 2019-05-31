@@ -72,14 +72,15 @@ Personal Home Page
         $user_id = $row['id'];
         $add_directions = htmlspecialchars($_POST['addRecipeDirections']);
         
-        $stmt = $db->prepare('INSERT INTO recipes(name, rank, date, user_id,  directions,) VALUES(:addRecipeName, :addRank, :addDateServed, :user_id, :addRecipeDirections,);');
-        $stmt->bindValue(':addRecipeName', $add_recipe, PDO::PARAM_STR);
-        $stmt->bindValue(':addRank', $add_rank, PDO::PARAM_INT);
-        $stmt->bindValue(':addDateServed', $add_date, PDO::PARAM_STR);
-        $stmt->bindValue(':user_id', $user_id, PDO::PARAM_STR);
-        $stmt->bindValue(':addRecipeDirections', $add_directions, PDO::PARAM_STR);
-        $stmt->execute();
-        $recipe_id = $db->lastInsertId();
+        var_dump($user_id);
+//        $stmt = $db->prepare('INSERT INTO recipes(name, rank, date, user_id,  directions,) VALUES(:addRecipeName, :addRank, :addDateServed, :user_id, :addRecipeDirections,);');
+//        $stmt->bindValue(':addRecipeName', $add_recipe, PDO::PARAM_STR);
+//        $stmt->bindValue(':addRank', $add_rank, PDO::PARAM_INT);
+//        $stmt->bindValue(':addDateServed', $add_date, PDO::PARAM_STR);
+//        $stmt->bindValue(':user_id', $user_id, PDO::PARAM_STR);
+//        $stmt->bindValue(':addRecipeDirections', $add_directions, PDO::PARAM_STR);
+//        $stmt->execute();
+//        $recipe_id = $db->lastInsertId();
         
 //        foreach ($menu as $m){
 //            $stmt = $db->prepare('INSERT INTO menu(recipes_id, ingredients_id) VALUES(:recipies_id, :ingredients_id);');
