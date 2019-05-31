@@ -43,8 +43,10 @@ Personal Home Page
                     <input  class="form-control" type="text" name="username" placeholder="Username">
                     <br>
                     <input  class="form-control btn-primary" type="submit" value="List Your Recipes">
+                    <button class="form-control btn-primary" type="button" value="Add New Recipes" href="addRecipes.php" ></button>
                 </div>
             </form>
+            
         </div>
         <footer>
             <?php include ('../../common/footer.php'); ?>
