@@ -47,7 +47,7 @@ Personal Home Page
         LEFT JOIN menu
         ON menu.ingredients_id = ingredients.id
         WHERE menu.recipes_id=:recipe_id');
-            $stmt2->bindValue(':id', $recipe_id2, PDO::PARAM_STR);
+            $stmt2->bindValue(':id', $recipe_id, PDO::PARAM_STR);
             $stmt2->execute();
             $row2 = $stmt2->fetch(PDO::FETCH_ASSOC);
             echo "<p class='recipe_details'><span>" . $row['name'] . ': ' . 'Ingredient List' . "</span>";
