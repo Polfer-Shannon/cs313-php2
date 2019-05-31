@@ -89,7 +89,7 @@ Personal Home Page
 //        }
         
         ?>
-        <?php var_dump($user_id); ?>
+        <? ?>
         <footer>
             <?php include ('../../common/footer.php'); ?>
         </footer>
