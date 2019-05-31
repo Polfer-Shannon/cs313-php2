@@ -43,6 +43,9 @@ Personal Home Page
                 echo '<h1>' . 'New Recipes for ' . $row['first_name'] . '</h1>';
                 echo '<br>';
                 echo '<p>' . 'Please fill out the top form before adding ingredients:' . '</p>';
+                
+                $user_id = $row['id'];
+                $_SESSION["users_id"] = $user_id;
                             
         }
         ?> 
