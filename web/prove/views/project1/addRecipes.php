@@ -47,7 +47,7 @@ Personal Home Page
         ?> 
         </div>
         <div class="container">
-            <form method="post" action="addRecipes.php">
+            <form method="post" action="newRecipes.php">
                 <div class="form-group">    
                     <label for="addRecipeName">Recipe Name:</label>
                     <input  class="form-control" type="text" name="addRecipeName" placeholder="Recipe Name">
@@ -59,38 +59,12 @@ Personal Home Page
                     <input  class="form-control" type="date" name="addDateServed" placeholder="mm/dd/yyy">
                     <br>
                     <input  class="form-control btn-primary" name="newRecipe" type="submit" value="Add Recipe">
-                    
                 </div>
             </form>
-           
-            
+                    
         </div>
-        <?php
-        $add_recipe = htmlspecialchars($_POST['addRecipeName']);
-        $add_rank = htmlspecialchars($_POST['addRank']);
-        $add_date = htmlspecialchars($_POST['addDateServed']);
-        $user_id = $row['id'];
-        $add_directions = htmlspecialchars($_POST['addRecipeDirections']);
-        
-        var_dump($user_id);
-//        $stmt = $db->prepare('INSERT INTO recipes(name, rank, date, user_id,  directions,) VALUES(:addRecipeName, :addRank, :addDateServed, :user_id, :addRecipeDirections,);');
-//        $stmt->bindValue(':addRecipeName', $add_recipe, PDO::PARAM_STR);
-//        $stmt->bindValue(':addRank', $add_rank, PDO::PARAM_INT);
-//        $stmt->bindValue(':addDateServed', $add_date, PDO::PARAM_STR);
-//        $stmt->bindValue(':user_id', $user_id, PDO::PARAM_STR);
-//        $stmt->bindValue(':addRecipeDirections', $add_directions, PDO::PARAM_STR);
-//        $stmt->execute();
-//        $recipe_id = $db->lastInsertId();
-        
-//        foreach ($menu as $m){
-//            $stmt = $db->prepare('INSERT INTO menu(recipes_id, ingredients_id) VALUES(:recipies_id, :ingredients_id);');
-//            $stmt->bindValue(':recipies_id', $recipe_id, PDO::PARAM_INT);
-//            $stmt->bindValue('ingredients_id', $m, PDO::PARAM_INT);
-//            $stmt->execute();
-//        }
-        
-        ?>
-        <? ?>
+
+      
         <footer>
             <?php include ('../../common/footer.php'); ?>
         </footer>
