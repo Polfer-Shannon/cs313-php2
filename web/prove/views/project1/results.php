@@ -1,6 +1,7 @@
 <?php
 require 'dbConnect.php';
 $db = get_db();
+session_start();
 ?>
 <!DOCTYPE html>
 <!--
@@ -41,10 +42,10 @@ Personal Home Page
                 echo '<p>' . 'Click on a recipe to view directions:' . '</p>';
                 
                 $user_id = $row['id'];
-                $_SESSION['users_id'] = $user_id;
+                $_SESSION["users_id"] = $user_id;
                 
                 echo $user_id;
-                echo $_SESSION['users_id'];
+                echo $_SESSION["users_id"];
                 
                 $stmt = $db->prepare('SELECT * FROM recipes WHERE user_id=:user ORDER BY name');
                 $stmt->bindValue(':user', $user_id, PDO::PARAM_INT);

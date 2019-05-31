@@ -8,7 +8,7 @@ session_start();
         $add_recipe = htmlspecialchars($_POST['addRecipeName']);
         $add_rank = htmlspecialchars($_POST['addRank']);
         $add_date = htmlspecialchars($_POST['addDateServed']);
-        $users_id = $_SESSION['users_id'];
+        $users_id = $_SESSION["users_id"];
         $add_directions = htmlspecialchars($_POST['addRecipeDirections']);
         
         var_dump($users_id);
