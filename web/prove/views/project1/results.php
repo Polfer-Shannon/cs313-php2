@@ -41,8 +41,8 @@ Personal Home Page
         $stmt2->execute();
         $rows2 = $stmt2->fetchAll(PDO::FETCH_ASSOC);
 
-        
-            echo '<h1 class="recipe_list__title">' . 'Recipes for ' . $rows2['first_name'] . '</h1>';
+        foreach ($rows2 as $r2) {
+            echo '<h1 class="recipe_list__title">' . 'Recipes for ' . $r2['first_name'] . '</h1>';
             echo '<br>';
             echo '<p class="recipe_list_title--directions">' . 'Click on a recipe to view directions:' . '</p>';
         
