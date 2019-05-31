@@ -8,7 +8,7 @@ Personal Home Page
 -->
 <html lang="en-us">
     <head>  
-        <title>SP Home</title>
+        <title>Add Recipes</title>
         <meta charset="UTF-8"/>
         <meta name="author" content="Shannon Polfer">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -30,7 +30,17 @@ Personal Home Page
             </div>
         </header> 
         <div class="container">
-
+            <form>
+                <div class="form-group">    
+                    <label for="username">Recipe Name</label>
+                    <input  class="form-control" type="text" name="recipeName" placeholder="Recipe Name">
+                    <label for="username">Recipe Name</label>
+                    <input  class="form-control" type="text" name="recipeName" placeholder="Recipe Name">
+                    
+                    <input  class="form-control btn-primary" type="submit" value="Add Recipe">
+                    
+                </div>
+            </form>
            
             
         </div>
