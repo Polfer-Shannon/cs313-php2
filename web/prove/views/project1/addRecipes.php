@@ -23,7 +23,7 @@ Personal Home Page
         <header class="header__pages">
             <div class="header__text-box header__text-box--pages">
                 <h1 class="heading-primary pages">
-                    <span class="heading-primary--main pages">Organize</span>
+                    <span class="heading-primary--main pages">Add New</span>
                     <span class="heading-primary--sub pages">Favorite Family Recipes</span>
                 </h1>
                 <a href="../../../index.php" class="btn btn--white btn--animated btn__pages">&nbsp;&nbsp;&nbsp;&nbsp;Home&nbsp;&nbsp;&nbsp;&nbsp;</a>
@@ -39,7 +39,7 @@ Personal Home Page
         $rows2 = $stmt2->fetchAll(PDO::FETCH_ASSOC);
         foreach ($rows2 as $row) {
            
-                echo '<h1 class="recipe_list__title">' . 'Recipes for ' . $row['first_name'] . '</h1>';
+                echo '<h1 class="recipe_list__title">' . 'New Recipes for ' . $row['first_name'] . '</h1>';
                 echo '<br>';
                 echo '<p>' . 'Please enter a new recipe name and the directions before adding ingredients:' . '</p>';
                 
@@ -60,6 +60,10 @@ Personal Home Page
                     <input  class="form-control" type="text" name="recipeName" placeholder="Recipe Name">
                     <label for="username">Directions:</label>
                     <textarea  class="form-control" type="text" name="recipeName" placeholder="Recipe Name"></textarea>
+                    <label for="username">How much does your family like this recipe? (Rank 1 to 5):</label>
+                    <input  class="form-control" type="text" name="rank" placeholder="Family Rank">
+                    <label for="username">When did you last serve this recipe to your family?:</label>
+                    <input  class="form-control" type="date" name="dateServed" placeholder="yyyy-mm-dd">
                     <br>
                     <input  class="form-control btn-primary" type="submit" value="Add Recipe">
                     
