@@ -41,6 +41,8 @@ Personal Home Page
                 echo '<p>' . 'Click on a recipe to view directions:' . '</p>';
                 
                 $user_id = $row['id'];
+                $_SESSION['users_id'] = $user_id;
+                echo $user_id;
                 $stmt = $db->prepare('SELECT * FROM recipes WHERE user_id=:user ORDER BY name');
                 $stmt->bindValue(':user', $user_id, PDO::PARAM_INT);
                 $stmt->execute();
