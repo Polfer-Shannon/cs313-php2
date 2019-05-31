@@ -4,7 +4,7 @@ $db = get_db();
 ?>
 <!DOCTYPE html>
 <!--
-Personal Home Page
+Personal Results Page
 -->
 <html lang="en-us">
     <head>   
@@ -30,14 +30,14 @@ Personal Home Page
         <?php
         //get and print data from database
         $user = $_POST['username'];
-        $stmt = $db->prepare('SELECT * FROM recipes WHERE user_id=:user ORDER BY name');
-        $stmt->bindValue('user', $user, PDO::PARAM_STR);
+        $stmt = $db->prepare('SELECT * FROM recipes WHERE username=:user ORDER BY name');
+        $stmt->bindValue(':user', $user, PDO::PARAM_STR);
         $stmt->execute();
         $rows = $stmt->fetchAll(PDO::FETCH_ASSOC);
 
         $user2 = $_POST['username'];
         $stmt2 = $db->prepare('SELECT * FROM users WHERE id=:id');
-        $stmt2->bindValue('id', $user2, PDO::PARAM_STR);
+        $stmt2->bindValue(':id', $user2, PDO::PARAM_STR);
         $stmt2->execute();
         $rows2 = $stmt2->fetchAll(PDO::FETCH_ASSOC);
 
