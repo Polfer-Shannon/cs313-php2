@@ -81,12 +81,12 @@ Personal Home Page
         $stmt->execute();
         $recipe_id = $db->lastInsertId();
         
-        foreach ($menu as $m){
-            $stmt = $db->prepare('INSERT INTO menu(recipes_id, ingredients_id) VALUES(:recipies_id, :ingredients_id);');
-            $stmt->bindValue(':recipies_id', $recipe_id, PDO::PARAM_INT);
-            $stmt->bindValue('ingredients_id', $m, PDO::PARAM_INT);
-            $stmt->execute();
-        }
+//        foreach ($menu as $m){
+//            $stmt = $db->prepare('INSERT INTO menu(recipes_id, ingredients_id) VALUES(:recipies_id, :ingredients_id);');
+//            $stmt->bindValue(':recipies_id', $recipe_id, PDO::PARAM_INT);
+//            $stmt->bindValue('ingredients_id', $m, PDO::PARAM_INT);
+//            $stmt->execute();
+//        }
         
         ?>
         <footer>
