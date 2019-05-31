@@ -35,17 +35,17 @@ Personal Results Page
         $stmt->execute();
         $rows = $stmt->fetchAll(PDO::FETCH_ASSOC);
 
-        $user2 = $_POST['username'];
-        $stmt2 = $db->prepare('SELECT * FROM users WHERE id=:id');
-        $stmt2->bindValue(':id', $user2, PDO::PARAM_STR);
-        $stmt2->execute();
-        $rows2 = $stmt2->fetchAll(PDO::FETCH_ASSOC);
+//        $user2 = $_POST['username'];
+//        $stmt2 = $db->prepare('SELECT * FROM users WHERE id=:id');
+//        $stmt2->bindValue(':id', $user2, PDO::PARAM_STR);
+//        $stmt2->execute();
+//        $rows2 = $stmt2->fetchAll(PDO::FETCH_ASSOC);
 
-        foreach ($rows2 as $r2) {
-            echo '<h1 class="recipe_list__title">' . 'Recipes for ' . $r2['first_name'] . '</h1>';
-            echo '<br>';
-            echo '<p class="recipe_list_title--directions">' . 'Click on a recipe to view directions:' . '</p>';
-        }
+//        foreach ($rows2 as $r2) {
+//            echo '<h1 class="recipe_list__title">' . 'Recipes for ' . $r2['first_name'] . '</h1>';
+//            echo '<br>';
+//            echo '<p class="recipe_list_title--directions">' . 'Click on a recipe to view directions:' . '</p>';
+//        }
         foreach ($rows as $r) {
             echo '<span class="r_list"><a href="details.php?recipeLinks=' . $r['id'] . '">' . $r['name'] . '</a></span>';
             echo '<br>';
