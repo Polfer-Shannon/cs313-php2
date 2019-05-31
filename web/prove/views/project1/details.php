@@ -53,7 +53,7 @@ Personal Home Page
             echo '<p>' . "Ingredient List" . '</p>';
             echo '<br>';
             foreach ($row2 as $r2) {
-                echo '<p>' . $row2['food'] . '</p>';
+                echo '<p>' . $r2['food'] . '</p>';
                 echo '<br/>';
             }
             ?>
