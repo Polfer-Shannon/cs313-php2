@@ -36,16 +36,16 @@ Personal Home Page
 //        $rows = $stmt->fetchAll(PDO::FETCH_ASSOC);
 
         $user2 = $_POST['username'];
-        $stmt2 = $db->prepare('SELECT name FROM users LEFT JOIN recipes ON users.id = recipes.user_id WHERE username=:username;');
+        $stmt2 = $db->prepare('SELECT * FROM users WHERE username=:username;');
         $stmt2->bindValue('username', $user2, PDO::PARAM_STR);
         $stmt2->execute();
         $rows2 = $stmt2->fetchAll(PDO::FETCH_ASSOC);
 
-        foreach ($rows2 as $r2) {
-            echo '<h1 class="recipe_list__title">' . 'Recipes for ' . $r2['first_name'] . '</h1>';
+        
+            echo '<h1 class="recipe_list__title">' . 'Recipes for ' . $rows2['first_name'] . '</h1>';
             echo '<br>';
             echo '<p class="recipe_list_title--directions">' . 'Click on a recipe to view directions:' . '</p>';
-        }
+        
 //        foreach ($rows as $r) {
 //            echo '<span class="r_list"><a href="details.php?recipeLinks=' . $r['id'] . '">' . $r['name'] . '</a></span>';
 //            echo '<br>';

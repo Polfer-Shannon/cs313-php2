@@ -162,3 +162,5 @@ ON ingredients.id = menu.ingredients_id
 WHERE ingredients.food =:id;
  
 SELECT * FROM users LEFT JOIN recipes ON users.id = recipes.user_id WHERE username = 'morgock'; 
+
+SELECT id FROM users WHERE username = 'morgock';
