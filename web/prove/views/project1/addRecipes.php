@@ -14,10 +14,10 @@ Personal Home Page
         <meta name="author" content="Shannon Polfer">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">      
-<!--        <link href="../../css/home_style.css" rel="stylesheet" type="text/css" 
-              media="screen">
-        <link href="../../css/project1.css" rel="stylesheet" type="text/css" 
-              media="screen">-->
+        <!--        <link href="../../css/home_style.css" rel="stylesheet" type="text/css" 
+                      media="screen">
+                <link href="../../css/project1.css" rel="stylesheet" type="text/css" 
+                      media="screen">-->
         <script src="../../js/homejs.js"></script>
     </head>
     <body>
@@ -32,23 +32,22 @@ Personal Home Page
         </header> 
         <div>
             <?php
-        //get user's first name to print
-        $user2 = htmlspecialchars($_POST['username']);
-        $stmt2 = $db->prepare('SELECT * FROM users WHERE username=:username');
-        $stmt2->bindValue(':username', $user2, PDO::PARAM_STR);
-        $stmt2->execute();
-        $rows2 = $stmt2->fetchAll(PDO::FETCH_ASSOC);
-        foreach ($rows2 as $row) {
-           
+            //get user's first name to print
+            $user2 = htmlspecialchars($_POST['username']);
+            $stmt2 = $db->prepare('SELECT * FROM users WHERE username=:username');
+            $stmt2->bindValue(':username', $user2, PDO::PARAM_STR);
+            $stmt2->execute();
+            $rows2 = $stmt2->fetchAll(PDO::FETCH_ASSOC);
+            foreach ($rows2 as $row) {
+
                 echo '<h1>' . 'New Recipes for ' . $row['first_name'] . '</h1>';
                 echo '<br>';
                 echo '<p>' . 'Please fill out the top form before adding ingredients:' . '</p>';
-                
+
                 $user_id = $row['id'];
                 $_SESSION["users_id"] = $user_id;
-                            
-        }
-        ?> 
+            }
+            ?> 
         </div>
         <div class="container">
             <form method="post" action="newRecipes.php">
@@ -62,21 +61,23 @@ Personal Home Page
                     <label for="addRecipeDirections">Directions:</label>
                     <textarea  class="form-control" type="text" name="addRecipeDirections" placeholder="Directions"></textarea>
                     <br>
-                    
+
                     <input  class="form-control btn-primary" name="newRecipe" type="submit" value="Add Recipe">
                 </div>
             </form>
-                    
+
         </div>
-<?php
-echo $add_recipe;
-echo $add_rank;
-echo $add_date;
-echo $user_id;
-echo $add_directions;
-echo $recipe_id;
-?>
-      
+        <?php
+        if (isset($_POST['newRecipe'])) {
+            echo $add_recipe;
+            echo $add_rank;
+            echo $add_date;
+            echo $user_id;
+            echo $add_directions;
+            echo $recipe_id;
+        };
+        ?>
+
         <footer>
             <?php include ('../../common/footer.php'); ?>
         </footer>
