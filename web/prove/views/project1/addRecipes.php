@@ -83,10 +83,10 @@ Personal Home Page
         <!--          Enter new ingredients-->
         <form method="post" action="newRecipes.php">
 <?php
-$stmt = $db->query('SELECT * FROM ingredients WHERE ');
-$stmt->bindValue(':', $recipes_id, PDO::PARAM_INT);
-$results = $stmt->fetch(PDO::FETCH_ASSOC);
-$stmt->execute();
+//$stmt = $db->query('SELECT * FROM ingredients WHERE ');
+//$stmt->bindValue(':', $recipes_id, PDO::PARAM_INT);
+//$results = $stmt->fetch(PDO::FETCH_ASSOC);
+//$stmt->execute();
 
     ?>
 
