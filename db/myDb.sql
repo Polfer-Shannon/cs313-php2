@@ -36,7 +36,7 @@ VALUES ('morgock', 'Morgan', 'Polfer', 'littleFace'),
 ('billiam', 'Bill', 'Polfer', 'Billfallo');
 
 
-
+ 
 
 INSERT INTO recipes (name, rank, date, user_id, directions)
 VALUES ('Dijon Salmon', 1, '2019-03-27', 1, 'Defrost salmon filets...'),
@@ -49,6 +49,9 @@ VALUES ('Spaghetti', 3, '2018-03-27', 2, 'Brown the hamburger meat...'),
 ('Chicken Pot Pie', 1, '2018-06-07', 3, 'Boil chicken in boulion...'),
 ('Biscuits and Gravy', 2, '2019-04-20', 3, 'Brown the ground sausage...'),
 ('ACA Salad', 4, '2018-12-20', 2, 'Dice cooked chicken...');
+
+INSERT INTO recipes(name, rank, date, user_id, directions)
+VALUES ('White Bean Chili', 1, '2019-05-30', 1, 'Boil the chicken tenders');
 
 INSERT INTO ingredients (food, category, on_hand)
 VALUES ('Chicken', 'meat', TRUE),
@@ -69,23 +72,23 @@ VALUES ('Cream Cheese', 'dairy', TRUE),
 ('Milk', 'dairy', TRUE);
 
 INSERT INTO menu (ingredients_id, recipes_id)
-VALUES (1,2),
-(1,4),
-(1,6),
-(1,8),
-(2,14),
-(3,6),
-(3,14),
-(4,5),
-(5,14),
-(5,2),
-(6,14),
-(6,6),
-(7,14),
-(8,14),
-(10,5),
-(11,5),
-(12,7);
+VALUES (1,16),
+(1,18),
+(1,20),
+(1,22),
+(2,23),
+(3,23),
+(4,19),
+(5,16),
+(5,23),
+(6,23),
+(6,20),
+(6,16),
+(7,23),
+(8,23),
+(10,19),
+(11,19),
+(12,21);
 
 SELECT ingredients.food, recipes.name, users.first_name, users.last_name, recipes.rank 
 FROM ingredients
