@@ -24,8 +24,8 @@ $stmt->bindValue(':addDateServed', $add_date, PDO::PARAM_STR);
 $stmt->bindValue(':user_id', $users_id, PDO::PARAM_INT);
 $stmt->bindValue(':addRecipeDirections', $add_directions, PDO::PARAM_STR);
 $stmt->execute();
-$recipe_id = $db->lastInsertId();
-$_SESSION["recipe_id"] = $recipe_id;
+$recipes_id = $db->lastInsertId();
+$_SESSION["recipe_id"] = $recipes_id;
 
 foreach ($ingredients as $i) {
     $stmt = $db->prepare('INSERT INTO menu(recipes_id, ingredients_id) VALUES(:recipes_id, :ingredients_id)');
