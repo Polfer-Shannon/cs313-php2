@@ -91,7 +91,7 @@ Personal Home Page
         <div>
         <!--        Display new recipe info-->
         <?php
-        $recipes_id = $_SESSION["recipe_id"];
+        $recipe_id = $_SESSION["recipe_id"];
         $stmt = $db->prepare('SELECT * FROM recipes WHERE id=:recipes_id');
         $stmt->bindValue(':recipes_id', $recipes_id, PDO::PARAM_INT);
         $stmt->execute();
@@ -101,8 +101,9 @@ Personal Home Page
         echo $row['date'];
         echo $row['directions'];
 
+        
         $stmt2 = $db->prepare('SELECT ingredients.food FROM ingredients LEFT JOIN menu ON menu.ingredients_id = ingredients.id WHERE menu.recipes_id =:recipes_id');
-        $stmt2->bindValue(':recipes_id', $recipes_id, PDO::PARAM_INT);
+        $stmt2->bindValue(':recipes_id', $recipe_id, PDO::PARAM_INT);
         $stmt2->execute();
         $ingredients = $stmt2->fetchAll(PDO::FETCH_ASSOC);
         foreach ($ingredients as $i){
