@@ -79,28 +79,32 @@ Personal Home Page
         echo $row['date'];
         echo $row['directions'];
         ?>
-        
+
         <!--          Enter new ingredients-->
-        
+
         <div class="container">
-        <form method="post" action="newRecipes.php">
-<?php
-//$stmt = $db->query('SELECT * FROM ingredients WHERE ');
-//$stmt->bindValue(':', $recipes_id, PDO::PARAM_INT);
-//$results = $stmt->fetch(PDO::FETCH_ASSOC);
-//$stmt->execute();
+            <form method="post" action="newRecipes.php">
+                <?php
+                $stmt = $db->query('SELECT * FROM ingredients ORDER BY category');
+                $results = $stmt->fetchAll(PDO::FETCH_ASSOC);
+                $stmt->execute();
+                foreach ($results as $row) {
+                    ?>
+                    <input type="checkbox" name="ingredients[]" value="<?= $row['id']; ?>"> <?= $row['food']; ?>
+                    <?php
+                }
+                ?>
 
-    ?>
-
-            <input class="form-control" type="checkbox" name="newIngredient" value="true">
-            <input class="form-control" type="text" name="newIngredien_text" placeholder="Add an Ingredient">
-
-            <input class="form-control btn-primary" name="newIngredient" type="submit" value="Add Ingredient">
-        </form>
+                <label for="newIngredient">New Ingredient:</label> 
+                <input class="form-control" type="text" name="newIngredient" value="true">
+                <label for="addCategory">What Category:</label>
+                <input class="form-control" type="text" name="addCategory" placeholder="canned, dairy, dry, meat or produce"> 
+                <input class="form-control btn-primary" name="ingredients[]" type="submit" value="Add Ingredient">
+            </form>
         </div>
-    <footer>
-<?php include ('../../common/footer.php'); ?>
-    </footer>
-</body>
+        <footer>
+            <?php include ('../../common/footer.php'); ?>
+        </footer>
+    </body>
 </html>
 
