@@ -23,7 +23,7 @@ $stmt->bindValue(':addRecipeDirections', $add_directions, PDO::PARAM_STR);
 $stmt->execute();
 $recipe_id = $db->lastInsertId();
 
-
+$_SESSION["recipe_id"] = $recipe_id;
 
 //foreach ($menu as $m) {
 //    $stmt = $db->prepare('INSERT INTO menu(recipes_id, ingredients_id) VALUES(:recipies_id, :ingredients_id);');

@@ -68,18 +68,19 @@ Personal Home Page
 
         </div>
         <?php
+        $recipes_id = $_SESSION($_POST["recipe_id"]);
         if (isset($_POST['newRecipe'])) {
-            echo $add_recipe;
-            echo $add_rank;
-            echo $add_date;
-            echo $user_id;
-            echo $add_directions;
-            echo $recipe_id;
-        };
-        ?>
+            $stmt = $db->prepare('SELECT * FROM recipes WHERE recipes_id=:recipes_id');
+            $stmt->bindValue(':recipes_id', $recipes_id, PDO::PARAM_INT);
+            $row = $stmt->fetch(PDO::FETCH_ASSOC);
+            echo $row['name'];
+            echo $row['rank'];
+            echo $row['date'];
+            echo $row['directions'];
+            ?>
 
-        <footer>
-            <?php include ('../../common/footer.php'); ?>
+            <footer>
+                <?php include ('../../common/footer.php'); ?>
         </footer>
     </body>
 </html>
