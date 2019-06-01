@@ -81,6 +81,8 @@ Personal Home Page
         ?>
         
         <!--          Enter new ingredients-->
+        
+        <div class="container">
         <form method="post" action="newRecipes.php">
 <?php
 //$stmt = $db->query('SELECT * FROM ingredients WHERE ');
@@ -90,12 +92,12 @@ Personal Home Page
 
     ?>
 
-            <input type="checkbox" name="newIngredient" value="true">
-            <input type="text" name="newIngredien_text" placeholder="Add an Ingredient">
+            <input class="form-control" type="checkbox" name="newIngredient" value="true">
+            <input class="form-control" type="text" name="newIngredien_text" placeholder="Add an Ingredient">
 
             <input type="submit" value="Add Ingredient">
         </form>
-   
+        </div>
     <footer>
 <?php include ('../../common/footer.php'); ?>
     </footer>
