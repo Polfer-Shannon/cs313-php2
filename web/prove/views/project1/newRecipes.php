@@ -13,13 +13,8 @@ $add_date = htmlspecialchars($_POST['addDateServed']);
 $users_id = $_SESSION["users_id"];
 $add_directions = htmlspecialchars($_POST['addRecipeDirections']);
 
-echo $add_recipe . ",";
-echo $add_rank . ",";
-echo $add_date . ",";
-echo $users_id . ",";
-echo $add_directions . ",";
 
-$stmt = $db->prepare('INSERT INTO recipes(name, rank, date, user_id, directions,) VALUES(:addRecipeName, :addRank, :addDateServed, :user_id, :addRecipeDirections,);');
+$stmt = $db->prepare('INSERT INTO recipes(name, rank, date, user_id, directions) VALUES(:addRecipeName, :addRank, :addDateServed, :user_id, :addRecipeDirections);');
 $stmt->bindValue(':addRecipeName', $add_recipe, PDO::PARAM_STR);
 $stmt->bindValue(':addRank', $add_rank, PDO::PARAM_INT);
 $stmt->bindValue(':addDateServed', $add_date, PDO::PARAM_STR);
