@@ -70,14 +70,14 @@ Personal Home Page
         <?php
         
         $recipes_id = $_SESSION["recipe_id"];
-            $stmt = $db->prepare('SELECT * FROM recipes WHERE recipes_id=:recipes_id');
-            $stmt->bindValue(':recipes_id', $recipes_id, PDO::PARAM_INT);
-            $row = $stmt->fetch(PDO::FETCH_ASSOC);
-            echo $row['name'];
-            echo $row['rank'];
-            echo $row['date'];
-            echo $row['directions'];
-           
+//            $stmt = $db->prepare('SELECT * FROM recipes WHERE recipes_id=:recipes_id');
+//            $stmt->bindValue(':recipes_id', $recipes_id, PDO::PARAM_INT);
+//            $row = $stmt->fetch(PDO::FETCH_ASSOC);
+//            echo $row['name'];
+//            echo $row['rank'];
+//            echo $row['date'];
+//            echo $row['directions'];
+           echo $recipes_id;
             ?>
 
             <footer>
