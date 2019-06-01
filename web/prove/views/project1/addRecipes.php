@@ -106,8 +106,8 @@ Personal Home Page
         $stmt2->bindValue(':recipes_id', $recipes_id, PDO::PARAM_INT);
         $stmt2->execute();
         $ingredients = $stmt2->fetchAll(PDO::FETCH_ASSOC);
-        foreach ($ingredients as $i){
-            echo "<h4>" . 'Ingredient List' . "</h4>";
+        echo "<h4>" . 'Ingredient List' . "</h4>";
+        foreach ($ingredients as $i){ 
             echo "<p>" . $i['food'] . "</p>";
             echo '<br>';
         }
