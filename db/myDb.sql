@@ -9,8 +9,8 @@ password VARCHAR(15) NOT NULL
 CREATE TABLE recipes (
 id SERIAL PRIMARY KEY,
 name VARCHAR(50) NOT NULL,
-rank SMALLINT CHECK (rank > 0 AND rank < 6) NOT NULL,
-date DATE NOT NULL,
+rank SMALLINT CHECK (rank > 0 AND rank < 6),
+date DATE,
 user_id INT NOT NULL REFERENCES users(id),
 directions TEXT NOT NULL
 );
@@ -21,7 +21,7 @@ CREATE TABLE ingredients (
 id SERIAL PRIMARY KEY,
 food VARCHAR(50) NOT NULL,
 category f_cat NOT NULL,
-on_hand BOOLEAN NOT NULL
+on_hand BOOLEAN
 );
 
 CREATE TABLE menu (
@@ -35,8 +35,7 @@ VALUES ('morgock', 'Morgan', 'Polfer', 'littleFace'),
 ('stevinie', 'Stevie', 'Neff', 'pooBear'),
 ('billiam', 'Bill', 'Polfer', 'Billfallo');
 
-INSERT INTO recipes (name, rank, date, user_id, directions)
-VALUES ('White Bean Chili', 2, '2019-04-28', 1, 'Saute onions and garlic in olive oil. Place all ingredients in pot.');
+
 
 INSERT INTO recipes (name, rank, date, user_id, directions)
 VALUES ('Dijon Salmon', 1, '2019-03-27', 1, 'Defrost salmon filets...'),
