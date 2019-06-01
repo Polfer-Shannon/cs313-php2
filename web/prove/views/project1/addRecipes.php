@@ -96,7 +96,7 @@ Personal Home Page
                 ?>
 
                 <label for="newIngredient">New Ingredient:</label> 
-                <input class="form-control" type="text" name="newIngredient" value="true">
+                <input class="form-control" type="checkbox" name="newIngredient" value="true">
                 <label for="addCategory">What Category:</label>
                 <input class="form-control" type="text" name="addCategory" placeholder="canned, dairy, dry, meat or produce"> 
                 <input class="form-control btn-primary" name="ingredients[]" type="submit" value="Add Ingredient">
