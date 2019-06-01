@@ -14,6 +14,7 @@ $users_id = $_SESSION["users_id"];
 $add_directions = htmlspecialchars($_POST['addRecipeDirections']);
 
 
+
 $stmt = $db->prepare('INSERT INTO recipes(name, rank, date, user_id, directions) VALUES(:addRecipeName, :addRank, :addDateServed, :user_id, :addRecipeDirections);');
 $stmt->bindValue(':addRecipeName', $add_recipe, PDO::PARAM_STR);
 $stmt->bindValue(':addRank', $add_rank, PDO::PARAM_INT);

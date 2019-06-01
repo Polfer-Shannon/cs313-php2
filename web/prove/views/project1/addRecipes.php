@@ -67,23 +67,38 @@ Personal Home Page
             </form>
 
         </div>
+        <!--        Display new recipe info-->
         <?php
-        
         $recipes_id = $_SESSION["recipe_id"];
-            $stmt = $db->prepare('SELECT * FROM recipes WHERE id=:recipes_id');
-            $stmt->bindValue(':recipes_id', $recipes_id, PDO::PARAM_INT);
-            $stmt->execute();
-            $row = $stmt->fetch(PDO::FETCH_ASSOC);
-            echo $row['name'];
-            echo $row['rank'];
-            echo $row['date'];
-            echo $row['directions'];
-           
-            ?>
+        $stmt = $db->prepare('SELECT * FROM recipes WHERE id=:recipes_id');
+        $stmt->bindValue(':recipes_id', $recipes_id, PDO::PARAM_INT);
+        $stmt->execute();
+        $row = $stmt->fetch(PDO::FETCH_ASSOC);
+        echo $row['name'];
+        echo $row['rank'];
+        echo $row['date'];
+        echo $row['directions'];
+        ?>
+        
+        <!--          Enter new ingredients-->
+        <form method="post" action="newRecipes.php">
+<?php
+$stmt = $db->query('SELECT * FROM ingredients WHERE ');
+$stmt->bindValue(':', $recipes_id, PDO::PARAM_INT);
+$results = $stmt->fetch(PDO::FETCH_ASSOC);
+$stmt->execute();
 
-            <footer>
-                <?php include ('../../common/footer.php'); ?>
-        </footer>
-    </body>
+    ?>
+
+            <input type="checkbox" name="newIngredient" value="true">
+            <input type="text" name="newIngredien_text" placeholder="Add an Ingredient">
+
+            <input type="submit" value="Add Ingredient">
+        </form>
+   
+    <footer>
+<?php include ('../../common/footer.php'); ?>
+    </footer>
+</body>
 </html>
 
