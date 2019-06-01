@@ -16,7 +16,7 @@ $add_directions = htmlspecialchars($_POST['addRecipeDirections']);
 echo $add_recipe . ",";
 echo $add_rank . ",";
 echo $add_date . ",";
-echo $user_id . ",";
+echo $users_id . ",";
 echo $add_directions . ",";
 
 $stmt = $db->prepare('INSERT INTO recipes(name, rank, date, user_id, directions,) VALUES(:addRecipeName, :addRank, :addDateServed, :user_id, :addRecipeDirections,);');
