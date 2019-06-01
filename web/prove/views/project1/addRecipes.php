@@ -82,7 +82,7 @@ Personal Home Page
 
         <!--          Enter new ingredients-->
 
-<!--        <div class="container">
+        <div class="container">
             <form method="post" action="newRecipes.php">
                 <?php
                 $stmt = $db->query('SELECT food FROM ingredients LEFT JOIN menu ON menu.ingredients_id = ingredients.id WHERE menu.recipes_id=:user_id ORDER BY category');
@@ -102,7 +102,7 @@ Personal Home Page
                 <input class="form-control" type="text" name="addCategory" placeholder="canned, dairy, dry, meat or produce"> 
                 <input class="form-control btn-primary" name="ingredients[]" type="submit" value="Add Ingredient">
             </form>
-        </div>-->
+        </div>
         <footer>
             <?php include ('../../common/footer.php'); ?>
         </footer>
