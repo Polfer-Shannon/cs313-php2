@@ -18,7 +18,7 @@ $stmt = $db->prepare('INSERT INTO recipes(name, rank, date, user_id, directions)
 $stmt->bindValue(':addRecipeName', $add_recipe, PDO::PARAM_STR);
 $stmt->bindValue(':addRank', $add_rank, PDO::PARAM_INT);
 $stmt->bindValue(':addDateServed', $add_date, PDO::PARAM_STR);
-$stmt->bindValue(':user_id', $user_id, PDO::PARAM_INT);
+$stmt->bindValue(':user_id', $users_id, PDO::PARAM_INT);
 $stmt->bindValue(':addRecipeDirections', $add_directions, PDO::PARAM_STR);
 $stmt->execute();
 $recipe_id = $db->lastInsertId();
