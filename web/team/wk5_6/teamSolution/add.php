@@ -42,7 +42,8 @@ $db = get_db();
                 foreach ($results as $row) {
                     ?>
 
-                    <input type="checkbox" name="topics[]" value="<?= $row['id']; ?>"> <?= $row['name']; ?>
+                    <input type="checkbox" name="topics[]" 
+                           value="<?= $row['id']; ?>"> <?= $row['name']; ?>
                     <?php
                 }
                 ?>
@@ -53,6 +54,7 @@ $db = get_db();
             </form>
 
         </div>
+        <!-- Display new scripture info -->
         <?php
         $stmt = $db->prepare('SELECT * FROM scriptures');
         $stmt->execute();

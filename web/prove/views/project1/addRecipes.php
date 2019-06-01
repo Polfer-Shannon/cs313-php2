@@ -51,22 +51,44 @@ Personal Home Page
         </div>
         <div class="container">
             <form method="post" action="newRecipes.php">
-                <div class="form-group">    
+                <div class="form-group">   
+
                     <label for="addRecipeName">Recipe Name:</label>
                     <input  class="form-control" type="text" name="addRecipeName" placeholder="Recipe Name">
+
                     <label for="addRank">How much does your family like this recipe? (Rank 1 to 5):</label>
                     <input  class="form-control" type="text" name="addRank" placeholder="Family Rank">
+
                     <label for="addDateServed">When did you last serve this recipe to your family?:</label>
                     <input  class="form-control" type="date" name="addDateServed" placeholder="mm/dd/yyy">
+
                     <label for="addRecipeDirections">Directions:</label>
                     <textarea  class="form-control" type="text" name="addRecipeDirections" placeholder="Directions"></textarea>
                     <br>
 
-                    <input  class="form-control btn-primary" name="newRecipe" type="submit" value="Add Recipe">
+                    <?php
+                    $stmt = $db->query('SELECT * FROM ingredients');
+                    $results = $stmt->fetchAll(PDO::FETCH_ASSOC);
+                    $stmt->execute();
+
+                    foreach ($results as $row) {
+                        ?>
+                        <input type="checkbox" name="ingredients[]" value="<?= $row['id']; ?>"> <?= $row['food']; ?>
+                        <?php
+                    }
+                    ?>
+
+                    <label for="newIngredient">New Ingredient:</label> 
+                    <input type="checkbox" name="newIngredient" value="true">
+                    <input type="text" name="newIngredient_text" placeholder="Type new ingredient">
+
+
+                    <input  class="form-control btn-primary" type="submit" value="Add Recipe">
                 </div>
             </form>
 
         </div>
+        <div>
         <!--        Display new recipe info-->
         <?php
         $recipes_id = $_SESSION["recipe_id"];
@@ -78,30 +100,16 @@ Personal Home Page
         echo $row['rank'];
         echo $row['date'];
         echo $row['directions'];
+
+        $stmt2 = $db->prepare('SELECT ingredients.food FROM ingredients LEFT JOIN menu ON menu.ingredients_id = ingredients.id WHERE menu.recipes_id =:recipes_id');
+        $stmt2->bindValue(':recipes_id', $recipes_id, PDO::PARAM_INT);
+        $stmt2->execute();
+        $ingredients = $stmt2->fetchAll(PDO::FETCH_ASSOC);
+        foreach ($ingredients as $i){
+            echo $i['food'];
+            echo '<br>';
+        }
         ?>
-
-        <!--          Enter new ingredients-->
-
-        <div class="container">
-            <form method="post" action="newRecipes.php">
-                <?php
-                $stmt = $db->query('SELECT food FROM ingredients LEFT JOIN menu ON menu.ingredients_id = ingredients.id WHERE menu.recipes_id=:user_id ORDER BY category');
-                $stmt->bindValue(':user_id', $user_id, PDO::PARAM_INT);
-                $stmt->execute();
-                $results = $stmt->fetchAll(PDO::FETCH_ASSOC);
-                foreach ($results as $row) {
-                    ?>
-                    <input type="checkbox" name="ingredients[]" value="<?= $row['id']; ?>"> <?= $row['food']; ?>
-                    <?php
-                }
-                ?>
-
-                <label for="newIngredient">New Ingredient:</label> 
-                <input type="checkbox" name="newIngredient" value="true">
-                <label for="addCategory">What Category:</label>
-                <input class="form-control" type="text" name="addCategory" placeholder="canned, dairy, dry, meat or produce"> 
-                <input class="form-control btn-primary" name="ingredients[]" type="submit" value="Add Ingredient">
-            </form>
         </div>
         <footer>
             <?php include ('../../common/footer.php'); ?>
