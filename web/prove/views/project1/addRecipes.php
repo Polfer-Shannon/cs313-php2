@@ -72,6 +72,7 @@ Personal Home Page
         $recipes_id = $_SESSION["recipe_id"];
             $stmt = $db->prepare('SELECT * FROM recipes WHERE id=:recipes_id');
             $stmt->bindValue(':recipes_id', $recipes_id, PDO::PARAM_INT);
+            $stmt->execute();
             $row = $stmt->fetch(PDO::FETCH_ASSOC);
             echo $row['name'];
             echo $row['rank'];
