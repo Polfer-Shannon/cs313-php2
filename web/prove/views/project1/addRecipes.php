@@ -68,8 +68,8 @@ Personal Home Page
 
         </div>
         <?php
-        
-        $recipes_id = $_SESSION($_POST["recipe_id"]);
+        if (isset($_POST['newRecipe'])) {
+        $recipes_id = $_SESSION["recipe_id"];
             $stmt = $db->prepare('SELECT * FROM recipes WHERE recipes_id=:recipes_id');
             $stmt->bindValue(':recipes_id', $recipes_id, PDO::PARAM_INT);
             $row = $stmt->fetch(PDO::FETCH_ASSOC);
@@ -77,7 +77,7 @@ Personal Home Page
             echo $row['rank'];
             echo $row['date'];
             echo $row['directions'];
-        
+            }
             ?>
 
             <footer>
