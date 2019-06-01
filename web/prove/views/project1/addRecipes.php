@@ -62,6 +62,7 @@ Personal Home Page
                     <label for="addRecipeDirections">Directions:</label>
                     <textarea  class="form-control" type="text" name="addRecipeDirections" placeholder="Directions"></textarea>
                     <br>
+                    
                     <input  class="form-control btn-primary" name="newRecipe" type="submit" value="Add Recipe">
                 </div>
             </form>

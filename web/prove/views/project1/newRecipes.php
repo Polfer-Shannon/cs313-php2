@@ -31,6 +31,6 @@ $recipe_id = $db->lastInsertId();
 //    $stmt->bindValue(':ingredients_id', $m, PDO::PARAM_INT);
 //    $stmt->execute();
 //}
-//    header("Location: addRecipes.php");    
+    header("Location: addRecipes.php");    
   ?>     
 
