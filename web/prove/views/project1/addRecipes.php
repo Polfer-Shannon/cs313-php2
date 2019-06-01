@@ -96,17 +96,19 @@ Personal Home Page
         $stmt->bindValue(':recipes_id', $recipes_id, PDO::PARAM_INT);
         $stmt->execute();
         $row = $stmt->fetch(PDO::FETCH_ASSOC);
-        echo $row['name'];
-        echo $row['rank'];
-        echo $row['date'];
-        echo $row['directions'];
+        echo "<h3>" . $row['name'] . "</h3>";
+        echo "<p>" . 'Family Rank: ' . $row['rank'] . "</p>";
+        echo "<p>" . 'Last Served on: ' . $row['date'] . "</p>";
+        echo "<h4>" . 'Directions:' . "</h4>";
+        echo "<p>" . $row['directions'] . "</p>";
 
         $stmt2 = $db->prepare('SELECT ingredients.food FROM ingredients LEFT JOIN menu ON menu.ingredients_id = ingredients.id WHERE menu.recipes_id =:recipes_id');
         $stmt2->bindValue(':recipes_id', $recipes_id, PDO::PARAM_INT);
         $stmt2->execute();
         $ingredients = $stmt2->fetchAll(PDO::FETCH_ASSOC);
         foreach ($ingredients as $i){
-            echo $i['food'];
+            echo "<h4>" . 'Ingredient List' . "</h4>";
+            echo "<p>" . $i['food'] . "</p>";
             echo '<br>';
         }
         ?>
