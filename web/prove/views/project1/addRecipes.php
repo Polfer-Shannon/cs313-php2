@@ -95,7 +95,7 @@ Personal Home Page
             <input class="form-control" type="checkbox" name="newIngredient" value="true">
             <input class="form-control" type="text" name="newIngredien_text" placeholder="Add an Ingredient">
 
-            <input type="submit" value="Add Ingredient">
+            <input class="form-control btn-primary" name="newIngredient" type="submit" value="Add Ingredient">
         </form>
         </div>
     <footer>
