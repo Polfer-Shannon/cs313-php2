@@ -82,7 +82,27 @@ Personal Home Page
 
         <!--          Enter new ingredients-->
 
-        
+<!--        <div class="container">
+            <form method="post" action="newRecipes.php">
+                <?php
+                $stmt = $db->query('SELECT food FROM ingredients LEFT JOIN menu ON menu.ingredients_id = ingredients.id WHERE menu.recipes_id=:user_id ORDER BY category');
+                $stmt->bindValue(':user_id', $user_id, PDO::PARAM_INT);
+                $stmt->execute();
+                $results = $stmt->fetchAll(PDO::FETCH_ASSOC);
+                foreach ($results as $row) {
+                    ?>
+                    <input type="checkbox" name="ingredients[]" value="<?= $row['id']; ?>"> <?= $row['food']; ?>
+                    <?php
+                }
+                ?>
+
+                <label for="newIngredient">New Ingredient:</label> 
+                <input type="checkbox" name="newIngredient" value="true">
+                <label for="addCategory">What Category:</label>
+                <input class="form-control" type="text" name="addCategory" placeholder="canned, dairy, dry, meat or produce"> 
+                <input class="form-control btn-primary" name="ingredients[]" type="submit" value="Add Ingredient">
+            </form>
+        </div>-->
         <footer>
             <?php include ('../../common/footer.php'); ?>
         </footer>
