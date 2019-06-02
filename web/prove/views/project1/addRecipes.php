@@ -94,8 +94,8 @@ Personal Home Page
         $stmt->execute();
         $row = $stmt->fetch(PDO::FETCH_ASSOC);
         echo "<h3>" . $row['name'] . "</h3>";
-        echo "<p>" . 'Family Rank: ' . $row['rank'] . "</p>";
-        echo "<p>" . 'Last Served on: ' . $row['date'] . "</p>";
+        echo "<h5>" . 'Family Rank: ' . $row['rank'] . "</h5>";
+        echo "<h5>" . 'Last Served on: ' . $row['date'] . "</h5>";
         echo "<h4>" . 'Directions:' . "</h4>";
         echo "<p>" . $row['directions'] . "</p>";
 
