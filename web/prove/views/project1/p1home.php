@@ -26,7 +26,7 @@ Personal Home Page
                     <span class="heading-primary--main pages">Organize</span>
                     <span class="heading-primary--sub pages">Favorite Family Recipes</span>
                 </h1>
-                <a href="../../../index.php" class="btn btn--white btn--animated btn__pages">&nbsp;&nbsp;&nbsp;&nbsp;Home&nbsp;&nbsp;&nbsp;&nbsp;</a>
+                <a href="../../../index.php" class="btn-outline-primary">&nbsp;&nbsp;&nbsp;&nbsp;Home&nbsp;&nbsp;&nbsp;&nbsp;</a>
             </div>
         </header> 
         <div class="container">
