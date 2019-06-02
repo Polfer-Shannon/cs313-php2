@@ -83,7 +83,7 @@ Personal Home Page
                     <input type="text" name="newIngredient_text" placeholder="Type new ingredient">
 
 
-                    <input  class="form-control btn-primary" type="submit" value="Add Recipe">
+                    <input  class="form-control btn-primary" type="submit" name="addRecipe" value="Add Recipe">
                 </div>
             </form>
 
@@ -106,10 +106,12 @@ Personal Home Page
         $stmt2->bindValue(':recipes_id', $recipes_id, PDO::PARAM_INT);
         $stmt2->execute();
         $ingredients = $stmt2->fetchAll(PDO::FETCH_ASSOC);
+        if (isset($_POST["addRecipe"])){
         echo "<h4>" . 'Ingredient List' . "</h4>";
         foreach ($ingredients as $i){ 
             echo "<p>" . $i['food'] . "</p>";
             echo '<br>';
+        }
         }
         ?>
         </div>
