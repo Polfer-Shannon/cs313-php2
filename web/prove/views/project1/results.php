@@ -43,7 +43,6 @@ Personal Home Page
                 echo '<br>';
                 echo '<p>' . 'Click on a recipe to view directions:' . '</p>';
 
-                echo '<form method="post" action="deleteRecipe">';
                 $user_id = $row['id'];
                 $_SESSION["users_id"] = $user_id;
 
@@ -59,12 +58,9 @@ Personal Home Page
                     echo '<br>';
                 }
             }
-            echo '<input type="submit" value="Delete Recipe">';
             ?>
             <a href="deleteRecipe.php?id=<?php echo $row['id'];?>" class="btn btn-primary">Delete Recipe</a>
-               
-            echo '</form>';
-            ?> 
+                
         </div>
         <!--        <br>
         
