@@ -28,7 +28,7 @@ Personal Home Page
 
             </div>
         </header>
-        <div>
+        <div class="container">
             <?php
             $recipe_id = $_GET['recipeLinks'];
             $stmt = $db->prepare('SELECT * FROM recipes WHERE id=:id');
