@@ -59,6 +59,7 @@ Personal Home Page
                     echo '<br>';
                 }
             }
+            echo '<input type="submit" value="Delete Recipe">';
             echo '</form>';
             ?> 
         </div>
