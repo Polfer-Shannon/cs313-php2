@@ -96,6 +96,7 @@ Personal Home Page
         $stmt->bindValue(':recipes_id', $recipes_id, PDO::PARAM_INT);
         $stmt->execute();
         $row = $stmt->fetch(PDO::FETCH_ASSOC);
+        if (isset($_POST["addRecipe"])){
         echo "<h3>" . $row['name'] . "</h3>";
         echo "<p>" . 'Family Rank: ' . $row['rank'] . "</p>";
         echo "<p>" . 'Last Served on: ' . $row['date'] . "</p>";
@@ -106,7 +107,7 @@ Personal Home Page
         $stmt2->bindValue(':recipes_id', $recipes_id, PDO::PARAM_INT);
         $stmt2->execute();
         $ingredients = $stmt2->fetchAll(PDO::FETCH_ASSOC);
-        if (isset($_POST["addRecipe"])){
+        
         echo "<h4>" . 'Ingredient List' . "</h4>";
         foreach ($ingredients as $i){ 
             echo "<p>" . $i['food'] . "</p>";
