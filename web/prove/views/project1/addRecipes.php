@@ -72,7 +72,7 @@ Personal Home Page
 
                     foreach ($results as $row) {
                         ?>
-                        <input type="checkbox" name="ingredients[]" value="<?= $row['id']; ?>"> <?= $row['food']; ?>
+                        <input type="checkbox" name="ingredients[]" value="<?= $row['id']; ?>"> <?= $row['food'] . '</br>'; ?>
                         <?php
                     }
                     ?>
