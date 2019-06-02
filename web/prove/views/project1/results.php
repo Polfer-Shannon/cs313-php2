@@ -51,6 +51,8 @@ Personal Home Page
             $rows = $stmt->fetchAll(PDO::FETCH_ASSOC);
 
             foreach ($rows as $r) {
+                echo '<input type="checkbox" value="true">';
+                echo '';
                 echo '<span><a href="details.php?recipeLinks=' . $r['id'] . '">' . $r['name'] . '</a></span>';
                 echo '<input type="checkbox" value="true">';
                 echo '<br>';
