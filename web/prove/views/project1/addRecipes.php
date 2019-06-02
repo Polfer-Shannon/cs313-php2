@@ -29,7 +29,7 @@ Personal Home Page
                 <a href="p1home.php" class="btn btn-outline-primary">&nbsp;&nbsp;&nbsp;&nbsp;Recipe Home&nbsp;&nbsp;&nbsp;&nbsp;</a>
             </div>
         </header> 
-        <div>
+        <div class="container">
             <?php
             //get user's first name to print
             $user2 = htmlspecialchars($_POST['username']);
@@ -47,8 +47,8 @@ Personal Home Page
                 $_SESSION["users_id"] = $user_id;
             }
             ?> 
-        </div>
-        <div class="container">
+        
+        
             <form method="post" action="newRecipes.php">
                 <div class="form-group">   
 
@@ -85,9 +85,7 @@ Personal Home Page
                     <input  class="form-control btn-primary" type="submit" value="Add Recipe">
                 </div>
             </form>
-
-        </div>
-        <div>
+        
         <!--        Display new recipe info-->
         <?php
         $recipes_id = $_SESSION["recipe_id"];
@@ -112,6 +110,8 @@ Personal Home Page
         }
         ?>
         </div>
+
+
         <footer class="card-footer text-center footer-bg_color" >
             <?php include ('../../common/footer.php'); ?>
         </footer>
