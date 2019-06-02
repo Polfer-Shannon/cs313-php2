@@ -26,47 +26,49 @@ Personal Home Page
                 </h1>
                 <a href="../../../index.php" class="btn btn-outline-primary">&nbsp;&nbsp;&nbsp;&nbsp;Shannon Home&nbsp;&nbsp;&nbsp;&nbsp;</a>
                 <a href="p1home.php" class="btn btn-outline-primary">&nbsp;&nbsp;&nbsp;&nbsp;Recipe Home&nbsp;&nbsp;&nbsp;&nbsp;</a>
-                
+
             </div>
         </header>
-        <?php
-        //get and print data from database
-        $user2 = htmlspecialchars($_POST['username']);
-        $stmt2 = $db->prepare('SELECT * FROM users WHERE username=:username');
-        $stmt2->bindValue(':username', $user2, PDO::PARAM_STR);
-        $stmt2->execute();
-        $rows2 = $stmt2->fetchAll(PDO::FETCH_ASSOC);
-        foreach ($rows2 as $row) {
+        <div>
+            <?php
+            //get and print data from database
+            $user2 = htmlspecialchars($_POST['username']);
+            $stmt2 = $db->prepare('SELECT * FROM users WHERE username=:username');
+            $stmt2->bindValue(':username', $user2, PDO::PARAM_STR);
+            $stmt2->execute();
+            $rows2 = $stmt2->fetchAll(PDO::FETCH_ASSOC);
+            foreach ($rows2 as $row) {
 
-            echo '<h1 class="recipe_list__title">' . 'Recipes for ' . $row['first_name'] . '</h1>';
-            echo '<br>';
-            echo '<p>' . 'Click on a recipe to view directions:' . '</p>';
-
-            $user_id = $row['id'];
-            $_SESSION["users_id"] = $user_id;
-
-            $stmt = $db->prepare('SELECT * FROM recipes WHERE user_id=:user ORDER BY name');
-            $stmt->bindValue(':user', $user_id, PDO::PARAM_INT);
-            $stmt->execute();
-            $rows = $stmt->fetchAll(PDO::FETCH_ASSOC);
-
-            foreach ($rows as $r) {
-                echo '<input type="checkbox" value="true">';
-                echo ' ';
-                echo '<span><a href="details.php?recipeLinks=' . $r['id'] . '">' . $r['name'] . '</a></span>';
+                echo '<h1 class="recipe_list__title">' . 'Recipes for ' . $row['first_name'] . '</h1>';
                 echo '<br>';
-            }
-        }
-        ?> 
-<!--        <br>
+                echo '<p>' . 'Click on a recipe to view directions:' . '</p>';
 
-        <form method="post" action="results.php">
-                        <label for="rank">Enter 1 to Order by Rank :</label>
-            <br>
-                        <label for="rank">Enter 2 to Order by Date :</label>
-            <input class="input_box ib_big" type="text" name="order" placeholder="Enter '1' for rank or '2' for date">
-            <input class="btn btn--white btn--animated btn_color" type="submit" value="Change List Order">
-        </form>    -->
+                $user_id = $row['id'];
+                $_SESSION["users_id"] = $user_id;
+
+                $stmt = $db->prepare('SELECT * FROM recipes WHERE user_id=:user ORDER BY name');
+                $stmt->bindValue(':user', $user_id, PDO::PARAM_INT);
+                $stmt->execute();
+                $rows = $stmt->fetchAll(PDO::FETCH_ASSOC);
+
+                foreach ($rows as $r) {
+                    echo '<input type="checkbox" value="true">';
+                    echo ' ';
+                    echo '<span><a href="details.php?recipeLinks=' . $r['id'] . '">' . $r['name'] . '</a></span>';
+                    echo '<br>';
+                }
+            }
+            ?> 
+        </div>
+        <!--        <br>
+        
+                <form method="post" action="results.php">
+                                <label for="rank">Enter 1 to Order by Rank :</label>
+                    <br>
+                                <label for="rank">Enter 2 to Order by Date :</label>
+                    <input class="input_box ib_big" type="text" name="order" placeholder="Enter '1' for rank or '2' for date">
+                    <input class="btn btn--white btn--animated btn_color" type="submit" value="Change List Order">
+                </form>    -->
 
         <?php
 //        //get and print data from database
