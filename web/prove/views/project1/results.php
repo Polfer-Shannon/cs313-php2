@@ -54,15 +54,15 @@ Personal Home Page
             }
         }
         ?> 
-        <br>
+<!--        <br>
 
         <form method="post" action="results.php">
-            <!--            <label for="rank">Enter 1 to Order by Rank :</label>-->
+                        <label for="rank">Enter 1 to Order by Rank :</label>
             <br>
-            <!--            <label for="rank">Enter 2 to Order by Date :</label>-->
+                        <label for="rank">Enter 2 to Order by Date :</label>
             <input class="input_box ib_big" type="text" name="order" placeholder="Enter '1' for rank or '2' for date">
             <input class="btn btn--white btn--animated btn_color" type="submit" value="Change List Order">
-        </form>    
+        </form>    -->
 
         <?php
 //        //get and print data from database
