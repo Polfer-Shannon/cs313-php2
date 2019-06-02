@@ -49,7 +49,7 @@ Personal Home Page
             
             
         </div>
-        <footer class="card-footer text-muted">
+        <footer class="card-footer text-center" >
             <?php include ('../../common/footer.php'); ?>
         </footer>
     </body>
