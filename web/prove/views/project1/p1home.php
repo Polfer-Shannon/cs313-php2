@@ -36,7 +36,7 @@ Personal Home Page
             ?>
 
             <form method="post" action="results.php">
-                <div class="form-group input-group">    
+                <div class="form-group input-group mb-3">    
                     <label for="username">Please enter your username before choosing an action:</label>
                     <input  class="form-control" type="text" name="username" placeholder="Username">
                     <br>
