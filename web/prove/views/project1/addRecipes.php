@@ -102,12 +102,12 @@ Personal Home Page
         echo "<p>" . 'Last Served on: ' . $row['date'] . "</p>";
         echo "<h4>" . 'Directions:' . "</h4>";
         echo "<p>" . $row['directions'] . "</p>";
-
+        }
         $stmt2 = $db->prepare('SELECT ingredients.food FROM ingredients LEFT JOIN menu ON menu.ingredients_id = ingredients.id WHERE menu.recipes_id =:recipes_id');
         $stmt2->bindValue(':recipes_id', $recipes_id, PDO::PARAM_INT);
         $stmt2->execute();
         $ingredients = $stmt2->fetchAll(PDO::FETCH_ASSOC);
-        
+        if (isset($_POST["addRecipe"])){
         echo "<h4>" . 'Ingredient List' . "</h4>";
         foreach ($ingredients as $i){ 
             echo "<p>" . $i['food'] . "</p>";
