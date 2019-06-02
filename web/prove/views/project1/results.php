@@ -52,9 +52,8 @@ Personal Home Page
 
             foreach ($rows as $r) {
                 echo '<input type="checkbox" value="true">';
-                echo '';
+                echo ' ';
                 echo '<span><a href="details.php?recipeLinks=' . $r['id'] . '">' . $r['name'] . '</a></span>';
-                echo '<input type="checkbox" value="true">';
                 echo '<br>';
             }
         }
