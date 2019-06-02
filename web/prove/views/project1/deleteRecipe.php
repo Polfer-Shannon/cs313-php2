@@ -11,5 +11,5 @@ $stmt->execute();
 $stmt = $db->prepare('DELETE FROM recipes WHERE id = ' . $id);
 $stmt->execute();
 
-header("Location: results.php"); 
+header("Location: p1home.php"); 
 
