@@ -45,13 +45,12 @@ Personal Home Page
             $stmt2->bindValue(':recipe_id', $recipe_id2, PDO::PARAM_INT);
             $stmt2->execute();
             $row2 = $stmt2->fetchAll(PDO::FETCH_ASSOC);
-            echo '<p>' . "Ingredient List" . '</p>';
+            echo '<h3>' . "Ingredient List" . '</h3>';
             foreach ($row2 as $r2) {
                 echo '<p>' . $r2['food'] . '</p>';
-                echo '<br/>';
             }
 
-            echo '<p>' . "Directions" . '</p>';
+            echo '<h3>' . "Directions" . '</h3>';
             echo '<p>' . $row['directions'] . "</p>";
             ?>
         </div>
