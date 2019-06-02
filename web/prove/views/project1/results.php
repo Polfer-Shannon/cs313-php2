@@ -29,7 +29,7 @@ Personal Home Page
 
             </div>
         </header>
-        <div>
+        <div class="container">
             <?php
             //get and print data from database
             $user2 = htmlspecialchars($_POST['username']);
