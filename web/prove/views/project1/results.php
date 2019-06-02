@@ -59,7 +59,7 @@ Personal Home Page
                 }
             }
             ?>
-            <a href="deleteRecipe.php?id=<?php echo $row['id'];?>" class="btn btn-primary">Delete Recipe</a>
+            <a href="deleteRecipe.php?id=<?php echo $r['id'];?>" class="btn btn-primary">Delete Recipe</a>
                 
         </div>
         <!--        <br>
