@@ -49,7 +49,7 @@ Personal Home Page
             
             
         </div>
-        <footer>
+        <footer class="card-footer">
             <?php include ('../../common/footer.php'); ?>
         </footer>
     </body>
