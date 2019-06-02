@@ -60,6 +60,9 @@ Personal Home Page
                 }
             }
             echo '<input type="submit" value="Delete Recipe">';
+            ?>
+            <a href="deleteRecipe.php?id=<?php echo $row['id'];?>" class="btn btn-primary">Delete Recipe</a>
+               
             echo '</form>';
             ?> 
         </div>
