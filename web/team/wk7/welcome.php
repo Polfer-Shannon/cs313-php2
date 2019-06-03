@@ -14,6 +14,7 @@ Team Week 7
         <meta name="viewport" content="width=device-width, initial-scale=1.0">    
 
         <link href="../css/bootstrap.css" rel="stylesheet" type="text/css" media="screen">
+        <link href="wk7.css" rel="stylesheet" type="text/css" media="screen">
         <script src="../../js/homejs.js"></script>
     </head>
 
@@ -22,7 +23,7 @@ Team Week 7
 
         </header>
 <nav class="navbar navbar-expand-md navbar-dark bg-dark mb-4">
-  <a class="navbar-brand" href="#">Top navbar</a>
+  <a class="navbar-brand" href="signUp.php">Sign Up</a>
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
   </button>
@@ -33,7 +34,7 @@ Team Week 7
         <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" href="#">Link</a>
+          <a class="nav-link" href="signUp.php">Sign up</a>
       </li>
       
     </ul>
@@ -41,22 +42,6 @@ Team Week 7
   </div>
 </nav>
         
-          <form class="form-signin">
-  <img class="mb-4" src="/docs/4.3/assets/brand/bootstrap-solid.svg" alt="" width="72" height="72">
-  <h1 class="h3 mb-3 font-weight-normal">Please sign in</h1>
-  <label for="inputEmail" class="sr-only">Email address</label>
-  <input type="email" id="inputEmail" class="form-control" placeholder="Email address" required autofocus>
-  <label for="inputPassword" class="sr-only">Password</label>
-  <input type="password" id="inputPassword" class="form-control" placeholder="Password" required>
-  <div class="checkbox mb-3">
-    <label>
-      <input type="checkbox" value="remember-me"> Remember me
-    </label>
-  </div>
-  <button class="btn btn-lg btn-primary btn-block" type="submit">Sign in</button>
-  <p class="mt-5 mb-3 text-muted">&copy; 2017-2019</p>
-</form>
-    </body>
-</html>
+
 
 
