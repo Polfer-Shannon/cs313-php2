@@ -20,7 +20,7 @@ Team Week 7
     <body>
         <header>
 <nav class="navbar navbar-default">
-  <div>
+  <div class="container">
     <div class="navbar-header">
       <a class="navbar-brand" href="#">WebSiteName</a>
     </div>
