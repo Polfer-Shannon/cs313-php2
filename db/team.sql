@@ -67,11 +67,6 @@ LEFT JOIN username ON note.username_id = username.id
 WHERE talk.id = 1;
 
 
-
-
-
-
-
 INSERT INTO users(id, first_name, last_name) 
 VALUES (100, 'Shannon', 'Polfer');
 
