@@ -17,7 +17,7 @@ Team Week 7
         <script src="../../js/homejs.js"></script>
     </head>
 
-    <body>
+    <body class="text-center">
         <header>
 
         </header>
