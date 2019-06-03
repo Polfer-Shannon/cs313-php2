@@ -42,6 +42,7 @@ Team Week 7
 </nav>
         
           <form class="form-signin">
+              <div class="form-group">
   <img class="mb-4" src="/docs/4.3/assets/brand/bootstrap-solid.svg" alt="" width="72" height="72">
   <h1 class="h3 mb-3 font-weight-normal">Please sign in</h1>
   <label for="inputEmail" class="sr-only">Email address</label>
@@ -54,7 +55,8 @@ Team Week 7
     </label>
   </div>
   <button class="btn btn-lg btn-primary btn-block" type="submit">Sign in</button>
-  <p class="mt-5 mb-3 text-muted">&copy; 2017-2019</p>
+              </div>
+              
 </form>
     </body>
 </html>
