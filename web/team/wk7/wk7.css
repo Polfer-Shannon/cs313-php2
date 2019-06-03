@@ -1,5 +1,7 @@
 .form-group {
-    position: relative;
+    position: absolute;
+    left: 35%;
+    top: 30%;
     width: 25rem;
 }
 
