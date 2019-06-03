@@ -1,6 +1,6 @@
 <?php
-require '../team/dbConnect.php';
-$db = get_db();
+//require '../team/dbConnect.php';
+//$db = get_db();
 ?>
 <!DOCTYPE html>
 <!--
