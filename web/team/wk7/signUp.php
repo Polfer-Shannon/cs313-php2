@@ -1,4 +1,19 @@
-        <link href="../css/bootstrap.css" rel="stylesheet" type="text/css" media="screen">
+ <?php
+require 'dbConnect.php';
+$db = get_db();
+?>
+<!DOCTYPE html>
+<!--
+Team Week 7
+-->
+<html lang="en-us">
+    <head>  
+        <title>SP Home</title>
+        <meta charset="UTF-8"/>
+        <meta name="author" content="Shannon Polfer">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">        
+
+<link href="../css/bootstrap.css" rel="stylesheet" type="text/css" media="screen">
         <link href="wk7.css" rel="stylesheet" type="text/css" media="screen">
         <script src="../../js/homejs.js"></script>
     </head>

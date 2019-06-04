@@ -12,7 +12,6 @@ Team Week 7
         <meta charset="UTF-8"/>
         <meta name="author" content="Shannon Polfer">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">    
-
         <link href="../css/bootstrap.css" rel="stylesheet" type="text/css" media="screen">
         <link href="wk7.css" rel="stylesheet" type="text/css" media="screen">
         <script src="../../js/homejs.js"></script>
