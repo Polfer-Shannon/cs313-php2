@@ -41,7 +41,7 @@ Team Week 7
 
                         <label class="sr-only" for="username">Enter a Username:</label>
                         <input class="form-control" type="text" name="username" id="username" placeholder="Enter a Username"><br>
-                        <label class="sr-only" for="clientPassword">Password:</label></h2> 
+                        <label class="sr-only" for="clientPassword">Password:</label>
                         <input class="form-control" type="password" name="clientPassword" id="clientPassword" placeholder="Required" required pattern="(?=^.{8,}$)(?=.*\d)(?=.*\W+)(?![.\n])(?=.*[A-Z])(?=.*[a-z]).*$"><br>    
                     
                     <p class="login">Passwords must be at least 8 character's and contain at least 1<br> of each of the following: number, capital letter, special character.</p>
