@@ -43,7 +43,7 @@ Team Week 7
                 <label class="sr-only" for="clientPassword">Password:</label>
                 <input class="form-control" type="password" name="clientPassword" id="clientPassword" placeholder="Required" required pattern="(?=^.{8,}$)(?=.*\d)(?=.*\W+)(?![.\n])(?=.*[A-Z])(?=.*[a-z]).*$">   
 
-                <p class="login">Passwords must be at least 8 character's and contain at least 1 of each of the following: number, capital letter, special character.</p>
+                <p class="login">Passwords must be at least 7 character's and contain at least 1 number.</p>
                 <input class="btn btn-lg btn-primary btn-block" type="submit" name="submit" id="regbutton" value="Register">
                 <!--Add the action name - value pair -->
                 <input type="hidden" name="action" value="register">                        
