@@ -11,13 +11,16 @@ if ($action == NULL) {
 }
 
 switch ($action){
+    case 'login':
+        include '../view/login.php';
+        break;
     case 'registration':
         include 'signUp.php';
         break;
    
      default:
-        include '/signUp.php';
+        include 'signUp.php';
         break;
         
 }
-?>
+
