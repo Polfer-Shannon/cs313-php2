@@ -14,3 +14,4 @@ $stmt->bindValue(':username', $username, PDO::PARAM_STR);
 $stmt->bindValue(':password', $password, PDO::PARAM_STR);
 $stmt->execute();
 
+header("Location: login.php"); 

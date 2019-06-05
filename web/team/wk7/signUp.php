@@ -35,7 +35,7 @@ Team Week 7
             </div>
         </nav>
 
-        <form class="form-signin"  method="post" action="/acme/accounts/index.php">
+        <form class="form-signin"  method="post" action="accountIndex.php">
             <div class="form-group">
                 <h1 class="h3 mb-3 font-weight-normal">Account Sign Up</h1>
                 <label class="sr-only" for="username">Enter a Username:</label>
