@@ -12,9 +12,9 @@ if ($action == NULL) {
 
 switch ($action){
     case 'register':
-        include 'signUp';
+        include 'signUp.php';
         break;
-    case
+    
         
 }
 ?>
