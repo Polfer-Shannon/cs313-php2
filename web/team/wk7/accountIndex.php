@@ -17,5 +17,6 @@ $stmt->bindValue(':password', $hash, PDO::PARAM_STR);
 $stmt->execute();
 
 header("Location: login.php"); 
+die();
 
 ?>
