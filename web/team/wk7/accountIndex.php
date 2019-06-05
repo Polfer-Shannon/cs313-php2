@@ -16,7 +16,7 @@ switch ($action){
         break;
    
      default:
-        include 'signUp.php';
+        include '/signUp.php';
         break;
         
 }
