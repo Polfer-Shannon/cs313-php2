@@ -39,13 +39,13 @@ Team Week 7
             </div>
         </nav>
 
-        <form class="form-signin">
+        <form class="form-signin" method="post" action="accountIndex.php">
             <div class="form-group">
                 <h1 class="h3 mb-3 font-weight-normal">Please sign in</h1>
-                <label for="username" class="sr-only">Username</label>
-                <input type="text" name="username"  class="form-control" placeholder="Username">
-                <label for="inputPassword" class="sr-only">Password</label>
-                <input type="password" name="password"  class="form-control" placeholder="Password" required>
+                <label for="clientUsername" class="sr-only">Username</label>
+                <input type="text" name="clientUsername"  class="form-control" placeholder="Username">
+                <label for="clientPassword" class="sr-only">Password</label>
+                <input type="password" name="clientPassword"  class="form-control" placeholder="Password" required pattern="(?=.*\d).{7,}" title="At least 7 character's, 1 must be a number">
 
                 <button class="btn btn-lg btn-primary btn-block" type="submit">Sign in</button>
             </div>

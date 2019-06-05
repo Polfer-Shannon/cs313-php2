@@ -20,3 +20,16 @@ header("Location: login.php");
 
 
 ?>
+ <?php
+ $clientUsername = htmlspecialchars($_post['clientUsername']);
+ $clientPassword = htmlspecialchars($_post['clientPassword']);
+ 
+ if($clientUsername = $username){
+     if(password_verify($passord, $clientPassword)){
+         echo "you're in";
+     }else {
+         echo "try again";
+     }
+ }
+ 
+ ?>
