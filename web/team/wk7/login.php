@@ -31,7 +31,9 @@ Team Week 7
                 <ul class="navbar-nav mr-auto">
 
                     <li class="nav-item">
-                        <a class="nav-link" href="signUp.php">Sign up</a>
+                        <a href="accountIndex.php?action=registration" title='Create an account'
+                       class="nav-link">Create an Account</a>
+                        
                     </li>
 
                 </ul>
