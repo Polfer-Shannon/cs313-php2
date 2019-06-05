@@ -5,22 +5,12 @@ $db = get_db();
 session_start();
 
 
-$action = filter_input(INPUT_POST, 'action');
-if ($action == NULL) {
-    $action = filter_input(INPUT_GET, 'action');
-}
+//Get input from signup form
+$username = htmlspecialchars($_POST['username']);
+$password = htmlspecialchars($_POST['password']);
 
-switch ($action){
-    case 'login':
-        include '../view/login.php';
-        break;
-    case 'registration':
-        include 'signUp.php';
-        break;
-   
-     default:
-        include 'signUp.php';
-        break;
-        
-}
+$stmt = $db->prepare('INSERT INTO client(username, password VALUES ):username, :password');
+$stmt->bindValue(':username', $username, PDO::PARAM_STR);
+$stmt->bindValue(':password', $password, PDO::PARAM_STR);
+$stmt->execute();
 
