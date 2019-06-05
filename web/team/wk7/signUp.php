@@ -41,7 +41,7 @@ Team Week 7
                 <label class="sr-only" for="username">Enter a Username:</label>
                 <input class="form-control" type="text" name="username" placeholder="Enter a Username">
                 <label class="sr-only" for="password">Password:</label>
-                <input class="form-control" type="password" name="password" placeholder="Password" required pattern="^(?=.*\d).{7,}$" title="At least 7 character's, 1 must be a number">   
+                <input class="form-control" type="password" name="password" placeholder="Password" required pattern="^(?=.*\d).(?=^.{8,}$)" title="At least 7 character's, 1 must be a number">   
 
                 <p class="login">Passwords must be at least 7 character's <br> and contain at least 1 number.</p>
                 <input class="btn btn-lg btn-primary btn-block" type="submit" name="submit" id="regbutton" value="Register">
