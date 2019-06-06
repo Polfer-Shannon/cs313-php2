@@ -12,6 +12,8 @@ if (isset($_POST['clientUsername']) && isset($_POST['clientPassword'])){
     $username = filter_input(INPUT_POST, 'clientUsername', FILTER_SANITIZE_STRING);
     $password = filter_input(INPUT_POST, 'clientPassword', FILTER_SANITIZE_STRING);
     
+    $db = get_db();
+    
     $stmt = $db->prepare('SELECT password FROM client WHERE username=:username');
     $stmt->bindValue(':username', $username, PDO::PARAM_STR);
     $result = $stmt->execute();
@@ -79,7 +81,7 @@ if ($badLogin) {
 }
 ?>
 
-        <form class="form-signin" method="post" action="accountIndex.php">
+        <form class="form-signin" method="post" action="login.php">
             <div class="form-group">
                 <h1 class="h3 mb-3 font-weight-normal">Please sign in</h1>
                 <label for="clientUsername" class="sr-only">Username</label>
