@@ -32,8 +32,8 @@ die();
  //Check for post variables. If  not continue
 if (isset($_POST['clientUsername']) && isset($_POST['clientPassword'])){
     //they have submitted a username and password to check
-    $username = htmlspecialchars($_POST['clientUsername']);
-    $password = htmlspecialchars($_POST['clientPassword']);
+    $username = ($_POST['clientUsername']);
+    $password = ($_POST['clientPassword']);
     
     $stmt = $db->prepare('SELECT password FROM client WHERE username=:username');
     $stmt->bindValue(':username', $username, PDO::PARAM_STR);
@@ -48,7 +48,7 @@ if (isset($_POST['clientUsername']) && isset($_POST['clientPassword'])){
             
             // password was correct, put the user on the session, and redirect to home
             $_SESSION['username'] = $username;
-            header("Location: home.php");
+            header("Location: welcome.php");
             die(); //always include a die after redirects
         }else{
             $badLogin = true;
