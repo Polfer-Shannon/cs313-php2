@@ -54,7 +54,7 @@ if ($_SESSION['badLogin']) {
                 <label for="clientUsername" class="sr-only">Username</label>
                 <input type="text" name="clientUsername"  class="form-control" placeholder="Username">
                 <label for="clientPassword" class="sr-only">Password</label>
-                <input type="password" name="clientPassword"  class="form-control" placeholder="Password" required pattern="(?=.*\d).{7,}" title="At least 7 character's, 1 must be a number">
+                <input type="password" name="clientPassword"  class="form-control" placeholder="Password">
 
                 <button class="btn btn-lg btn-primary btn-block" type="submit">Sign in</button>
             </div>
