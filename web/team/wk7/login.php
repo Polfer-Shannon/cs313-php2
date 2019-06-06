@@ -3,7 +3,38 @@ require 'dbConnect.php';
 $db = get_db();
 session_start();
 
-$badLogin = false;
+
+ $badLogin = false;
+ 
+ //Check for post variables. If  not continue
+if (isset($_POST['clientUsername']) && isset($_POST['clientPassword'])){
+    //they have submitted a username and password to check
+    $username = filter_input(INPUT_POST, 'clientUsername', FILTER_SANITIZE_STRING);
+    $password = filter_input(INPUT_POST, 'clientPassword', FILTER_SANITIZE_STRING);
+    
+    $stmt = $db->prepare('SELECT password FROM client WHERE username=:username');
+    $stmt->bindValue(':username', $username, PDO::PARAM_STR);
+    $result = $stmt->execute();
+    
+    if ($result){
+        $row = $stmt->fetch();
+        $hashedPasswordFromDB = $row['password'];
+        
+        //now check to see if the hashed password matches
+        if (password_verify($password, $hashedPasswordFromDB)){
+            
+            // password was correct, put the user on the session, and redirect to home
+            $_SESSION['username'] = $username;
+            header("Location: welcome.php");
+            die(); //always include a die after redirects
+        }else{
+            $badLogin = true;
+        }
+    }else{
+        $badLogin = true;
+    }
+    
+}
 ?>
 <!DOCTYPE html>
 <!--
@@ -43,7 +74,7 @@ Team Week 7
         </nav>
 
 <?php
-if ($_SESSION['badLogin']) {
+if ($badLogin) {
     echo "Incorrect username or password!<br /><br />\n";
 }
 ?>
