@@ -1,6 +1,4 @@
 <?php
-
-
 require 'dbConnect.php';
 $db = get_db();
 session_start();
@@ -13,10 +11,8 @@ if (isset($_POST['clientUsername']) && isset($_POST['clientPassword'])){
     //they have submitted a username and password to check
     $username = filter_input(INPUT_POST, 'clientUsername', FILTER_SANITIZE_STRING);
     $password = filter_input(INPUT_POST, 'clientPassword', FILTER_SANITIZE_STRING);
-    
-    
-    $sql = 'SELECT password FROM client WHERE username=:username';
-    $stmt = $db->prepare($sql);
+
+    $stmt = $db->prepare('SELECT password FROM client WHERE username=:username');
     $stmt->bindValue(':username', $username, PDO::PARAM_STR);
     $result = $stmt->execute();
     
