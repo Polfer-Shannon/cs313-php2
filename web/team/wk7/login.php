@@ -43,7 +43,7 @@ Team Week 7
         </nav>
 
 <?php
-if ($badLogin) {
+if ($_SESSION['badLogin']) {
     echo "Incorrect username or password!<br /><br />\n";
 }
 ?>
