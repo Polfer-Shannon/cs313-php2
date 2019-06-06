@@ -1,6 +1,9 @@
 <?php
 require 'dbConnect.php';
 $db = get_db();
+session_start();
+
+$badLogin = false;
 ?>
 <!DOCTYPE html>
 <!--
@@ -38,6 +41,12 @@ Team Week 7
 
             </div>
         </nav>
+
+<?php
+if ($badLogin) {
+    echo "Incorrect username or password!<br /><br />\n";
+}
+?>
 
         <form class="form-signin" method="post" action="accountIndex.php">
             <div class="form-group">
