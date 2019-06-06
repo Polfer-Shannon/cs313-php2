@@ -22,7 +22,7 @@ if(isset($_SESSION['password_error'])){
             <div class="col-md-6 offset-md-3">
                 <h1>Sign Up!</h1>
                 
-                <? 
+                <?php 
                 if(isset($_SESSION['alert'])){
                     echo $_SESSION['alert'];
                     unset($_SESSION['alert']);
@@ -69,7 +69,7 @@ if(isset($_SESSION['password_error'])){
         </script>
     </body>
 </html>
-<?
+<?php
 if(isset($_SESSION['password_error'])){
     unset($_SESSION['password_error']);
 }
