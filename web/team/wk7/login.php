@@ -1,9 +1,9 @@
 <?php
-session_start();
+
 
 require 'dbConnect.php';
 
-
+session_start();
 
 
  $badLogin = false;
