@@ -31,7 +31,7 @@ Personal Home Page
         </header>
         <div class="container">
             <?php
-            //get and print data from database
+            //get and print user's first name from database
             $user2 = htmlspecialchars($_POST['username']);
             $stmt2 = $db->prepare('SELECT * FROM users WHERE username=:username');
             $stmt2->bindValue(':username', $user2, PDO::PARAM_STR);
