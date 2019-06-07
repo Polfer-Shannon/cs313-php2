@@ -52,8 +52,8 @@ Personal Home Page
                 $rows = $stmt->fetchAll(PDO::FETCH_ASSOC);
                 echo '<table>';
                 foreach ($rows as $r) {
-                    echo '<td><a class="btn btn-primary" href="deleteRecipe.php?id=' . $r['id'] . '">' . 'Delete' . '</a></td></tr>';
-                    echo '<tr><td><span><a class="recipes" href="details.php?recipeLinks=' . $r['id'] . '">' . $r['name'] . '</a></span></td>';
+                    echo '<tr><td><a class="btn btn-primary" href="deleteRecipe.php?id=' . $r['id'] . '">' . 'Delete' . '</a></td>';
+                    echo '<td><span><a class="recipes" href="details.php?recipeLinks=' . $r['id'] . '">' . $r['name'] . '</a></span></td></tr>';
                      
                 }
             }
