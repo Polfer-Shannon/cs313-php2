@@ -50,16 +50,17 @@ Personal Home Page
                 $stmt->bindValue(':user', $user_id, PDO::PARAM_INT);
                 $stmt->execute();
                 $rows = $stmt->fetchAll(PDO::FETCH_ASSOC);
-
+                echo '<table>';
                 foreach ($rows as $r) {
-                    echo '<input type="checkbox" value="true">';
-                    echo ' ';
-                    echo '<span><a href="details.php?recipeLinks=' . $r['id'] . '">' . $r['name'] . '</a></span>';
-                    echo '';
-                    echo '<a class="btn btn-primary" href="deleteRecipe.php?id=' . $r['id'] . '">' . 'Delete' . '</a>';
-                    echo '<br>';
+                    echo '<tr><td><input type="checkbox" value="true"></td>';
+             
+                    echo '<td><span><a href="details.php?recipeLinks=' . $r['id'] . '">' . $r['name'] . '</a></span></td>';
+                   
+                    echo '<td><a class="btn btn-primary" href="deleteRecipe.php?id=' . $r['id'] . '">' . 'Delete' . '</a></td></tr>';
+                   
                 }
             }
+            echo '</table>';
             ?>
             
                 
