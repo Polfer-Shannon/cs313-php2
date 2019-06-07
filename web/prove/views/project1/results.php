@@ -56,10 +56,11 @@ Personal Home Page
                     echo ' ';
                     echo '<span><a href="details.php?recipeLinks=' . $r['id'] . '">' . $r['name'] . '</a></span>';
                     echo '<br>';
+                    echo '<a class="btn btn-primary" href="deleteRecipe.php?id=' . $r['id'] . '">' . 'Delete' . '</a>';
                 }
             }
             ?>
-            <a href="deleteRecipe.php?id=<?php echo $r['id'];?>" class="btn btn-primary">Delete Recipe</a>
+            
                 
         </div>
         <!--        <br>
