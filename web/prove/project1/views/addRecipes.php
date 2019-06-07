@@ -14,9 +14,8 @@ Personal Home Page
         <meta name="author" content="Shannon Polfer">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">      
-                <link href="../../css/project1.css" rel="stylesheet" type="text/css" 
+        <link href="../../css/project1.css" rel="stylesheet" type="text/css" 
                       media="screen">
-        <script src="../../js/homejs.js"></script>
     </head>
     <body>
         <header class="header__pages">
@@ -49,7 +48,7 @@ Personal Home Page
             ?> 
         
         
-            <form method="post" action="newRecipes.php">
+            <form method="post" action="../controler/newRecipes.php">
                 <div class="form-group">   
 
                     <label for="addRecipeName">Recipe Name:</label>

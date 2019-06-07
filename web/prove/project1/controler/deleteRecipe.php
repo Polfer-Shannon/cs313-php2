@@ -13,6 +13,6 @@ $stmt = $db->prepare('DELETE FROM recipes WHERE id =:delete_id');
 $stmt->bindValue(':delete_id', $delete_id, PDO::PARAM_INT);
 $stmt->execute();
 
-header("Location: p1home.php"); 
+header("Location: ../views/p1home.php"); 
 
 ?>

@@ -17,7 +17,7 @@ Personal Home Page
               media="screen">
 -->        <link href="../../css/project1.css" rel="stylesheet" type="text/css" 
               media="screen">
-        <script src="../../js/homejs.js"></script>
+        
     </head>
     <body>
         <header class="header__pages">

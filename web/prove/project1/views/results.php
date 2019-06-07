@@ -16,7 +16,7 @@ Personal Home Page
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous"> 
         <link href="../../css/project1.css" rel="stylesheet" type="text/css" 
               media="screen">
-        <script src="../../js/homejs.js"></script>
+        
     </head>
     <body>
         <header class="header__pages project1">
@@ -52,7 +52,7 @@ Personal Home Page
                 $rows = $stmt->fetchAll(PDO::FETCH_ASSOC);
                 echo '<table>';
                 foreach ($rows as $r) {
-                    echo '<tr><td><a class="btn btn-primary" href="deleteRecipe.php?id=' . $r['id'] . '">' . 'Delete' . '</a></td>';
+                    echo '<tr><td><a class="btn btn-primary" href="../controler/deleteRecipe.php?id=' . $r['id'] . '">' . 'Delete' . '</a></td>';
                     echo '<td><span><a class="recipes" href="details.php?recipeLinks=' . $r['id'] . '">' . $r['name'] . '</a></span></td></tr>';
                      
                 }
