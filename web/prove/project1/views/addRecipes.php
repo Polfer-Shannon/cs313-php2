@@ -66,7 +66,7 @@ Personal Home Page
 
                     <?php
                     $_SESSION["users_id"] = $user_id;
-                    $stmt = $db->query('SELECT ingredients.food
+                    $stmt = $db->prepare('SELECT ingredients.food
 FROM ingredients
 INNER JOIN (recipes INNER JOIN menu ON recipes.id = menu.recipes_id)
 ON ingredients.id = menu.ingredients_id
