@@ -55,8 +55,9 @@ Personal Home Page
                     echo '<input type="checkbox" value="true">';
                     echo ' ';
                     echo '<span><a href="details.php?recipeLinks=' . $r['id'] . '">' . $r['name'] . '</a></span>';
-                    echo '<br>';
+                    echo '';
                     echo '<a class="btn btn-primary" href="deleteRecipe.php?id=' . $r['id'] . '">' . 'Delete' . '</a>';
+                    echo '<br>';
                 }
             }
             ?>
