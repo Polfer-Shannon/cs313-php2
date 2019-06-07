@@ -15,7 +15,7 @@ Personal Home Page
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">      
         <link href="../../css/project1.css" rel="stylesheet" type="text/css" 
-              media="screen">
+                      media="screen">
     </head>
     <body>
         <header class="header__pages">
@@ -46,8 +46,8 @@ Personal Home Page
                 $_SESSION["users_id"] = $user_id;
             }
             ?> 
-
-
+        
+        
             <form method="post" action="../controler/newRecipes.php">
                 <div class="form-group">   
 
@@ -65,7 +65,12 @@ Personal Home Page
                     <br>
 
                     <?php
-                    $stmt = $db->query('SELECT * FROM ingredients  ORDER BY ingredients.food');
+                    $stmt = $db->query('SELECT ingredients.food
+FROM ingredients
+INNER JOIN (recipes INNER JOIN menu ON recipes.id = menu.recipes_id)
+ON ingredients.id = menu.ingredients_id
+WHERE recipes.user_id = :user_id');
+                    $stmt2->bindValue(':user_id', $user_id, PDO::PARAM_STR);
                     $results = $stmt->fetchAll(PDO::FETCH_ASSOC);
                     $stmt->execute();
 
@@ -84,34 +89,30 @@ Personal Home Page
                     <input  class="form-control btn-primary" type="submit" value="Add Recipe">
                 </div>
             </form>
+        
+        <!--        Display new recipe info-->
+        <?php
+        $recipes_id = $_SESSION["recipe_id"];
+        $stmt = $db->prepare('SELECT * FROM recipes WHERE id=:recipes_id');
+        $stmt->bindValue(':recipes_id', $recipes_id, PDO::PARAM_INT);
+        $stmt->execute();
+        $row = $stmt->fetch(PDO::FETCH_ASSOC);
+        echo "<h3>" . $row['name'] . "</h3>";
+        echo "<h5>" . 'Family Rank: ' . $row['rank'] . "</h5>";
+        echo "<h5>" . 'Last Served on: ' . $row['date'] . "</h5>";
+        echo "<h4>" . 'Directions:' . "</h4>";
+        echo "<p>" . $row['directions'] . "</p>";
 
-            <!--        Display new recipe info-->
-            <?php
-            $recipes_id = $_SESSION["recipe_id"];
-            $stmt = $db->prepare('SELECT * FROM recipes WHERE id=:recipes_id');
-            $stmt->bindValue(':recipes_id', $recipes_id, PDO::PARAM_INT);
-            $stmt->execute();
-            $row = $stmt->fetch(PDO::FETCH_ASSOC);
-            echo "<h3>" . $row['name'] . "</h3>";
-            echo "<h5>" . 'Family Rank: ' . $row['rank'] . "</h5>";
-            echo "<h5>" . 'Last Served on: ' . $row['date'] . "</h5>";
-            echo "<h4>" . 'Directions:' . "</h4>";
-            echo "<p>" . $row['directions'] . "</p>";
-
-            $stmt2 = $db->prepare('SELECT ingredients.food
-FROM ingredients
-INNER JOIN (recipes INNER JOIN menu ON recipes.id = menu.recipes_id)
-ON ingredients.id = menu.ingredients_id
-WHERE recipes.user_id = :user_id;');
-            $stmt2->bindValue(':user_id', $user_id, PDO::PARAM_INT);
-            $stmt2->execute();
-            $ingredients = $stmt2->fetchAll(PDO::FETCH_ASSOC);
-            echo "<h4>" . 'Ingredient List' . "</h4>";
-            foreach ($ingredients as $i) {
-                echo "<p>" . $i['food'] . "</p>";
-                echo '<br>';
-            }
-            ?>
+        $stmt2 = $db->prepare('SELECT ingredients.food FROM ingredients LEFT JOIN menu ON menu.ingredients_id = ingredients.id WHERE menu.recipes_id =:recipes_id ORDER BY ingredients.food');
+        $stmt2->bindValue(':recipes_id', $recipes_id, PDO::PARAM_INT);
+        $stmt2->execute();
+        $ingredients = $stmt2->fetchAll(PDO::FETCH_ASSOC);
+        echo "<h4>" . 'Ingredient List' . "</h4>";
+        foreach ($ingredients as $i){ 
+            echo "<p>" . $i['food'] . "</p>";
+            echo '<br>';
+        }
+        ?>
         </div>
 
 
