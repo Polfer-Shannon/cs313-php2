@@ -69,6 +69,7 @@ Personal Home Page
                     $results = $stmt->fetchAll(PDO::FETCH_ASSOC);
                     $stmt->execute();
 
+                    var_dump($results);
                     foreach ($results as $row) {
                         ?>
                         <input type="checkbox" name="ingredients[]" value="<?= $row['id']; ?>"> <?= $row['food'] . '</br>'; ?>
