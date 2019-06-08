@@ -28,39 +28,33 @@ Personal Home Page
 
             </div>
         </header>
-        <div class="container">
-            <?php
-            $recipe_id = $_GET['recipeLinks'];
-            $stmt = $db->prepare('SELECT * FROM recipes WHERE id=:id');
-            $stmt->bindValue(':id', $recipe_id, PDO::PARAM_STR);
-            $stmt->execute();
-            $row = $stmt->fetch(PDO::FETCH_ASSOC);
-            echo '<h2><span>' . $row['name'] . '</span></h2>';
+        
+        
+          <!--        Display new recipe info-->
+          <div class="container">
+        <?php
+        $recipes_id = $_SESSION["recipe_id"];
+        $stmt = $db->prepare('SELECT * FROM recipes WHERE id=:recipes_id');
+        $stmt->bindValue(':recipes_id', $recipes_id, PDO::PARAM_INT);
+        $stmt->execute();
+        $row = $stmt->fetch(PDO::FETCH_ASSOC);
+        echo "<h3>" . $row['name'] . "</h3>";
+        echo "<h5>" . 'Family Rank: ' . $row['rank'] . "</h5>";
+        echo "<h5>" . 'Last Served on: ' . $row['date'] . "</h5>";
+        echo "<h4>" . 'Directions:' . "</h4>";
+        echo "<p>" . $row['directions'] . "</p>";
 
-            $recipe_id2 = $row['id'];
-            $stmt2 = $db->prepare('SELECT ingredients.food FROM ingredients
-        LEFT JOIN menu
-        ON menu.ingredients_id = ingredients.id
-        WHERE menu.recipes_id=:recipe_id');
-            $stmt2->bindValue(':recipe_id', $recipe_id2, PDO::PARAM_INT);
-            $stmt2->execute();
-            $row2 = $stmt2->fetchAll(PDO::FETCH_ASSOC);
-            echo '<h3>' . "Ingredient List" . '</h3>';
-            foreach ($row2 as $r2) {
-                echo '<p>' . $r2['food'] . '</p>';
-            }
-
-            echo '<h3>' . "Directions" . '</h3>';
-            echo '<p>' . $row['directions'] . "</p>";
-            ?>
+        $stmt2 = $db->prepare('SELECT ingredients.food FROM ingredients LEFT JOIN menu ON menu.ingredients_id = ingredients.id WHERE menu.recipes_id =:recipes_id ORDER BY ingredients.food');
+        $stmt2->bindValue(':recipes_id', $recipes_id, PDO::PARAM_INT);
+        $stmt2->execute();
+        $ingredients = $stmt2->fetchAll(PDO::FETCH_ASSOC);
+        echo "<h4>" . 'Ingredient List' . "</h4>";
+        foreach ($ingredients as $i){ 
+            echo "<p>" . $i['food'] . "</p>";
+            echo '<br>';
+        }
+        ?>
         </div>
-        
-        
-        
-        <footer class="card-footer text-center footer-bg_color" >
-            <?php include ('../../common/footer.php'); ?>
-        </footer>
     </body>
 </html>
-
 
