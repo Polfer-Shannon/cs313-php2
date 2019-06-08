@@ -65,7 +65,7 @@ Personal Home Page
                     <br>
 
                     <?php
-                    $stmt = $db->query('SELECT * FROM ingredients');
+                    $stmt = $db->query('SELECT ingredient.food FROM ingredients');
                     $results = $stmt->fetchAll(PDO::FETCH_ASSOC);
                     $stmt->execute();
 
