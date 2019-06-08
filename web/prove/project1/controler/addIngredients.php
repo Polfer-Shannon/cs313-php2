@@ -10,6 +10,8 @@ $ingredients = $_POST['ingredients'];
 $newIngredient = htmlspecialchars($_POST['newIngredient']);
 $newIngredient_text = htmlspecialchars($_POST['newIngredient_text']);
 
+$_SESSION['newRecipeId'] = $recipe_id;
+
 foreach ($ingredients as $i) {
     $stmt = $db->prepare('INSERT INTO menu(recipes_id, ingredients_id) VALUES(:recipes_id, :ingredients_id)');
     $stmt->bindValue(':recipes_id', $recipe_id, PDO::PARAM_INT);

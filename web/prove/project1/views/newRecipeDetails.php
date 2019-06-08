@@ -50,6 +50,7 @@ Personal Home Page
         echo "<p>" . $row['directions'] . "</p>";
 
         $_SESSION['newRecipe'] = $row['name'];
+        $_SESSION['newRecipeId'] = $row['id'];
 
         ?>
         </div>
