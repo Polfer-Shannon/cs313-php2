@@ -43,6 +43,9 @@ New Ingredients page
                 ?> 
             </div>
 
+            <form method="post" action="addIngredients.php">
+                <div class="form-group">
+            
             <?php
             $stmt = $db->query('SELECT * FROM ingredients');
             $results = $stmt->fetchAll(PDO::FETCH_ASSOC);
@@ -59,6 +62,11 @@ New Ingredients page
             <label for="newIngredient">New Ingredient:</label> 
             <input type="checkbox" name="newIngredient" value="true">
             <input type="text" name="newIngredient_text" placeholder="Type new ingredient">
+            
+            <input  class="form-control btn-primary" type="submit" value="Add Recipe">
+                </div>
+            </form>
+            
         </div>
     </body>
 </html>

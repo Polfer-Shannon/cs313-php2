@@ -30,7 +30,7 @@ if ($newIngredient == "true"){
     $stmt->execute();
 }
 
-header("Location: ../views/newRecipeDetails.php");
+header("Location: ../views/newIngredientsDetails.php");
 
 
 ?>  
