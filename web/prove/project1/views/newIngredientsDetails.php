@@ -28,15 +28,21 @@ Personal Home Page
 
             </div>
         </header>
-        
-        
-
-        <div class="container">
+         <div class="container">
             <?php
             //get user's first name to print
-            echo $_SESSION['currentUser'];
+            echo "<h1>" . 'Ingredient list for New Recipe for ' . $_SESSION['currentUser'] . "</h1>";
             ?> 
         </div>
+     
+
+            <div class="container">
+                <?php
+                //get user's first name to print
+                echo "<h1>" . 'Recipe Name: ' . $_SESSION['newRecipe'] . "</h1>";
+                ?> 
+            </div>
+  
         <div class="container">
             <!--        Display new ingredient info-->
 
@@ -51,6 +57,10 @@ Personal Home Page
                 echo '<br>';
             }
             ?>
+            
+            <div class="container">
+                <p>Click the Recipe Home button above to view this new recipe from your recipe list.</p>
+            </div>
         </div>
     </body>
 </html>
