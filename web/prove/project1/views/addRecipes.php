@@ -69,7 +69,7 @@ Personal Home Page
                     $results = $stmt->fetchAll(PDO::FETCH_ASSOC);
                     $stmt->execute();
                     
-                    $stmt3 = $db->prepare('SELECT ingredients.food
+                    $stmt3 = $db->prepare('SELECT *
 FROM ingredients
 INNER JOIN (recipes INNER JOIN menu ON recipes.id = menu.recipes_id)
 ON ingredients.id = menu.ingredients_id
