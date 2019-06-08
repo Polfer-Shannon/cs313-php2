@@ -38,7 +38,7 @@ Personal Home Page
             $rows2 = $stmt2->fetchAll(PDO::FETCH_ASSOC);
             foreach ($rows2 as $row) {
 
-                echo '<h1>' . 'New Recipes for ' . $row['first_name'] . '</h1>';
+                echo '<h1>' . 'Add a new recipe to ' . $row['first_name'] . "'s list." . '</h1>';
                 echo '<br>';
                 echo '<p>' . 'Add the following details and click the button to add ingredients:' . '</p>';
 
