@@ -47,7 +47,7 @@ if ($newIngredient == "true") {
     $stmt->bindValue(':ingredients_id', $ingredients_id, PDO::PARAM_INT);
     $stmt->execute();
 }
-header("Location: ../views/details.php");
+header("Location: ../views/newRecipeDetails.php");
 die();
 ?>     
 
