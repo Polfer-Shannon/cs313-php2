@@ -76,6 +76,7 @@ WHERE recipes.user_id = :user_id');
                     $stmt->execute();
 
                     echo $user_id;
+                    var_dump($results);
                     
                     foreach ($results as $row) {
                         ?>
