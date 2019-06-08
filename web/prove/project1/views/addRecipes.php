@@ -70,14 +70,10 @@ Personal Home Page
 FROM ingredients
 INNER JOIN (recipes INNER JOIN menu ON recipes.id = menu.recipes_id)
 ON ingredients.id = menu.ingredients_id
-WHERE recipes.user_id = :user_id');
+WHERE recipes.user_id = :user_id ORDER BY ingredients.food');
                     $stmt->bindValue(':user_id', $user_id, PDO::PARAM_STR);
                     $stmt->execute();
                     $results = $stmt->fetchAll(PDO::FETCH_ASSOC);
-                    
-
-                    echo $user_id;
-                    var_dump($results);
                     
                     foreach ($results as $row) {
                         ?>
