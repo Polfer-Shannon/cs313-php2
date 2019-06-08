@@ -5,11 +5,11 @@ session_start();
 ?>
 <!DOCTYPE html>
 <!--
-Personal Home Page
+New Ingredients page
 -->
 <html lang="en-us">
     <head>  
-        <title>Add Recipes</title>
+        <title>Add Ingredients</title>
         <meta charset="UTF-8"/>
         <meta name="author" content="Shannon Polfer">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -48,3 +48,5 @@ Personal Home Page
 
     </body>
 </html>
+
+
