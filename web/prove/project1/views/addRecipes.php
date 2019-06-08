@@ -65,8 +65,8 @@ Personal Home Page
                     <br>
 
                     <?php
-                    $stmt = $db->query('SELECT * FROM ingredients LEFT JOIN menu ON menu.ingredients_id = ingredients.id WHERE menu.recipes_id =:recipes_id ORDER BY ingredients.food');
-                    $stmt->bindValue(':recipes_id', $_SESSION['users_id'], PDO::PARAM_INT);
+                    $stmt = $db->prepare('SELECT * FROM ingredients LEFT JOIN menu ON menu.ingredients_id = ingredients.id WHERE menu.recipes_id =:recipes_id ORDER BY ingredients.food');
+                    $stmt->bindValue(':recipes_id', $_SESSION['users_id']);
                     $results = $stmt->fetchAll(PDO::FETCH_ASSOC);
                     $stmt->execute();
 
