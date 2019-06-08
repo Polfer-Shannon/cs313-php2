@@ -44,6 +44,7 @@ Personal Home Page
 
                 $user_id = $row['id'];
                 $_SESSION["users_id"] = $user_id;
+                $_SESSION["currentUser"] = $row['first_name'];
             }
             ?> 
         

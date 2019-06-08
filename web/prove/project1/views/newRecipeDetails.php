@@ -32,20 +32,7 @@ Personal Home Page
          <div class="container">
             <?php
             //get user's first name to print
-            $user2 = htmlspecialchars($_POST['username']);
-            $stmt2 = $db->prepare('SELECT * FROM users WHERE username=:username');
-            $stmt2->bindValue(':username', $user2, PDO::PARAM_STR);
-            $stmt2->execute();
-            $rows2 = $stmt2->fetchAll(PDO::FETCH_ASSOC);
-            foreach ($rows2 as $row) {
-
-                echo '<h1>' . 'New Recipes for ' . $row['first_name'] . '</h1>';
-                echo '<br>';
-                echo '<p>' . 'Add the following details and click the button to add ingredients:' . '</p>';
-
-                $user_id = $row['id'];
-                $_SESSION["users_id"] = $user_id;
-            }
+            echo $_SESSION['currentUser'];
             ?> 
         
           <div class="container">
