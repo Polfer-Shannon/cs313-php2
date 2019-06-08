@@ -30,28 +30,28 @@ Personal Home Page
         </header>
         <div class="container">
             <?php
-            $recipe_id = $_GET['recipeLinks'];
-            $stmt = $db->prepare('SELECT * FROM recipes WHERE id=:id');
-            $stmt->bindValue(':id', $recipe_id, PDO::PARAM_STR);
-            $stmt->execute();
-            $row = $stmt->fetch(PDO::FETCH_ASSOC);
-            echo '<h2><span>' . $row['name'] . '</span></h2>';
-
-            $recipe_id2 = $row['id'];
-            $stmt2 = $db->prepare('SELECT ingredients.food FROM ingredients
-        LEFT JOIN menu
-        ON menu.ingredients_id = ingredients.id
-        WHERE menu.recipes_id=:recipe_id');
-            $stmt2->bindValue(':recipe_id', $recipe_id2, PDO::PARAM_INT);
-            $stmt2->execute();
-            $row2 = $stmt2->fetchAll(PDO::FETCH_ASSOC);
-            echo '<h3>' . "Ingredient List" . '</h3>';
-            foreach ($row2 as $r2) {
-                echo '<p>' . $r2['food'] . '</p>';
-            }
-
-            echo '<h3>' . "Directions" . '</h3>';
-            echo '<p>' . $row['directions'] . "</p>";
+//            $recipe_id = $_GET['recipeLinks'];
+//            $stmt = $db->prepare('SELECT * FROM recipes WHERE id=:id');
+//            $stmt->bindValue(':id', $recipe_id, PDO::PARAM_STR);
+//            $stmt->execute();
+//            $row = $stmt->fetch(PDO::FETCH_ASSOC);
+//            echo '<h2><span>' . $row['name'] . '</span></h2>';
+//
+//            $recipe_id2 = $row['id'];
+//            $stmt2 = $db->prepare('SELECT ingredients.food FROM ingredients
+//        LEFT JOIN menu
+//        ON menu.ingredients_id = ingredients.id
+//        WHERE menu.recipes_id=:recipe_id');
+//            $stmt2->bindValue(':recipe_id', $recipe_id2, PDO::PARAM_INT);
+//            $stmt2->execute();
+//            $row2 = $stmt2->fetchAll(PDO::FETCH_ASSOC);
+//            echo '<h3>' . "Ingredient List" . '</h3>';
+//            foreach ($row2 as $r2) {
+//                echo '<p>' . $r2['food'] . '</p>';
+//            }
+//
+//            echo '<h3>' . "Directions" . '</h3>';
+//            echo '<p>' . $row['directions'] . "</p>";
             ?>
         </div>
         
