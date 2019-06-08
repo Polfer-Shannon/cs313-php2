@@ -32,7 +32,7 @@ Personal Home Page
          <div class="container">
             <?php
             //get user's first name to print
-            echo $_SESSION['currentUser'];
+            echo "<h1>" . 'New Recipe for ' . $_SESSION['currentUser'] . "</h1>";
             ?> 
          </div>
           <div class="container">

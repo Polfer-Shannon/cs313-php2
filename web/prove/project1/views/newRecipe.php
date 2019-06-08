@@ -21,7 +21,6 @@ Personal Home Page
         <header class="header__pages">
             <div class="header__text-box header__text-box--pages">
                 <h1 class="heading-primary pages">
-                    <span class="heading-primary--main pages">Add New</span>
                     <span class="heading-primary--sub pages">Favorite Family Recipes</span>
                 </h1>
                 <a href="../../../index.php" class="btn btn-outline-primary">&nbsp;&nbsp;&nbsp;&nbsp; Shannon Home&nbsp;&nbsp;&nbsp;&nbsp;</a>
