@@ -6,7 +6,6 @@ session_start();
 ?>   
 
 <?php
-
 // Get input from forms
 $add_recipe = htmlspecialchars($_POST['addRecipeName']);
 $add_rank = htmlspecialchars($_POST['addRank']);
@@ -36,7 +35,7 @@ foreach ($ingredients as $i) {
 }
 
 
-if ($newIngredient == "true") {
+if ($newIngredient == "true"){
     $stmt = $db->prepare('INSERT INTO ingredients(food) VALUES(:food)');
     $stmt->bindValue(':food', $newIngredient_text, PDO::PARAM_STR);
     $stmt->execute();
@@ -47,7 +46,6 @@ if ($newIngredient == "true") {
     $stmt->bindValue(':ingredients_id', $ingredients_id, PDO::PARAM_INT);
     $stmt->execute();
 }
-header("Location: ../views/newRecipeDetails.php");
-die();
-?>     
+header("Location: ../views/addRecipes.php");    
+  ?>     
 
