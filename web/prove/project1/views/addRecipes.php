@@ -75,7 +75,7 @@ WHERE recipes.user_id = :user_id');
                     $results = $stmt->fetchAll(PDO::FETCH_ASSOC);
                     $stmt->execute();
 
-                    var_dump($results);
+                    echo $user2;
                     
                     foreach ($results as $row) {
                         ?>
