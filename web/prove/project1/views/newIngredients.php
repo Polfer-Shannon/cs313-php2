@@ -43,7 +43,7 @@ New Ingredients page
                 ?> 
             </div>
 
-            <form method="post" action="../addIngredients.php">
+            <form method="post" action="../controler/addIngredients.php">
                 <div class="form-group">
             
             <?php
