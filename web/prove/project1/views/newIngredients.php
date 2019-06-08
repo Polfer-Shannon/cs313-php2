@@ -32,7 +32,7 @@ New Ingredients page
             <?php
             //get user's first name to print
             echo "<h1>" . 'Add Ingredients to New Recipe for ' . $_SESSION['currentUser'] . "</h1>";
-            print_r($_SESSION['currentUser']);
+//            print_r($_SESSION['currentUser']);
             ?> 
         </div>
         <div class="container">
