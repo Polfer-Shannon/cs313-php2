@@ -72,8 +72,9 @@ INNER JOIN (recipes INNER JOIN menu ON recipes.id = menu.recipes_id)
 ON ingredients.id = menu.ingredients_id
 WHERE recipes.user_id = :user_id');
                     $stmt->bindValue(':user_id', $user_id, PDO::PARAM_STR);
-                    $results = $stmt->fetchAll(PDO::FETCH_ASSOC);
                     $stmt->execute();
+                    $results = $stmt->fetchAll(PDO::FETCH_ASSOC);
+                    
 
                     echo $user_id;
                     var_dump($results);
