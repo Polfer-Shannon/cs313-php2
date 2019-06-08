@@ -52,6 +52,8 @@ Personal Home Page
 
         ?>
         </div>
+        
+        <a href="newIngredients.php" class="btn btn-outline-primary">Add Ingredients To This Recipe;</a>
     </body>
 </html>
 
