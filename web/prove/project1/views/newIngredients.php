@@ -21,7 +21,6 @@ New Ingredients page
         <header class="header__pages">
             <div class="header__text-box header__text-box--pages">
                 <h1 class="heading-primary pages">
-                    <span class="heading-primary--main pages">Add New</span>
                     <span class="heading-primary--sub pages">Favorite Family Recipes</span>
                 </h1>
                 <a href="../../../index.php" class="btn btn-outline-primary">&nbsp;&nbsp;&nbsp;&nbsp; Shannon Home&nbsp;&nbsp;&nbsp;&nbsp;</a>
@@ -29,23 +28,38 @@ New Ingredients page
             </div>
         </header> 
 
-        <?php
-        $stmt = $db->query('SELECT * FROM ingredients');
-        $results = $stmt->fetchAll(PDO::FETCH_ASSOC);
-        $stmt->execute();
-
-
-        foreach ($results as $row) {
-            ?>
-            <input type="checkbox" name="ingredients[]" value="<?= $row['id']; ?>"> <?= $row['food'] . '</br>'; ?>
+        <div class="container">
             <?php
-        }
-        ?>
+            //get user's first name to print
+            echo "<h1>" . 'Add Ingredients to New Recipe for ' . $_SESSION['currentUser'] . "</h1>";
+            ?> 
+        </div>
+        <div class="container">
 
-        <label for="newIngredient">New Ingredient:</label> 
-        <input type="checkbox" name="newIngredient" value="true">
-        <input type="text" name="newIngredient_text" placeholder="Type new ingredient">
+            <div class="container">
+                <?php
+                //get user's first name to print
+                echo "<h1>" . 'Recipe Name: ' . $_SESSION['newRecipe'] . "</h1>";
+                ?> 
+            </div>
 
+            <?php
+            $stmt = $db->query('SELECT * FROM ingredients');
+            $results = $stmt->fetchAll(PDO::FETCH_ASSOC);
+            $stmt->execute();
+
+
+            foreach ($results as $row) {
+                ?>
+                <input type="checkbox" name="ingredients[]" value="<?= $row['id']; ?>"> <?= $row['food'] . '</br>'; ?>
+                <?php
+            }
+            ?>
+
+            <label for="newIngredient">New Ingredient:</label> 
+            <input type="checkbox" name="newIngredient" value="true">
+            <input type="text" name="newIngredient_text" placeholder="Type new ingredient">
+        </div>
     </body>
 </html>
 

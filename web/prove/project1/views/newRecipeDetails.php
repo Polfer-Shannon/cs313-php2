@@ -49,6 +49,7 @@ Personal Home Page
         echo "<h4>" . 'Directions:' . "</h4>";
         echo "<p>" . $row['directions'] . "</p>";
 
+        $_SESSION['newRecipe'] = $row['name'];
 
         ?>
         </div>
