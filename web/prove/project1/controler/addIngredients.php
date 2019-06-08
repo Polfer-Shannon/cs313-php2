@@ -3,14 +3,16 @@
 require '../dbConnect.php';
 $db = get_db();
 session_start();
+?>
 
+<?php
 
 $ingredients = $_POST['ingredients'];
 
 $newIngredient = htmlspecialchars($_POST['newIngredient']);
 $newIngredient_text = htmlspecialchars($_POST['newIngredient_text']);
 
-$_SESSION['newRecipeId'] = $recipe_id;
+$recipe_id = $_SESSION['newRecipeId'];
 
 foreach ($ingredients as $i) {
     $stmt = $db->prepare('INSERT INTO menu(recipes_id, ingredients_id) VALUES(:recipes_id, :ingredients_id)');
