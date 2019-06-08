@@ -68,18 +68,9 @@ Personal Home Page
                     $stmt = $db->query('SELECT * FROM ingredients');
                     $results = $stmt->fetchAll(PDO::FETCH_ASSOC);
                     $stmt->execute();
-                    
-                    $stmt3 = $db->prepare('SELECT ingredients.food ingredients.id
-FROM ingredients
-INNER JOIN (recipes INNER JOIN menu ON recipes.id = menu.recipes_id)
-ON ingredients.id = menu.ingredients_id
-WHERE recipes.user_id = :user_id ORDER BY ingredients.food');
-                    $stmt3->bindValue(':user_id', $user_id, PDO::PARAM_INT);
-                    $stmt3->execute();
-                    $results3 = $stmt3->fetchAll(PDO::FETCH_ASSOC);
-                    
-                    var_dump($results3);
-                    foreach ($results3 as $row) {
+
+                    var_dump($results);
+                    foreach ($results as $row) {
                         ?>
                         <input type="checkbox" name="ingredients[]" value="<?= $row['id']; ?>"> <?= $row['food'] . '</br>'; ?>
                         <?php
