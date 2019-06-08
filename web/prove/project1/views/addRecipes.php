@@ -61,20 +61,14 @@ Personal Home Page
                     <input  class="form-control" type="date" name="addDateServed" placeholder="mm/dd/yyy">
 
                     <label for="addRecipeDirections">Directions:</label>
-                    <textarea  class="form-control" name="addRecipeDirections" placeholder="Directions"></textarea>
+                    <textarea  class="form-control"  name="addRecipeDirections" placeholder="Directions"></textarea>
                     <br>
 
                     <?php
-                    $_SESSION["users_id"] = $user_id;
-                    $stmt = $db->prepare('SELECT ingredients.food
-FROM ingredients
-INNER JOIN (recipes INNER JOIN menu ON recipes.id = menu.recipes_id)
-ON ingredients.id = menu.ingredients_id
-WHERE recipes.user_id = :user_id ORDER BY ingredients.food');
-                    $stmt->bindValue(':user_id', $user_id, PDO::PARAM_STR);
-                    $stmt->execute();
+                    $stmt = $db->query('SELECT * FROM ingredients');
                     $results = $stmt->fetchAll(PDO::FETCH_ASSOC);
-                    
+                    $stmt->execute();
+
                     foreach ($results as $row) {
                         ?>
                         <input type="checkbox" name="ingredients[]" value="<?= $row['id']; ?>"> <?= $row['food'] . '</br>'; ?>
@@ -90,7 +84,32 @@ WHERE recipes.user_id = :user_id ORDER BY ingredients.food');
                     <input  class="form-control btn-primary" type="submit" value="Add Recipe">
                 </div>
             </form>
+        
+        <!--        Display new recipe info-->
+        <?php
+        $recipes_id = $_SESSION["recipe_id"];
+        $stmt = $db->prepare('SELECT * FROM recipes WHERE id=:recipes_id');
+        $stmt->bindValue(':recipes_id', $recipes_id, PDO::PARAM_INT);
+        $stmt->execute();
+        $row = $stmt->fetch(PDO::FETCH_ASSOC);
+        echo "<h3>" . $row['name'] . "</h3>";
+        echo "<h5>" . 'Family Rank: ' . $row['rank'] . "</h5>";
+        echo "<h5>" . 'Last Served on: ' . $row['date'] . "</h5>";
+        echo "<h4>" . 'Directions:' . "</h4>";
+        echo "<p>" . $row['directions'] . "</p>";
+
+        $stmt2 = $db->prepare('SELECT ingredients.food FROM ingredients LEFT JOIN menu ON menu.ingredients_id = ingredients.id WHERE menu.recipes_id =:recipes_id');
+        $stmt2->bindValue(':recipes_id', $recipes_id, PDO::PARAM_INT);
+        $stmt2->execute();
+        $ingredients = $stmt2->fetchAll(PDO::FETCH_ASSOC);
+        echo "<h4>" . 'Ingredient List' . "</h4>";
+        foreach ($ingredients as $i){ 
+            echo "<p>" . $i['food'] . "</p>";
+            echo '<br>';
+        }
+        ?>
         </div>
+
 
         <footer class="card-footer text-center footer-bg_color" >
             <?php include ('../../common/footer.php'); ?>
