@@ -17,7 +17,7 @@ Personal Home Page
         </header> 
         
         <a href="scart/browse.php" class="btn btn--white btn--animated btn__pages">&nbsp;&nbsp;&nbsp;&nbsp;CART&nbsp;&nbsp;&nbsp;&nbsp;</a>
-        <a href="project1/p1home.php" class="btn btn--white btn--animated btn__pages">PROJECT 1</a>
+        <a href="../project1/views/p1home.php" class="btn btn--white btn--animated btn__pages">PROJECT 1</a>
         <a href="../../team/wk5_6/scriptures.php" class="btn btn--white btn--animated btn__pages">Team</a>
         <footer>
             <?php include ('../common/footer.php'); ?> 
