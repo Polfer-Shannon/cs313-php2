@@ -40,7 +40,7 @@ Personal Home Page
 
                 echo '<h1>' . 'New Recipes for ' . $row['first_name'] . '</h1>';
                 echo '<br>';
-                echo '<p>' . 'Please fill out the top form before adding ingredients:' . '</p>';
+                echo '<p>' . 'Add the following details and click the button to add ingredients:' . '</p>';
 
                 $user_id = $row['id'];
                 $_SESSION["users_id"] = $user_id;
@@ -64,22 +64,7 @@ Personal Home Page
                     <textarea  class="form-control"  name="addRecipeDirections" placeholder="Directions"></textarea>
                     <br>
 
-                    <?php
-                    $stmt = $db->query('SELECT * FROM ingredients');
-                    $results = $stmt->fetchAll(PDO::FETCH_ASSOC);
-                    $stmt->execute();
-
-               
-                    foreach ($results as $row) {
-                        ?>
-                        <input type="checkbox" name="ingredients[]" value="<?= $row['id']; ?>"> <?= $row['food'] . '</br>'; ?>
-                        <?php
-                    }
-                    ?>
-
-                    <label for="newIngredient">New Ingredient:</label> 
-                    <input type="checkbox" name="newIngredient" value="true">
-                    <input type="text" name="newIngredient_text" placeholder="Type new ingredient">
+                   
 
 
                     <input  class="form-control btn-primary" type="submit" value="Add Recipe">
