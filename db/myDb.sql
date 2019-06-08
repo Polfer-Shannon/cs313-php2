@@ -179,3 +179,5 @@ FROM ingredients
 INNER JOIN (recipes INNER JOIN menu ON recipes.id = menu.recipes_id)
 ON ingredients.id = menu.ingredients_id
 WHERE recipes.user_id = 1;
+
+SELECT ingredients.food FROM ingredients LEFT JOIN menu ON menu.ingredients_id = ingredients.id WHERE menu.recipes_id =:recipes_id ORDER BY ingredients.food
