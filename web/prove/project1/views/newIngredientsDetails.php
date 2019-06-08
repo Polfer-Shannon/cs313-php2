@@ -28,30 +28,27 @@ Personal Home Page
 
             </div>
         </header>
-        
-         <div class="container">
+
+        <div class="container">
             <?php
             //get user's first name to print
             echo $_SESSION['currentUser'];
             ?> 
-         </div>
-          <div class="container">
-        <!--        Display new recipe info-->
-        <?php
-        $recipes_id = $_SESSION["recipe_id"];
-        $stmt = $db->prepare('SELECT * FROM recipes WHERE id=:recipes_id');
-        $stmt->bindValue(':recipes_id', $recipes_id, PDO::PARAM_INT);
-        $stmt->execute();
-        $row = $stmt->fetch(PDO::FETCH_ASSOC);
-        echo "<h3>" . $row['name'] . "</h3>";
-        echo "<h5>" . 'Family Rank: ' . $row['rank'] . "</h5>";
-        echo "<h5>" . 'Last Served on: ' . $row['date'] . "</h5>";
-        echo "<h4>" . 'Directions:' . "</h4>";
-        echo "<p>" . $row['directions'] . "</p>";
+        </div>
+        <div class="container">
+            <!--        Display new ingredient info-->
 
-
-        ?>
+            <?php
+            $stmt2 = $db->prepare('SELECT ingredients.food FROM ingredients LEFT JOIN menu ON menu.ingredients_id = ingredients.id WHERE menu.recipes_id =:recipes_id');
+            $stmt2->bindValue(':recipes_id', $recipes_id, PDO::PARAM_INT);
+            $stmt2->execute();
+            $ingredients = $stmt2->fetchAll(PDO::FETCH_ASSOC);
+            echo "<h4>" . 'Ingredient List' . "</h4>";
+            foreach ($ingredients as $i) {
+                echo "<p>" . $i['food'] . "</p>";
+                echo '<br>';
+            }
+            ?>
         </div>
     </body>
 </html>
-
