@@ -47,6 +47,8 @@ Personal Home Page
             <!--        Display new ingredient info-->
 
             <?php
+            $recipes_id = $_SESSION['newRecipeId'];
+            
             $stmt2 = $db->prepare('SELECT ingredients.food FROM ingredients LEFT JOIN menu ON menu.ingredients_id = ingredients.id WHERE menu.recipes_id =:recipes_id');
             $stmt2->bindValue(':recipes_id', $recipes_id, PDO::PARAM_INT);
             $stmt2->execute();
