@@ -90,32 +90,7 @@ WHERE recipes.user_id = :user_id ORDER BY ingredients.food');
                     <input  class="form-control btn-primary" type="submit" value="Add Recipe">
                 </div>
             </form>
-        
-        <!--        Display new recipe info-->
-        <?php
-        $recipes_id = $_SESSION["recipe_id"];
-        $stmt = $db->prepare('SELECT * FROM recipes WHERE id=:recipes_id');
-        $stmt->bindValue(':recipes_id', $recipes_id, PDO::PARAM_INT);
-        $stmt->execute();
-        $row = $stmt->fetch(PDO::FETCH_ASSOC);
-        echo "<h3>" . $row['name'] . "</h3>";
-        echo "<h5>" . 'Family Rank: ' . $row['rank'] . "</h5>";
-        echo "<h5>" . 'Last Served on: ' . $row['date'] . "</h5>";
-        echo "<h4>" . 'Directions:' . "</h4>";
-        echo "<p>" . $row['directions'] . "</p>";
-
-        $stmt2 = $db->prepare('SELECT ingredients.food FROM ingredients LEFT JOIN menu ON menu.ingredients_id = ingredients.id WHERE menu.recipes_id =:recipes_id ORDER BY ingredients.food');
-        $stmt2->bindValue(':recipes_id', $recipes_id, PDO::PARAM_INT);
-        $stmt2->execute();
-        $ingredients = $stmt2->fetchAll(PDO::FETCH_ASSOC);
-        echo "<h4>" . 'Ingredient List' . "</h4>";
-        foreach ($ingredients as $i){ 
-            echo "<p>" . $i['food'] . "</p>";
-            echo '<br>';
-        }
-        ?>
         </div>
-
 
         <footer class="card-footer text-center footer-bg_color" >
             <?php include ('../../common/footer.php'); ?>
