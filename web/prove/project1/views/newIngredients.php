@@ -64,7 +64,7 @@ New Ingredients page
                             <?php
                         }
                         ?>
-
+                            <br>
                         <label for="newIngredient">New Ingredient:</label> 
                         <input type="checkbox" name="newIngredient" value="true">
                         <input type="text" name="newIngredient_text" placeholder="Type new ingredient">
