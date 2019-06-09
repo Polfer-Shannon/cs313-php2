@@ -23,8 +23,8 @@ New Ingredients page
                 <h1 class="heading-primary pages">
                     <span class="heading-primary--sub pages">Favorite Family Recipes</span>
                 </h1>
-                <a href="../../../index.php" class="btn btn-outline-primary">&nbsp;&nbsp;&nbsp;&nbsp; Shannon Home&nbsp;&nbsp;&nbsp;&nbsp;</a>
-                <a href="p1home.php" class="btn btn-outline-primary">&nbsp;&nbsp;&nbsp;&nbsp;Recipe Home&nbsp;&nbsp;&nbsp;&nbsp;</a>
+                <a href="../../../index.php" class="btn btn-outline-primary btn--white">&nbsp;&nbsp;&nbsp;&nbsp; Shannon Home&nbsp;&nbsp;&nbsp;&nbsp;</a>
+                <a href="p1home.php" class="btn btn-outline-primary btn--white">&nbsp;&nbsp;&nbsp;&nbsp;Recipe Home&nbsp;&nbsp;&nbsp;&nbsp;</a>
             </div>
         </header> 
 
