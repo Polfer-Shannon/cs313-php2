@@ -19,7 +19,7 @@ Personal Home Page
               media="screen">
         
     </head>
-    <body>
+    <body class="project">
         <header class="header__pages">
             <div class="header__text-box header__text-box--pages">
                 <h1 class="heading-primary pages">
