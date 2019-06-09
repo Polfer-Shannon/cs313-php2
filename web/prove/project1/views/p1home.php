@@ -49,8 +49,8 @@ Personal Home Page
             
             
         </div>
-        <footer class="footer-bg_color footer mt-auto py-3" >
+        
             <?php include ('../../common/footer.php'); ?>
-        </footer>
+        
     </body>
 </html>
