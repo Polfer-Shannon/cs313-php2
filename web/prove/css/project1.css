@@ -15,7 +15,7 @@
 
 }
 .header__pages {
-    height: 10vh;
+    height: 15vh;
     background-color: #babcc1;
 }
 
@@ -37,6 +37,14 @@
 }
 .btn--white::after {
     background-color: #fff; 
+}
+
+.header__text-box{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-60%, -80%);
+    text-align: center;
 }
 
 .heading-primary--main{
