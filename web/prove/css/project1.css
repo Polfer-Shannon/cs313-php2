@@ -38,3 +38,36 @@
 .btn--white::after {
     background-color: #fff; 
 }
+
+.heading-primary--main{
+    display: block;
+    font-size: 6rem;
+    font-weight: 800;
+    letter-spacing: 35px;
+    padding-left: 2rem;
+
+    animation-name: moveInLeft;
+    animation-duration: 1s;
+
+}
+
+@keyframes moveInLeft {
+    0% {
+        opacity: 0;
+        transform: translateX(-10rem); }
+    80% {
+        transform: translateX(1rem); }
+    100% {
+        opacity: 1;
+        transform: translate(0); } 
+}
+@keyframes moveInRight {
+    0% {
+        opacity: 0;
+        transform: translateX(10rem); }
+    80% {
+        transform: translateX(-1rem); }
+    100% {
+        opacity: 1;
+        transform: translate(0); }
+}
