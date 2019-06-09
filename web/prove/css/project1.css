@@ -1,13 +1,18 @@
 .footer-bg_color{
     background-color: #000;
     color: #fff;
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    height: 2.5rem;            /* Footer height */
 }
- .recipes {
+}
+.recipes {
     font-size: 2em;
 }
 .project {
     background-color: #d1c0b5;
-   
+
 }
 .header__pages {
     height: 10vh;
