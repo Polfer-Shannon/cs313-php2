@@ -73,11 +73,13 @@ New Ingredients page
                             ?>
                         </table>
                         <br>
+                        <div class="container">
                         <label for="newIngredient">New Ingredient:</label> 
                         <input type="checkbox" name="newIngredient" value="true">
                         <input type="text" name="newIngredient_text" placeholder="Type new ingredient"> 
 
                         <input  class="form-control btn-primary" type="submit" value="Add Ingredients">
+                        </div>
                     </div>
                 </form>
             </div>
