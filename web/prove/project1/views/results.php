@@ -62,43 +62,7 @@ Personal Home Page
             ?>
             
                 
-        </div>
-        <!--        <br>
-        
-                <form method="post" action="results.php">
-                                <label for="rank">Enter 1 to Order by Rank :</label>
-                    <br>
-                                <label for="rank">Enter 2 to Order by Date :</label>
-                    <input class="input_box ib_big" type="text" name="order" placeholder="Enter '1' for rank or '2' for date">
-                    <input class="btn btn--white btn--animated btn_color" type="submit" value="Change List Order">
-                </form>    -->
-
-        <?php
-//        //get and print data from database
-//        $order = $_POST['order'];
-//        $stmt = $db->query('SELECT * FROM recipes ORDER BY rank');
-//        $stmt->execute();
-//        $rows = $stmt->fetchAll(PDO::FETCH_ASSOC);
-//
-//        $order2 = $_POST['order'];
-//        $stmt2 = $db->query('SELECT * FROM recipes ORDER BY date');
-//        $stmt2->execute();
-//        $rows2 = $stmt2->fetchAll(PDO::FETCH_ASSOC);
-//
-//        foreach ($rows as $r) {
-//            if ($order = 1) {
-//                echo '<span class="r_list"><a href="details.php?recipeLinks=' . $r['id'] . '">' . $r['rank'] . $r['name'] . '</a></span>';
-//                echo '<br>';
-//            }
-//        }
-//        
-//        foreach ($rows2 as $r2) {
-//            if ($order2 = 2){
-//            echo '<span class="r_list"><a href="details.php?recipeLinks=' . $r['id'] . '">' . $r['date'] . $r['name'] . '</a></span>';
-//            echo '<br>';
-//        }
-//        }
-        ?> 
+        </div> 
        
             <?php include ('../../common/footer.php'); ?>
        

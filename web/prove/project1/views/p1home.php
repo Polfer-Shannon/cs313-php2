@@ -31,9 +31,6 @@ Personal Home Page
         </header> 
         <div class="container">
 
-            <?php
-//            echo '<h2><a href="login.php?action=login" title="Go to login">Login</a><h2><br>';
-            ?>
 
             <form method="post" action="results.php">
                 <div class="form-group">    

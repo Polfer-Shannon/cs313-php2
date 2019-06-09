@@ -65,9 +65,6 @@ Personal Home Page
                     <textarea  class="form-control"  name="addRecipeDirections" placeholder="Directions"></textarea>
                     <br>
 
-                   
-
-
                     <input  class="form-control btn-primary" type="submit" value="Add Recipe">
                 </div>
             </form>
