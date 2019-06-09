@@ -7,7 +7,7 @@
 }
 
 .header__pages{
-    height: 50vh;
+    height: 20vh;
     background-image: linear-gradient(to right bottom, rgba(231, 205, 177, .8), rgba(77, 50, 25, .8)), url("../img/pan_house.jpg");
     background-size: cover;
     background-position: top;
