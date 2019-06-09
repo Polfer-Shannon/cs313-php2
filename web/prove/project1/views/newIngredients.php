@@ -51,21 +51,28 @@ New Ingredients page
                 <form method="post" action="../controler/addIngredients.php">
                     <div class="form-group">
 
-                        <?php
-                        $stmt = $db->query('SELECT * FROM ingredients ORDER BY food');
-                        $results = $stmt->fetchAll(PDO::FETCH_ASSOC);
-                        $stmt->execute();
-
-
-                        foreach ($results as $row) {
-                            ?>
-
-                            <input type="checkbox" name="ingredients[]" value="<?= $row['id']; ?>"> <?= $row['food']; ?>
-                            <input type="checkbox" name="ingredients[]" value="<?= $row['id']; ?>"> <?= $row['category']; ?>
+                        <table>
+                            <th>Food</th>
+                            <th>Category</th>
+                            <th>On Hand</th>
                             <?php
-                        }
-                        ?>
-                            <br>
+                            $stmt = $db->query('SELECT * FROM ingredients ORDER BY food');
+                            $results = $stmt->fetchAll(PDO::FETCH_ASSOC);
+                            $stmt->execute();
+
+
+                            foreach ($results as $row) {
+                                ?>
+                                <tr>
+                                    <td> <input type="checkbox" name="ingredients[]" value="<?= $row['id']; ?>"> <?= $row['food']; ?> </td>
+                                    <td> <?= $row['category']; ?></td>
+                                    <td> <?= $row['on_hand']; ?></td>
+                                </tr>
+                                <?php
+                            }
+                            ?>
+                        </table>
+                        <br>
                         <label for="newIngredient">New Ingredient:</label> 
                         <input type="checkbox" name="newIngredient" value="true">
                         <input type="text" name="newIngredient_text" placeholder="Type new ingredient"> 
