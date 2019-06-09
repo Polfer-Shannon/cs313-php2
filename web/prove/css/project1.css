@@ -7,6 +7,10 @@
     height: 6rem;            /* Footer height */
 }
 
+.longFooter {
+    position: relative;
+}
+
 .recipes {
     font-size: 2em;
 }
