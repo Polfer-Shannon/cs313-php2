@@ -85,9 +85,7 @@ New Ingredients page
             </div>
         </div>
 
-        <footer class="longFooter">
-        <?php include ('../../common/footer.php'); ?>
-        </footer>
+        
     </body>
 </html>
 
