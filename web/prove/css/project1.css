@@ -73,6 +73,10 @@
     animation-duration: 1s;
 }
 
+table {
+    width: 100%;
+}
+
 @keyframes moveInLeft {
     0% {
         opacity: 0;
