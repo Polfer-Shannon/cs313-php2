@@ -17,7 +17,7 @@ Personal Home Page
         <link href="../../css/project1.css" rel="stylesheet" type="text/css" 
               media="screen">
     </head>
-    <body>
+    <body class="project">
         <header class="header__pages project1">
             <div class="header__text-box header__text-box--pages">
                 <h1 class="heading-primary pages">
@@ -64,5 +64,7 @@ Personal Home Page
                 <p>Click the Recipe Home button above to view this new recipe from your recipe list.</p>
             </div>
         </div>
+        
+        <?php include ('../../common/footer.php'); ?>
     </body>
 </html>

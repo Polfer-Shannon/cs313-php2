@@ -17,7 +17,7 @@ Personal Home Page
         <link href="../../css/project1.css" rel="stylesheet" type="text/css" 
                       media="screen">
     </head>
-    <body>
+    <body class="project">
         <header class="header__pages">
             <div class="header__text-box header__text-box--pages">
                 <h1 class="heading-primary pages">
@@ -75,9 +75,9 @@ Personal Home Page
         </div>
 
 
-        <footer class="card-footer text-center footer-bg_color" >
+        
             <?php include ('../../common/footer.php'); ?>
-        </footer>
+       
     </body>
 </html>
 
