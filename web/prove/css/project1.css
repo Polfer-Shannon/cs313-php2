@@ -49,3 +49,15 @@
     animation-name: moveInRight;
     animation-duration: 1s;
 }
+
+.foot {
+    border-top: 1rem solid #fff;
+    margin-top: 30rem;
+   
+}
+.foot p {
+    text-align: center;
+    font-size: 1em;
+    margin-bottom: 1em;
+    color: #fff;
+}
