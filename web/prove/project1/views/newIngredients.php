@@ -54,12 +54,10 @@ New Ingredients page
                         <table>
                             <th>Food</th>
                             <th>Category</th>
-                            <th>On Hand</th>
                             <?php
                             $stmt = $db->query('SELECT * FROM ingredients ORDER BY food');
                             $results = $stmt->fetchAll(PDO::FETCH_ASSOC);
                             $stmt->execute();
-
 
                             foreach ($results as $row) {
                                 ?>
