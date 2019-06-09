@@ -66,7 +66,6 @@ New Ingredients page
                                 <tr>
                                     <td> <input type="checkbox" name="ingredients[]" value="<?= $row['id']; ?>"> <?= $row['food']; ?> </td>
                                     <td> <?= $row['category']; ?></td>
-                                    <td> <?= $row['on_hand']; ?></td>
                                 </tr>
                                 <?php
                             }
@@ -85,7 +84,6 @@ New Ingredients page
             </div>
         </div>
 
-        
     </body>
 </html>
 
