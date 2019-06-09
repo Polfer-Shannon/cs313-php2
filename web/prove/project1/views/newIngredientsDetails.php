@@ -62,7 +62,7 @@ Personal Home Page
             ?>
             
             <div class="container">
-                <p>Click the Recipe Home button above to view this new recipe from your recipe list.</p>
+                <h4>Click the Recipe Home button above to view this new recipe from your recipe list.</h4>
             </div>
         </div>
         
