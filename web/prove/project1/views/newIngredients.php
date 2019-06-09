@@ -45,34 +45,36 @@ New Ingredients page
                 ?> 
             </div>
 
-            
-<!--            Form to add ingredients-->
-            <form method="post" action="../controler/addIngredients.php">
-                <div class="form-group">
-            
-            <?php
-            $stmt = $db->query('SELECT * FROM ingredients ORDER BY food');
-            $results = $stmt->fetchAll(PDO::FETCH_ASSOC);
-            $stmt->execute();
+
+            <!--            Form to add ingredients-->
+            <div class="container">
+                <form method="post" action="../controler/addIngredients.php">
+                    <div class="form-group">
+
+                        <?php
+                        $stmt = $db->query('SELECT * FROM ingredients ORDER BY food');
+                        $results = $stmt->fetchAll(PDO::FETCH_ASSOC);
+                        $stmt->execute();
 
 
-            foreach ($results as $row) {
-                ?>
-                <input type="checkbox" name="ingredients[]" value="<?= $row['id']; ?>"> <?= $row['food'] . '</br>'; ?>
-                <?php
-            }
-            ?>
+                        foreach ($results as $row) {
+                            ?>
 
-            <label for="newIngredient">New Ingredient:</label> 
-            <input type="checkbox" name="newIngredient" value="true">
-            <input type="text" name="newIngredient_text" placeholder="Type new ingredient">
-            
-            <input  class="form-control btn-primary" type="submit" value="Add Ingredients">
-                </div>
-            </form>
-            
+                            <input type="checkbox" name="ingredients[]" value="<?= $row['id']; ?>"> <?= $row['food'] . '</br>'; ?>
+                            <?php
+                        }
+                        ?>
+
+                        <label for="newIngredient">New Ingredient:</label> 
+                        <input type="checkbox" name="newIngredient" value="true">
+                        <input type="text" name="newIngredient_text" placeholder="Type new ingredient">
+
+                        <input  class="form-control btn-primary" type="submit" value="Add Ingredients">
+                    </div>
+                </form>
+            </div>
         </div>
-        
+
         <?php include ('../../common/footer.php'); ?>
     </body>
 </html>
