@@ -37,4 +37,6 @@ if ($newIngredient == "true"){
 header("Location: ../views/newIngredientsDetails.php");
 
 
-?>  
+?>
+
+

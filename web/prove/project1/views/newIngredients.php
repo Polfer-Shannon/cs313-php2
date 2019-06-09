@@ -61,6 +61,7 @@ New Ingredients page
                             ?>
 
                             <input type="checkbox" name="ingredients[]" value="<?= $row['id']; ?>"> <?= $row['food']; ?>
+                            <input type="checkbox" name="ingredients[]" value="<?= $row['id']; ?>"> <?= $row['category']; ?>
                             <?php
                         }
                         ?>
