@@ -6,7 +6,7 @@
     width: 100%;
     height: 6rem;            /* Footer height */
 }
-}
+
 .recipes {
     font-size: 2em;
 }
@@ -19,3 +19,23 @@
     background-color: #a5836d;
 }
 
+.btn:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.2); 
+}
+.btn:hover::after {
+    transform: scaleX(1.4) scaleY(1.6);
+    opacity: 0; }
+
+.btn:active {
+    transform: translateY(-1px);
+    box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.2); }
+
+.btn--white {
+    background-color: #fff;
+    color: #777;
+    padding: 1.5rem 4rem; 
+}
+.btn--white::after {
+    background-color: #fff; 
+}
