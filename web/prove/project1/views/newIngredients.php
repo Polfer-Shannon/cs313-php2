@@ -83,7 +83,9 @@ New Ingredients page
             </div>
         </div>
 
+        <footer>
         <?php include ('../../common/footer.php'); ?>
+        </footer>
     </body>
 </html>
 
