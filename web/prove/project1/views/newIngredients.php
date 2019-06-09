@@ -60,7 +60,7 @@ New Ingredients page
                         foreach ($results as $row) {
                             ?>
 
-                            <input type="checkbox" name="ingredients[]" value="<?= $row['id']; ?>"> <?= $row['food'] . '</br>'; ?>
+                            <input type="checkbox" name="ingredients[]" value="<?= $row['id']; ?>"> <?= $row['food']; ?>
                             <?php
                         }
                         ?>
