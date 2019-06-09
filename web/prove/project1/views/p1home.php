@@ -49,8 +49,8 @@ Personal Home Page
             
             
         </div>
-        <footer>
+       
             <?php include ('../../common/footer.php'); ?>
-        </footer>
+       
     </body>
 </html>
