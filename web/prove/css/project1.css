@@ -5,7 +5,9 @@
  .recipes {
     font-size: 2em;
 }
-
+body {
+    background-color: #fff;
+}
 .header__pages {
     height: 20vh;
     background-color: #a5836d;
