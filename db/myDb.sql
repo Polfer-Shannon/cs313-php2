@@ -189,4 +189,5 @@ ON ingredients.id = menu.ingredients_id
 WHERE recipes.user_id = :user_id ORDER BY ingredients.food
 
 
-UPDATE song SET orig_artist=:orig_artist, release_date=:release_date WHERE id=:id
+UPDATE ingredients SET category = 'meat' WHERE id = 41;
+
