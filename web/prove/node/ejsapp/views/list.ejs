@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+<title>Home Page</title>
+</head>
+<body>
+<h1>This is the home page.</h1>
+<h2> <%= tagline %> </h2>
+
+
+
+<h2>Loop</h2>
+
+<ul>
+    <% drinks.forEach(function(drink) { %>
+    
+    <li><%= drink.name %> - <%= drink.gas %></li>
+    
+    <% }); %>
+</ul>
+
+
+</body>
+</html>

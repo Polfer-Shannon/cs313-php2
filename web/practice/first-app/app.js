@@ -1,3 +1,2 @@
-const fs = require('fs');
 
-fs.readdir()
+console.log(module);
